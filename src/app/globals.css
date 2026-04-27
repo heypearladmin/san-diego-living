@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-stone-900 bg-white antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-serif font-normal;
+  }
+}
+
+@layer components {
+  /* Labels: tracking carries the weight, not boldness */
+  .label-text {
+    @apply text-xs font-sans font-normal tracking-widest uppercase text-stone-400;
+  }
+
+  .section-heading {
+    @apply font-serif font-normal text-4xl md:text-5xl text-stone-900 leading-[1.1];
+  }
+
+  /* Buttons: generous proportion, light weight, slow transitions */
+  .btn-primary {
+    @apply inline-block bg-stone-900 text-white font-sans text-xs font-light
+           tracking-widest uppercase px-10 py-4
+           hover:bg-stone-800 transition-all duration-500;
+  }
+
+  .btn-outline {
+    @apply inline-block border border-stone-900 text-stone-900 font-sans text-xs font-light
+           tracking-widest uppercase px-10 py-4
+           hover:bg-stone-900 hover:text-white transition-all duration-500;
+  }
+
+  /* White outline: breathes in on hover rather than hard-flipping */
+  .btn-outline-white {
+    @apply inline-block border border-white/50 text-white font-sans text-xs font-light
+           tracking-widest uppercase px-10 py-4
+           hover:border-white hover:bg-white/10 transition-all duration-500;
+  }
+}
+
+/* ─── Load animations ────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.fade-up-1 { animation-delay: 0.05s; }
+.fade-up-2 { animation-delay: 0.2s;  }
+.fade-up-3 { animation-delay: 0.35s; }
+.fade-up-4 { animation-delay: 0.5s;  }
