@@ -4,92 +4,92 @@ import Link from 'next/link'
 import BlogNewsletterForm from '@/components/BlogNewsletterForm'
 
 export const metadata: Metadata = {
-  title: 'Insights & Stories',
+  title: 'Stories & Guides',
   description:
-    'Market reports, neighborhood deep-dives, lifestyle coverage, and real estate guides for coastal San Diego buyers and sellers.',
+    'Neighborhood guides, local business spotlights, things to do, and community stories from across coastal San Diego.',
 }
 
-const categories = ['All', 'Market Reports', 'Neighborhoods', 'Lifestyle', 'Buying', 'Selling']
+const categories = ['All', 'Neighborhoods', 'Local Guides', 'Things To Do', 'Restaurants', 'Real Estate']
 
 const featuredArticle = {
-  category: 'Market Report',
-  title: "San Diego's Luxury Tier Defies the National Slowdown — Again",
+  category: 'Local Guide',
+  title: "The Best Neighborhoods in San Diego for Every Type of Person",
   excerpt:
-    'While rising mortgage rates and economic uncertainty have tempered home sales in much of the country, coastal San Diego continues to chart its own course. Here is what the latest data reveals about the $2M+ segment, and what it means for buyers and sellers entering the market this spring.',
+    'La Jolla for the culture-seeker, Pacific Beach for the beach lover, Del Mar for the family — a genuine guide to finding where you belong in San Diego.',
   author: 'San Diego Living',
   date: 'April 14, 2026',
   readTime: '8 min read',
   image:
     'https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&w=1920&q=80',
-  href: '/blog/luxury-tier-market-report',
+  href: '/blog/best-neighborhoods-for-every-person',
 }
 
 const articles = [
   {
+    category: 'Local Guide',
+    title: 'The Best Coffee Shops in La Jolla',
+    excerpt:
+      "From third-wave roasters to sun-drenched patios with Pacific views, La Jolla's coffee culture is worth exploring slowly.",
+    date: 'April 2, 2026',
+    readTime: '4 min read',
+    image:
+      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80',
+    href: '/blog/coffee-shops-la-jolla',
+  },
+  {
+    category: 'Neighborhoods',
+    title: 'Living in Pacific Beach: An Honest Lifestyle Guide',
+    excerpt:
+      "What's it actually like to live in PB? We break down the vibe, walkability, dining scene, and who it's genuinely perfect for.",
+    date: 'March 28, 2026',
+    readTime: '6 min read',
+    image:
+      'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80',
+    href: '/blog/living-in-pacific-beach',
+  },
+  {
+    category: 'Things To Do',
+    title: 'Hidden Gems in San Diego You Need to Visit',
+    excerpt:
+      'Beyond Balboa Park and the Zoo — the spots that only residents know about, from secret tide pools to off-menu dining experiences.',
+    date: 'March 15, 2026',
+    readTime: '5 min read',
+    image:
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+    href: '/blog/san-diego-hidden-gems',
+  },
+  {
+    category: 'Restaurants',
+    title: "Little Italy's Best Restaurants Right Now",
+    excerpt:
+      "San Diego's most walkable dining neighborhood keeps getting better. Here are the tables worth booking this month.",
+    date: 'February 22, 2026',
+    readTime: '5 min read',
+    image:
+      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+    href: '/blog/little-italy-restaurants',
+  },
+  {
     category: 'Neighborhoods',
     title: 'Del Mar vs. Rancho Santa Fe: Which Is Right for You?',
     excerpt:
-      "Two of San Diego County's most storied addresses appeal to distinct buyer profiles. We break down the lifestyle tradeoffs, price points, and long-term outlook.",
-    date: 'March 28, 2026',
+      "Two of San Diego County's most storied communities appeal to entirely different lifestyles. We break down the honest tradeoffs.",
+    date: 'January 30, 2026',
     readTime: '7 min read',
     image:
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
     href: '/blog/del-mar-vs-rancho-santa-fe',
   },
   {
-    category: 'Lifestyle',
-    title: 'The New Wave of Farm-to-Table Dining in Little Italy',
+    category: 'Real Estate',
+    title: "San Diego's Coastal Market: What Buyers Need to Know in 2026",
     excerpt:
-      "San Diego's culinary scene has quietly matured into one of the West Coast's most exciting. Here's where chefs are sourcing locally and cooking brilliantly.",
-    date: 'March 15, 2026',
-    readTime: '5 min read',
-    image:
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/farm-to-table-little-italy',
-  },
-  {
-    category: 'Buying',
-    title: "A First-Time Buyer's Guide to San Diego's Coastal Neighborhoods",
-    excerpt:
-      "Pacific Beach or Ocean Beach? La Jolla or Bird Rock? This guide helps you cut through the noise and find the San Diego neighborhood that actually fits your life.",
-    date: 'February 22, 2026',
-    readTime: '10 min read',
+      'A grounded look at where the market stands — inventory, pricing trends, and what experienced buyers are doing differently this year.',
+    date: 'January 10, 2026',
+    readTime: '9 min read',
     image:
       'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/first-time-buyer-guide',
-  },
-  {
-    category: 'Market Reports',
-    title: "Q4 2025 Year-End Market Recap: What Happened and What's Next",
-    excerpt:
-      "A comprehensive look at San Diego County's real estate performance in 2025 — including the suburban shift, interest rate headwinds, and the surprising resilience of the luxury condo market.",
-    date: 'January 10, 2026',
-    readTime: '12 min read',
-    image:
-      'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/q4-2025-year-end-recap',
-  },
-  {
-    category: 'Selling',
-    title: 'How to Prepare Your La Jolla Home for Maximum Value',
-    excerpt:
-      "Small decisions about staging, timing, and pricing strategy can mean hundreds of thousands of dollars in a competitive market. Here's the insider playbook.",
-    date: 'December 5, 2025',
-    readTime: '6 min read',
-    image:
-      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/prepare-la-jolla-home-for-sale',
-  },
-  {
-    category: 'Neighborhoods',
-    title: 'Inside Coronado: Why the Island Continues to Command a Premium',
-    excerpt:
-      "Across the bay from downtown San Diego, Coronado has maintained some of the most stable appreciation in the county. We explore what makes this island community irreplaceable.",
-    date: 'November 18, 2025',
-    readTime: '8 min read',
-    image:
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/inside-coronado',
+    href: '/blog/coastal-market-buyers-guide-2026',
   },
 ]
 
@@ -139,7 +139,7 @@ export default function BlogPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <p className="label-text mb-1">San Diego Living</p>
-              <h2 className="font-serif text-3xl text-stone-900">Insights & Stories</h2>
+              <h2 className="font-serif text-3xl text-stone-900">Stories & Guides</h2>
             </div>
 
             {/* Category Filter */}
@@ -224,7 +224,7 @@ export default function BlogPage() {
 
           {/* Load More */}
           <div className="text-center mt-16">
-            <button className="btn-outline">Load More Articles</button>
+            <button className="btn-outline">Load More Stories</button>
           </div>
         </div>
       </section>
@@ -232,12 +232,12 @@ export default function BlogPage() {
       {/* ─── NEWSLETTER ───────────────────────────────────────────────── */}
       <section className="bg-cream-100 py-20">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <p className="label-text mb-4">Never Miss an Insight</p>
+          <p className="label-text mb-4">Stay in the Loop</p>
           <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-4">
             The San Diego Living Brief
           </h2>
           <p className="font-sans text-stone-500 text-sm leading-relaxed mb-8 max-w-md mx-auto">
-            One monthly email. Market reports, neighborhood spotlights, and curated content — nothing else.
+            Neighborhood guides, local spots, community stories, and the occasional market insight — once a month, nothing more.
           </p>
           <BlogNewsletterForm />
         </div>

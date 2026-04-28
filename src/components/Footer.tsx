@@ -12,12 +12,12 @@ const linkColumns = [
     ],
   },
   {
-    heading: 'Editorial',
+    heading: 'Explore',
     items: [
-      { label: 'Market Reports', href: '/market-reports' },
-      { label: 'Lifestyle', href: '/blog' },
+      { label: 'Local Spots', href: '/local-spots' },
+      { label: 'Things To Do', href: '/things-to-do' },
+      { label: 'Stories', href: '/blog' },
       { label: 'About', href: '/about' },
-      { label: 'Contact', href: '/contact' },
     ],
   },
 ]
@@ -65,7 +65,7 @@ export default function Footer() {
         {/* Specialist line */}
         <div className="mt-20 pt-10 border-t border-stone-900 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <p className="label-text text-stone-700 mb-1">Featured Specialist</p>
+            <p className="label-text text-stone-700 mb-1">Local Real Estate Expert</p>
             <p className="font-sans font-light text-sm text-stone-500">
               Sarah Chen &nbsp;·&nbsp; Compass Real Estate &nbsp;·&nbsp; CA DRE #02054123
             </p>
@@ -74,7 +74,7 @@ export default function Footer() {
             href="/contact"
             className="font-sans font-light text-xs tracking-widest uppercase text-gold hover:text-gold-light transition-colors duration-500 whitespace-nowrap"
           >
-            Connect →
+            Get in Touch →
           </Link>
         </div>
       </div>

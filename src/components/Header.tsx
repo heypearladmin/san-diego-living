@@ -14,8 +14,9 @@ const navLinks = [
       { label: 'Coronado', href: '/neighborhoods/coronado' },
     ],
   },
-  { label: 'Market Reports', href: '/market-reports' },
-  { label: 'Lifestyle', href: '/blog' },
+  { label: 'Local Spots', href: '/local-spots' },
+  { label: 'Things To Do', href: '/things-to-do' },
+  { label: 'Stories', href: '/blog' },
   { label: 'About', href: '/about' },
 ]
 
@@ -101,7 +102,7 @@ export default function Header() {
                   : 'border-white/40 text-white/80 hover:border-white hover:text-white'
               }`}
             >
-              Speak with an Expert
+              Get Local Insights
             </Link>
           </div>
 
@@ -155,7 +156,7 @@ export default function Header() {
             className="mt-2 btn-primary text-center"
             onClick={() => setMenuOpen(false)}
           >
-            Speak with an Expert
+            Get Local Insights
           </Link>
         </nav>
       </div>
