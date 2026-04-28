@@ -467,44 +467,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── REAL ESTATE SNAPSHOT ─────────────────────────────────────── */}
-      <section className="bg-stone-950 py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12 gap-6">
-            <div>
-              <p className="label-text text-stone-600 mb-2">For Those Considering a Move</p>
-              <h2 className="font-serif font-normal text-3xl md:text-4xl text-white leading-[1.1]">
-                San Diego Real Estate,
-                <br />
-                at a Glance
-              </h2>
-            </div>
-            <Link
-              href="/market-reports"
-              className="font-sans text-sm tracking-wider text-stone-400 hover:text-gold border-b border-stone-700 hover:border-gold pb-0.5 transition-colors self-start lg:self-auto"
-            >
-              Full Market Report →
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-stone-800">
-            {marketStats.map((stat) => (
-              <div key={stat.label} className="bg-stone-950 px-8 py-8">
-                <p className="font-serif text-3xl md:text-4xl text-gold mb-3">
-                  {stat.value}
-                </p>
-                <p className="font-sans text-sm text-white mb-1">{stat.label}</p>
-                <p className="font-sans text-xs text-stone-500">{stat.change}</p>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-6 font-sans font-light text-xs text-stone-700">
-            Data sourced from local MLS and regional reporting. All figures reflect coastal San Diego markets. Q1 2026.
-          </p>
-        </div>
-      </section>
-
       {/* ─── SPECIALIST FEATURE ───────────────────────────────────────── */}
       <section className="bg-cream-100 py-36 lg:py-48">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -567,6 +529,45 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ─── MARKET SNAPSHOT ──────────────────────────────────────────── */}
+      <section className="bg-white border-t border-stone-100 py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-10 gap-4">
+            <div>
+              <p className="label-text mb-2">Market Context · Q1 2026</p>
+              <h2 className="font-serif font-normal text-2xl md:text-3xl text-stone-900 leading-snug">
+                San Diego Market Snapshot
+              </h2>
+              <p className="font-sans font-light text-sm text-stone-400 mt-2 max-w-sm leading-relaxed">
+                A quick look at where coastal San Diego stands — useful context for anyone exploring the area.
+              </p>
+            </div>
+            <Link
+              href="/market-reports"
+              className="font-sans text-xs tracking-widest uppercase text-stone-400 hover:text-stone-900 border-b border-stone-200 hover:border-stone-900 pb-0.5 transition-colors self-start lg:self-auto whitespace-nowrap"
+            >
+              Full Report →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-stone-100 border border-stone-100">
+            {marketStats.map((stat) => (
+              <div key={stat.label} className="px-8 py-7">
+                <p className="font-serif text-2xl md:text-3xl text-stone-900 mb-2">
+                  {stat.value}
+                </p>
+                <p className="font-sans text-xs text-stone-600 mb-1">{stat.label}</p>
+                <p className="font-sans text-xs text-stone-400">{stat.change}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-5 font-sans font-light text-xs text-stone-400">
+            Data sourced from local MLS and regional reporting. Figures reflect coastal San Diego markets.
+          </p>
         </div>
       </section>
 
