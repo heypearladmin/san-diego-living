@@ -6,7 +6,7 @@ import Link from 'next/link'
 const navLinks = [
   {
     label: 'Neighborhoods',
-    href: '/neighborhoods/la-jolla',
+    href: '/neighborhoods',
     children: [
       { label: 'La Jolla', href: '/neighborhoods/la-jolla' },
       { label: 'Del Mar', href: '/neighborhoods/del-mar' },
@@ -70,22 +70,27 @@ export default function Header() {
                   {link.label}
                 </Link>
 
-                {/* Dropdown — always rendered, fades in/out */}
+                {/* Dropdown — pt-3 wrapper fills the gap so onMouseLeave doesn't fire mid-hover */}
                 {link.children && (
-                  <div className={`absolute top-full left-0 mt-3 w-48 bg-white border border-stone-100 transition-all duration-300 ${
-                    activeDropdown === link.label
-                      ? 'opacity-100 translate-y-0 pointer-events-auto'
-                      : 'opacity-0 -translate-y-1 pointer-events-none'
+                  <div className={`absolute top-full left-0 pt-3 w-48 z-10 ${
+                    activeDropdown === link.label ? 'pointer-events-auto' : 'pointer-events-none'
                   }`}>
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.label}
-                        href={child.href}
-                        className="block px-5 py-3 font-sans font-light text-sm text-stone-600 hover:text-stone-900 hover:bg-cream-50 transition-colors duration-300"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
+                    <div className={`bg-white border border-stone-100 shadow-sm transition-all duration-300 ${
+                      activeDropdown === link.label
+                        ? 'opacity-100 translate-y-0'
+                        : 'opacity-0 -translate-y-1'
+                    }`}>
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.label}
+                          href={child.href}
+                          onClick={() => setActiveDropdown(null)}
+                          className="block px-5 py-3 font-sans font-light text-sm text-stone-600 hover:text-stone-900 hover:bg-stone-50 transition-colors duration-200"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -95,7 +100,7 @@ export default function Header() {
           {/* CTA */}
           <div className="hidden lg:block">
             <Link
-              href="/contact"
+              href="/blog"
               className={`font-sans font-light text-xs tracking-widest uppercase border px-6 py-2.5 transition-all duration-500 ${
                 scrolled
                   ? 'border-stone-300 text-stone-600 hover:border-stone-900 hover:text-stone-900'
@@ -152,7 +157,7 @@ export default function Header() {
             </div>
           ))}
           <Link
-            href="/contact"
+            href="/blog"
             className="mt-2 btn-primary text-center"
             onClick={() => setMenuOpen(false)}
           >

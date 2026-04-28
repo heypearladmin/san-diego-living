@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import BlogNewsletterForm from '@/components/BlogNewsletterForm'
+import { getAllPosts, type BlogPost } from '@/lib/blog'
 
 export const metadata: Metadata = {
   title: 'Stories & Guides',
@@ -93,14 +94,25 @@ const articles = [
   },
 ]
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const mdPosts = getAllPosts()
+
+  // Markdown posts take priority; hardcoded articles fill in the rest
+  const mdSlugs = new Set(mdPosts.map((p) => p.slug))
+  const fallbackArticles = articles.filter((a) => !mdSlugs.has(a.href.replace('/blog/', '')))
+  const allArticles: (BlogPost | (typeof articles)[0])[] = [...mdPosts, ...fallbackArticles]
+
+  const hero = mdPosts.length > 0
+    ? { ...mdPosts[0], href: `/blog/${mdPosts[0].slug}`, date: mdPosts[0].date ?? '', author: 'San Diego Living' }
+    : featuredArticle
+
   return (
     <>
       {/* ─── FEATURED ARTICLE HERO ────────────────────────────────────── */}
       <section className="relative h-[65vh] min-h-[520px] flex items-end pt-20">
         <Image
-          src={featuredArticle.image}
-          alt={featuredArticle.title}
+          src={hero.image}
+          alt={hero.title}
           fill
           className="object-cover"
           priority
@@ -109,21 +121,25 @@ export default function BlogPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pb-16 w-full">
           <div className="max-w-2xl">
-            <p className="label-text text-gold mb-4">{featuredArticle.category}</p>
-            <Link href={featuredArticle.href} className="group">
+            <p className="label-text text-gold mb-4">{hero.category}</p>
+            <Link href={hero.href} className="group">
               <h1 className="font-serif text-3xl md:text-5xl text-white leading-tight mb-5 group-hover:text-stone-200 transition-colors">
-                {featuredArticle.title}
+                {hero.title}
               </h1>
             </Link>
             <p className="font-sans text-base text-white/70 leading-relaxed mb-6 max-w-xl font-light">
-              {featuredArticle.excerpt}
+              {hero.excerpt}
             </p>
             <div className="flex items-center gap-4">
-              <span className="font-sans text-xs text-white/50">{featuredArticle.date}</span>
-              <span className="w-1 h-1 rounded-full bg-white/30" />
-              <span className="font-sans text-xs text-white/50">{featuredArticle.readTime}</span>
+              {'date' in hero && hero.date && (
+                <>
+                  <span className="font-sans text-xs text-white/50">{hero.date}</span>
+                  <span className="w-1 h-1 rounded-full bg-white/30" />
+                </>
+              )}
+              <span className="font-sans text-xs text-white/50">{hero.readTime}</span>
               <Link
-                href={featuredArticle.href}
+                href={hero.href}
                 className="ml-4 font-sans text-xs tracking-widest uppercase text-gold hover:text-gold-light border-b border-gold/40 hover:border-gold pb-0.5 transition-colors"
               >
                 Read Article →
@@ -166,61 +182,72 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
           {/* First article — full-width horizontal */}
-          <Link href={articles[0].href} className="group block mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-0 lg:gap-16 items-center">
-              <div className="relative overflow-hidden h-72 lg:h-[400px] mb-8 lg:mb-0">
-                <Image
-                  src={articles[0].image}
-                  alt={articles[0].title}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-              </div>
-              <div>
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="label-text text-gold">{articles[0].category}</span>
-                  <span className="w-4 h-px bg-stone-200" />
-                  <span className="font-sans text-xs text-stone-400">{articles[0].date}</span>
-                  <span className="w-1 h-1 rounded-full bg-stone-200" />
-                  <span className="font-sans text-xs text-stone-400">{articles[0].readTime}</span>
-                </div>
-                <h3 className="font-serif text-3xl md:text-4xl text-stone-900 leading-snug mb-5 group-hover:text-stone-500 transition-colors duration-300">
-                  {articles[0].title}
-                </h3>
-                <p className="font-sans font-light text-sm text-stone-500 leading-relaxed mb-8">
-                  {articles[0].excerpt}
-                </p>
-                <span className="font-sans text-xs tracking-widest uppercase text-stone-400 group-hover:text-stone-900 transition-colors duration-300 border-b border-stone-200 group-hover:border-stone-900 pb-0.5">
-                  Read Article →
-                </span>
-              </div>
-            </div>
-          </Link>
-
-          {/* Remaining articles — compact 3-column, no card frames */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 border-t border-stone-100 pt-16">
-            {articles.slice(1).map((article) => (
-              <Link key={article.title} href={article.href} className="group block">
-                <div className="relative h-44 overflow-hidden mb-5">
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                </div>
-                <p className="label-text text-gold mb-3">{article.category}</p>
-                <h3 className="font-serif text-xl text-stone-900 leading-snug mb-3 group-hover:text-stone-500 transition-colors duration-300">
-                  {article.title}
-                </h3>
-                <div className="flex items-center gap-3 mt-4">
-                  <span className="font-sans text-xs text-stone-400">{article.date}</span>
-                  <span className="w-1 h-1 rounded-full bg-stone-200" />
-                  <span className="font-sans text-xs text-stone-400">{article.readTime}</span>
+          {allArticles[0] && (() => {
+            const a = allArticles[0]
+            const href = 'slug' in a ? `/blog/${a.slug}` : a.href
+            return (
+              <Link href={href} className="group block mb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-0 lg:gap-16 items-center">
+                  <div className="relative overflow-hidden h-72 lg:h-[400px] mb-8 lg:mb-0 bg-stone-100">
+                    {a.image && (
+                      <Image
+                        src={a.image}
+                        alt={a.title}
+                        fill
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                    )}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-3 mb-5">
+                      <span className="label-text text-gold">{a.category}</span>
+                      <span className="w-4 h-px bg-stone-200" />
+                      <span className="font-sans text-xs text-stone-400">{a.readTime}</span>
+                    </div>
+                    <h3 className="font-serif text-3xl md:text-4xl text-stone-900 leading-snug mb-5 group-hover:text-stone-500 transition-colors duration-300">
+                      {a.title}
+                    </h3>
+                    <p className="font-sans font-light text-sm text-stone-500 leading-relaxed mb-8">
+                      {a.excerpt}
+                    </p>
+                    <span className="font-sans text-xs tracking-widest uppercase text-stone-400 group-hover:text-stone-900 transition-colors duration-300 border-b border-stone-200 group-hover:border-stone-900 pb-0.5">
+                      Read Article →
+                    </span>
+                  </div>
                 </div>
               </Link>
-            ))}
-          </div>
+            )
+          })()}
+
+          {/* Remaining articles — compact 3-column, no card frames */}
+          {allArticles.length > 1 && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 border-t border-stone-100 pt-16">
+              {allArticles.slice(1).map((a) => {
+                const href = 'slug' in a ? `/blog/${a.slug}` : a.href
+                return (
+                  <Link key={a.title} href={href} className="group block">
+                    <div className="relative h-44 overflow-hidden mb-5 bg-stone-100">
+                      {a.image && (
+                        <Image
+                          src={a.image}
+                          alt={a.title}
+                          fill
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                      )}
+                    </div>
+                    <p className="label-text text-gold mb-3">{a.category}</p>
+                    <h3 className="font-serif text-xl text-stone-900 leading-snug mb-3 group-hover:text-stone-500 transition-colors duration-300">
+                      {a.title}
+                    </h3>
+                    <div className="flex items-center gap-3 mt-4">
+                      <span className="font-sans text-xs text-stone-400">{a.readTime}</span>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          )}
 
           {/* Load More */}
           <div className="text-center mt-16">

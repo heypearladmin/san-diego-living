@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import NewsletterForm from '@/components/NewsletterForm'
+import { getAllPosts } from '@/lib/blog'
 
 const neighborhoods = [
   {
@@ -132,43 +133,8 @@ const marketStats = [
   { value: '96%', label: 'List-to-Sale Ratio', change: "Seller's market" },
 ]
 
-const articles = [
-  {
-    category: 'Local Guide',
-    title: 'The Best Coffee Shops in La Jolla',
-    excerpt:
-      'From third-wave roasters to sun-drenched patios with Pacific views, La Jolla has developed a coffee culture worth exploring slowly.',
-    date: 'April 2026',
-    readTime: '4 min read',
-    image:
-      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/coffee-shops-la-jolla',
-  },
-  {
-    category: 'Neighborhoods',
-    title: 'Living in Pacific Beach: A Honest Lifestyle Guide',
-    excerpt:
-      "What's it actually like to live in PB? We break down the vibe, walkability, dining, and who it's genuinely perfect for.",
-    date: 'March 2026',
-    readTime: '6 min read',
-    image:
-      'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/living-in-pacific-beach',
-  },
-  {
-    category: 'Things To Do',
-    title: 'Hidden Gems in San Diego You Need to Visit',
-    excerpt:
-      'Beyond Balboa Park and the Zoo — the spots that only residents know about, from secret tide pools to off-menu dining.',
-    date: 'March 2026',
-    readTime: '5 min read',
-    image:
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/san-diego-hidden-gems',
-  },
-]
-
-export default function HomePage() {
+export default async function HomePage() {
+  const posts = getAllPosts()
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────────────────── */}
@@ -375,81 +341,87 @@ export default function HomePage() {
       </section>
 
       {/* ─── COMMUNITY ARTICLES ───────────────────────────────────────── */}
-      <section className="bg-white py-36 lg:py-48">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-20 gap-6">
-            <div>
-              <p className="label-text mb-5">Community & Stories</p>
-              <h2 className="font-serif font-normal text-5xl md:text-6xl text-stone-900 leading-[1.05]">
-                Life in San Diego,
-                <br />
-                Written Honestly
-              </h2>
-            </div>
-            <Link
-              href="/blog"
-              className="font-sans text-sm tracking-wider text-stone-400 hover:text-stone-900 border-b border-stone-300 hover:border-stone-900 pb-0.5 transition-colors self-start sm:self-auto whitespace-nowrap"
-            >
-              All Articles →
-            </Link>
-          </div>
-
-          {/* Featured article — horizontal */}
-          <Link href={articles[0].href} className="group block mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-0 lg:gap-16 items-center">
-              <div className="relative overflow-hidden h-72 lg:h-[420px] mb-8 lg:mb-0">
-                <Image
-                  src={articles[0].image}
-                  alt={articles[0].title}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-              </div>
+      {posts.length > 0 && (
+        <section className="bg-white py-36 lg:py-48">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-20 gap-6">
               <div>
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="label-text text-gold">{articles[0].category}</span>
-                  <span className="w-4 h-px bg-stone-300" />
-                  <span className="font-sans text-xs text-stone-400">{articles[0].date}</span>
-                  <span className="w-1 h-1 rounded-full bg-stone-300" />
-                  <span className="font-sans text-xs text-stone-400">{articles[0].readTime}</span>
-                </div>
-                <h3 className="font-serif text-3xl md:text-4xl text-stone-900 leading-snug mb-5 group-hover:text-stone-500 transition-colors duration-300">
-                  {articles[0].title}
-                </h3>
-                <p className="font-sans font-light text-sm text-stone-500 leading-relaxed mb-8">
-                  {articles[0].excerpt}
-                </p>
-                <span className="font-sans text-xs tracking-widest uppercase text-stone-400 group-hover:text-stone-900 transition-colors duration-300 border-b border-stone-200 group-hover:border-stone-900 pb-0.5">
-                  Read Article →
-                </span>
+                <p className="label-text mb-5">Community & Stories</p>
+                <h2 className="font-serif font-normal text-5xl md:text-6xl text-stone-900 leading-[1.05]">
+                  Life in San Diego,
+                  <br />
+                  Written Honestly
+                </h2>
               </div>
-            </div>
-          </Link>
-
-          {/* Secondary articles — compact */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12 border-t border-stone-200 pt-14">
-            {articles.slice(1).map((article) => (
-              <Link key={article.title} href={article.href} className="group flex gap-6 items-start">
-                <div className="relative overflow-hidden flex-shrink-0 w-28 h-20">
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <span className="label-text text-gold">{article.category}</span>
-                  <h3 className="font-serif text-lg text-stone-900 leading-snug group-hover:text-stone-500 transition-colors duration-300">
-                    {article.title}
-                  </h3>
-                  <span className="font-sans text-xs text-stone-400">{article.date}</span>
-                </div>
+              <Link
+                href="/blog"
+                className="font-sans text-sm tracking-wider text-stone-400 hover:text-stone-900 border-b border-stone-300 hover:border-stone-900 pb-0.5 transition-colors self-start sm:self-auto whitespace-nowrap"
+              >
+                All Articles →
               </Link>
-            ))}
+            </div>
+
+            {/* Featured article — horizontal */}
+            <Link href={`/blog/${posts[0].slug}`} className="group block mb-16">
+              <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-0 lg:gap-16 items-center">
+                <div className="relative overflow-hidden h-72 lg:h-[420px] mb-8 lg:mb-0">
+                  {posts[0].image && (
+                    <Image
+                      src={posts[0].image}
+                      alt={posts[0].title}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  )}
+                </div>
+                <div>
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="label-text text-gold">{posts[0].category}</span>
+                    <span className="w-4 h-px bg-stone-300" />
+                    <span className="font-sans text-xs text-stone-400">{posts[0].readTime}</span>
+                  </div>
+                  <h3 className="font-serif text-3xl md:text-4xl text-stone-900 leading-snug mb-5 group-hover:text-stone-500 transition-colors duration-300">
+                    {posts[0].title}
+                  </h3>
+                  <p className="font-sans font-light text-sm text-stone-500 leading-relaxed mb-8">
+                    {posts[0].excerpt}
+                  </p>
+                  <span className="font-sans text-xs tracking-widest uppercase text-stone-400 group-hover:text-stone-900 transition-colors duration-300 border-b border-stone-200 group-hover:border-stone-900 pb-0.5">
+                    Read Article →
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Secondary articles — compact */}
+            {posts.length > 1 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12 border-t border-stone-200 pt-14">
+                {posts.slice(1).map((post) => (
+                  <Link key={post.slug} href={`/blog/${post.slug}`} className="group flex gap-6 items-start">
+                    <div className="relative overflow-hidden flex-shrink-0 w-28 h-20 bg-stone-100">
+                      {post.image && (
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                      )}
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <span className="label-text text-gold">{post.category}</span>
+                      <h3 className="font-serif text-lg text-stone-900 leading-snug group-hover:text-stone-500 transition-colors duration-300">
+                        {post.title}
+                      </h3>
+                      <span className="font-sans text-xs text-stone-400">{post.readTime}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ─── EDITORIAL PAUSE ──────────────────────────────────────────── */}
       <section className="bg-white py-40 lg:py-56">
