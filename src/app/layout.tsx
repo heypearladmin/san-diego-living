@@ -1,12 +1,11 @@
-'use client'
+import Tracking from './tracking'
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Script from 'next/script';
-import { usePathname } from 'next/navigation'
-import { useEffect } from 'react'
+
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
@@ -48,15 +47,7 @@ export default function RootLayout({
 }) { 
  
 
-const pathname = usePathname()
 
-useEffect(() => {
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    if (pathname.startsWith('/neighborhoods')) {
-      (window as any).fbq('trackCustom', 'ViewNeighborhood')
-    }
-  }
-}, [pathname])
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
   <head>
@@ -90,10 +81,11 @@ useEffect(() => {
   </head>
 
   <body className="min-h-screen flex flex-col">
-    <Header />
-    <main className="flex-1">{children}</main>
-    <Footer />
-  </body>
+  <Tracking />
+  <Header />
+  <main className="flex-1">{children}</main>
+  <Footer />
+</body>
 </html>
   )
 }
