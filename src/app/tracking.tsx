@@ -6,19 +6,18 @@ import { usePathname } from 'next/navigation'
 export default function Tracking() {
   const pathname = usePathname()
 
- useEffect(() => {
+useEffect(() => {
   console.log('Tracking fired:', pathname)
 
   if (pathname.startsWith('/neighborhoods')) {
     if (typeof window !== 'undefined') {
-      setTimeout(() => {
+      const checkFbq = setInterval(() => {
         if ((window as any).fbq) {
           ;(window as any).fbq('trackCustom', 'ViewNeighborhood')
           console.log('Event sent: ViewNeighborhood')
-        } else {
-          console.log('fbq not ready')
+          clearInterval(checkFbq)
         }
-      }, 1000) // 1 second delay
+      }, 300) // check every 300ms
     }
   }
 }, [pathname])
