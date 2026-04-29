@@ -7,12 +7,12 @@ export default function Tracking() {
   const pathname = usePathname()
 
   useEffect(() => {
-    if (pathname.startsWith('/neighborhoods')) {
-      if (typeof window !== 'undefined' && window.fbq) {
-        window.fbq('trackCustom', 'ViewNeighborhood')
-      }
+  if (pathname.startsWith('/neighborhoods')) {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      ;(window as any).fbq('trackCustom', 'ViewNeighborhood')
     }
-  }, [pathname])
+  }
+}, [pathname])
 
   return null
 }
