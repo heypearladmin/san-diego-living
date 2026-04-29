@@ -1,9 +1,12 @@
+'use client'
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Script from 'next/script';
+import { usePathname } from 'next/navigation'
+import { useEffect } from 'react'
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
@@ -42,7 +45,15 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
+}) { const pathname = usePathname()
+
+useEffect(() => {
+  if (pathname.startsWith('/neighborhoods')) {
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('trackCustom', 'ViewNeighborhood')
+    }
+  }
+}, [pathname])
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
   <head>
