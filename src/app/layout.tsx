@@ -3,7 +3,7 @@ import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Script from 'next/script'
+import Script from 'next/script';
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
@@ -45,33 +45,41 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="min-h-screen flex flex-col"> <Script id="meta-pixel" strategy="afterInteractive">
-{`
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;
-n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;
-n.loaded=true;
-n.version='2.0';
-n.queue=[];
-t=b.createElement(e);
-t.async=true;
-t.src=v;
-s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s);
-}(window, document, 'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+  <head>
+    <Script
+      id="meta-pixel"
+      strategy="afterInteractive"
+      dangerouslySetInnerHTML={{
+        __html: `
+          !function(f,b,e,v,n,t,s){
+          if(f.fbq)return;
+          n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;
+          n.push=n;
+          n.loaded=true;
+          n.version='2.0';
+          n.queue=[];
+          t=b.createElement(e);
+          t.async=true;
+          t.src=v;
+          s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s);
+          }(window, document, 'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '269294361233360566');
-fbq('track', 'PageView');
-`}
-</Script>
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
-    </html>
+          fbq('init', '269294361233360566');
+          fbq('track', 'PageView');
+        `,
+      }}
+    />
+  </head>
+
+  <body className="min-h-screen flex flex-col">
+    <Header />
+    <main className="flex-1">{children}</main>
+    <Footer />
+  </body>
+</html>
   )
 }
