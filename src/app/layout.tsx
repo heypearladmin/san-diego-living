@@ -45,12 +45,15 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) { const pathname = usePathname()
+}) { 
+ 
+
+const pathname = usePathname()
 
 useEffect(() => {
-  if (pathname.startsWith('/neighborhoods')) {
-    if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('trackCustom', 'ViewNeighborhood')
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    if (pathname.startsWith('/neighborhoods')) {
+      (window as any).fbq('trackCustom', 'ViewNeighborhood')
     }
   }
 }, [pathname])
