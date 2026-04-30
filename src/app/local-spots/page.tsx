@@ -14,8 +14,7 @@ const spots = [
     neighborhood: 'La Jolla',
     description:
       'Single-origin roasts and sun-drenched patios in one of the neighborhood\'s most beloved institutions.',
-    image:
-      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80',
+   image: '/images/d1-birdrock.png',
   },
   {
     category: 'Dining',
@@ -23,8 +22,7 @@ const spots = [
     neighborhood: 'La Jolla',
     description:
       'James Beard-recognized cuisine served with uninterrupted views of the Pacific from the rooftop terrace.',
-    image:
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+    image: '/images/d2-georges.png',
   },
   {
     category: 'Nature',
@@ -32,8 +30,7 @@ const spots = [
     neighborhood: 'Del Mar',
     description:
       'Ancient pines, rugged coastal canyons, and miles of trails overlooking the Pacific — free and open daily.',
-    image:
-      'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80',
+   image: '/images/d3-torreypines.png',
   },
   {
     category: 'Food & Drink',
@@ -41,8 +38,7 @@ const spots = [
     neighborhood: 'Little Italy',
     description:
       "San Diego's most vibrant food destination — artisan vendors, craft cocktails, and a buzzing open-air atmosphere.",
-    image:
-      'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=800&q=80',
+   image: '/images/d4-littleitaly.png',
   },
   {
     category: 'Coffee',
@@ -50,8 +46,7 @@ const spots = [
     neighborhood: 'North Park',
     description:
       'A community-first cafe that helped anchor the North Park creative corridor. Great space, great beans.',
-    image:
-      'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80',
+   image: '/images/d7-communalcoffee.png',
   },
   {
     category: 'Dining',
@@ -59,8 +54,7 @@ const spots = [
     neighborhood: 'Embarcadero',
     description:
       'Pulled pork sandwiches, harbour views, and cold beers — one of the best casual spots on the waterfront.',
-    image:
-      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80',
+   image: '/images/d8-carnitas.png',
   },
   {
     category: 'Outdoors',
@@ -68,8 +62,7 @@ const spots = [
     neighborhood: 'La Jolla',
     description:
       'Protected snorkeling, sea lions, and one of the most photographed stretches of coastline in California.',
-    image:
-      'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80',
+image: '/images/d5-lajollacove.png',
   },
   {
     category: 'Culture',
@@ -77,8 +70,7 @@ const spots = [
     neighborhood: 'Balboa Park',
     description:
       'Seventeen museums, a botanical garden, the San Diego Zoo, and Spanish Colonial architecture across 1,200 acres.',
-    image:
-      'https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?auto=format&fit=crop&w=800&q=80',
+  image: '/images/d6-balboapark.jpg',
   },
 ]
 

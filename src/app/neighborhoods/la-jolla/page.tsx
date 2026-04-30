@@ -20,94 +20,80 @@ const lifestyleItems = [
   {
     category: 'Beaches',
     description:
-      "La Jolla Cove, Children's Pool, and Windansea Beach offer world-class snorkeling, kayaking, and simply one of the most dramatic coastlines in California.",
-    image:
-      'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80',
+      "La Jolla Cove, Children's Pool, and Windansea Beach offer world-class snorkeling, kayaking, and dramatic coastlines.",
+    image: '/images/d5-lajollacove.png',
   },
   {
     category: 'Dining',
     description:
-      "From George's at the Cove to the intimate bistros of Girard Avenue, La Jolla boasts Michelin-recognized cuisine and a dining culture that rivals any major city.",
-    image:
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+      "From George's at the Cove to Girard Avenue bistros, La Jolla boasts Michelin-recognized cuisine and a dining culture that rivals any major city.",
+    image: '/images/d2-georges.png',
   },
   {
     category: 'Culture',
     description:
-      "Home to the Salk Institute, UCSD campus, La Jolla Playhouse, and the Museum of Contemporary Art — one of California's most intellectually rich communities.",
-    image:
-      'https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?auto=format&fit=crop&w=800&q=80',
+      'Home to the Salk Institute, UCSD campus, La Jolla Playhouse, and the Museum of Contemporary Art — one of California’s most intellectually rich communities.',
+    image: '/images/c3-explorebalboa.png',
   },
   {
     category: 'Outdoors',
     description:
-      "Torrey Pines State Reserve, coastal trails, and world-ranked golf at Torrey Pines Golf Course give residents unmatched access to nature steps from their front door.",
-    image:
-      'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80',
+      'Torrey Pines State Reserve, coastal trails, and world-ranked golf at Torrey Pines Golf Course give residents unmatched access to nature.',
+    image: '/images/d3-torreypines.png',
   },
 ]
 
 const thingsToDo = [
   {
     title: 'Snorkel La Jolla Cove',
-    description: 'One of the best snorkeling spots in Southern California, with sea caves, leopard sharks, and garibaldi fish just offshore.',
+    description:
+      'One of the best snorkeling spots in Southern California, with sea caves, leopard sharks, and garibaldi fish just offshore.',
     category: 'Beaches',
+    image: '/images/d5-lajollacove.png',
   },
   {
     title: "Dine at George's at the Cove",
-    description: "James Beard-nominated rooftop dining with unobstructed Pacific views — go for sunset.",
+    description:
+      'James Beard-nominated rooftop dining with unobstructed Pacific views — go for sunset.',
     category: 'Dining',
+    image: '/images/d2-georges.png',
   },
   {
     title: 'Hike Torrey Pines',
-    description: 'Ancient pine forests, canyon trails, and sweeping coastal views just minutes from the village.',
+    description:
+      'Ancient pine forests, canyon trails, and sweeping coastal views just minutes from the village.',
     category: 'Nature',
-  },
-  {
-    title: 'Visit the Birch Aquarium',
-    description: 'Perched above Scripps Institution of Oceanography — great for all ages, with panoramic ocean views.',
-    category: 'Culture',
-  },
-  {
-    title: 'Walk Prospect Street',
-    description: 'Gallery-hop, browse independent boutiques, and stop for coffee at any number of sidewalk cafes.',
-    category: 'Village',
-  },
-  {
-    title: 'Catch a Show at La Jolla Playhouse',
-    description: "One of the most respected regional theaters in the country, with a history of Broadway-bound productions.",
-    category: 'Culture',
+    image: '/images/d3-torreypines.png',
   },
 ]
-
 const localBusinesses = [
   {
     name: 'Bird Rock Coffee Roasters',
     type: 'Coffee',
-    description: 'The neighborhood standard for single-origin espresso and a laid-back morning atmosphere.',
-    image:
-      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80',
+    description:
+      'The neighborhood standard for single-origin espresso and a laid-back morning atmosphere.',
+    image: '/images/d1-birdrock.png',
   },
   {
     name: "George's at the Cove",
     type: 'Fine Dining',
-    description: "Ocean terrace dining that has defined La Jolla's culinary identity for decades.",
-    image:
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+    description:
+      "Ocean terrace dining that has defined La Jolla's culinary identity for decades.",
+    image: '/images/d2-georges.png',
   },
   {
     name: 'UCSD Bookstore & Campus',
     type: 'Culture',
-    description: 'A world-class research university that anchors La Jolla\'s intellectual and cultural identity.',
-    image:
-      'https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?auto=format&fit=crop&w=800&q=80',
-  },
+    description:
+      "A world-class research university that anchors La Jolla's intellectual and cultural identity.",
+    image: '/images/d3-torreypines.png',
+  }, // ✅ THIS WAS MISSING
   {
     name: 'La Jolla Cove Snorkel',
     type: 'Outdoors',
-    description: "Rent gear and enter the water directly from the cove — sea lions often sunbathe nearby.",
-    image:
-      'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80',
+    description:
+      'Rent gear and enter the water directly from the cove – sea lions often sunbathe nearby.',
+    image: '/images/d5-lajollacove.png',
   },
 ]
 
@@ -133,8 +119,7 @@ const properties = [
     baths: 4.5,
     sqft: '4,200',
     type: 'Single Family',
-    image:
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
+    image: '/images/d5-lajollacove.png',
     tag: 'Ocean Views',
   },
   {
@@ -144,8 +129,7 @@ const properties = [
     baths: 3,
     sqft: '2,850',
     type: 'Condominium',
-    image:
-      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
+    image: '/images/d7-communalcoffee.png',
     tag: 'Newly Renovated',
   },
   {
@@ -155,8 +139,7 @@ const properties = [
     baths: 5,
     sqft: '5,100',
     type: 'Single Family',
-    image:
-      'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80',
+    image: '/images/d8-carnitas.png',
     tag: 'Corner Lot',
   },
 ]
@@ -167,7 +150,7 @@ export default function LaJollaPage() {
       {/* ─── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative h-[70vh] min-h-[550px] flex items-end">
         <Image
-          src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1920&q=80"
+          src="/images/a1 homepagehero.png"
           alt="La Jolla coastal cliffs at sunset"
           fill
           className="object-cover"
@@ -257,12 +240,12 @@ export default function LaJollaPage() {
 
             <div className="relative">
               <div className="relative h-[500px] overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1569982175971-d92b01cf8694?auto=format&fit=crop&w=900&q=80"
-                  alt="La Jolla village and coastline from above"
-                  fill
-                  className="object-cover"
-                />
+               <Image
+  src="/images/d5-lajollacove.png"
+  alt="La Jolla coastline"
+  fill
+  className="object-cover"
+/>
               </div>
               <div className="absolute -bottom-4 -left-4 bg-stone-950 text-white px-6 py-5 max-w-xs">
                 <p className="font-sans text-xs text-stone-400 uppercase tracking-widest mb-1">
@@ -285,12 +268,23 @@ export default function LaJollaPage() {
             <h2 className="section-heading max-w-lg">Who Loves Living Here</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whoItsFor.map((item) => (
-              <div key={item.label} className="bg-white border border-stone-100 p-7">
-                <p className="label-text text-gold mb-3">{item.label}</p>
-                <p className="font-sans text-sm text-stone-600 leading-relaxed">{item.description}</p>
-              </div>
-            ))}
+       {whoItsFor.map((item, index) => (
+  <div
+  key={index}
+  className="group border border-stone-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+>
+    <p className="text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-3">
+      {item.label}
+    </p>
+
+    <p className="text-sm text-stone-700 leading-relaxed group-hover:text-stone-900 transition">
+      {item.description}
+    </p>
+
+    {/* subtle animated line */}
+    <div className="mt-6 h-[1px] w-0 bg-amber-600 group-hover:w-full transition-all duration-300" />
+  </div>
+))}
           </div>
         </div>
       </section>
@@ -307,15 +301,42 @@ export default function LaJollaPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {thingsToDo.map((item) => (
-              <div key={item.title} className="border border-stone-100 p-7 hover:shadow-md transition-shadow duration-300">
-                <p className="label-text text-gold mb-3">{item.category}</p>
-                <h3 className="font-serif text-xl text-stone-900 mb-3">{item.title}</h3>
-                <p className="font-sans text-sm text-stone-500 leading-relaxed">{item.description}</p>
-              </div>
-            ))}
-          </div>
+<div className="grid md:grid-cols-3 gap-8 mt-10">
+
+  {thingsToDo.map((item, index) => (
+    <div key={index} className="group cursor-pointer">
+
+      <div className="relative h-[320px] overflow-hidden rounded-sm">
+
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+        <div className="absolute bottom-0 p-6 text-white">
+          <p className="text-xs tracking-widest uppercase text-white/70 mb-2">
+            {item.category}
+          </p>
+
+          <h3 className="text-xl font-serif mb-2">
+            {item.title}
+          </h3>
+
+          <p className="text-sm text-white/80 leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  ))}
+
+</div>
         </div>
       </section>
 
@@ -430,14 +451,16 @@ export default function LaJollaPage() {
               </p>
             </div>
 
-            <div className="relative h-80 lg:h-full min-h-[400px] overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=900&q=80"
-                alt="La Jolla school campus"
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="relative h-80 lg:h-full min-h-[400px] overflow-hidden group rounded-sm">
+  <Image
+    src="/images/school.png"
+    alt="Modern coastal campus in La Jolla"
+    fill
+    className="object-cover transition-transform duration-700 group-hover:scale-105"
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+</div>
           </div>
         </div>
       </section>

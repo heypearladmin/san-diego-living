@@ -3,38 +3,35 @@ import Link from 'next/link'
 import NewsletterForm from '@/components/NewsletterForm'
 import { getAllPosts } from '@/lib/blog'
 
+
 const neighborhoods = [
   {
     name: 'La Jolla',
     tagline: 'Clifftop grandeur by the sea',
     vibe: 'Upscale village · Ocean views · Culture',
     href: '/neighborhoods/la-jolla',
-    image:
-      'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80',
+  image: '/images/b1 lajollacard.png',
   },
   {
     name: 'Del Mar',
     tagline: 'Village charm, racetrack legacy',
     vibe: 'Relaxed · Walkable · Family-friendly',
     href: '/neighborhoods/del-mar',
-    image:
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+   image: '/images/b2 delmarcard.png',
   },
   {
     name: 'Pacific Beach',
     tagline: 'Vibrant energy, walkable coast',
     vibe: 'Young · Active · Beach lifestyle',
     href: '/neighborhoods/pacific-beach',
-    image:
-      'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80',
+    image: '/images/b3 pacificbeachcard.png',
   },
   {
     name: 'Coronado',
     tagline: 'Island elegance, historic soul',
     vibe: 'Quiet · Prestige · Close-knit',
     href: '/neighborhoods/coronado',
-    image:
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80',
+   image: '/images/b4 coronadocard.png',
   },
 ]
 
@@ -45,9 +42,8 @@ const localSpots = [
     neighborhood: 'La Jolla',
     description:
       'Single-origin roasts and sun-drenched patios in one of the neighborhood\'s most beloved institutions.',
-    image:
-      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80',
-    href: '/local-spots',
+   image: '/images/d1-birdrock.png',
+    href: '/local-spots', 
   },
   {
     category: 'Dining',
@@ -55,8 +51,7 @@ const localSpots = [
     neighborhood: 'La Jolla',
     description:
       'James Beard-recognized cuisine served with uninterrupted views of the Pacific from the rooftop terrace.',
-    image:
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+    image: '/images/d2-georges.png',
     href: '/local-spots',
   },
   {
@@ -65,8 +60,7 @@ const localSpots = [
     neighborhood: 'Del Mar',
     description:
       'Ancient pines, rugged coastal canyons, and miles of trails overlooking the Pacific — free and open daily.',
-    image:
-      'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80',
+  image: '/images/d3-torreypines.png',
     href: '/local-spots',
   },
   {
@@ -75,8 +69,8 @@ const localSpots = [
     neighborhood: 'Little Italy',
     description:
       'San Diego\'s most vibrant food destination — artisan vendors, craft cocktails, and a buzzing open-air atmosphere.',
-    image:
-      'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=800&q=80',
+  
+      image: '/images/d4-littleitaly.png',
     href: '/local-spots',
   },
 ]
@@ -85,43 +79,37 @@ const activities = [
   {
     title: 'Snorkel La Jolla Cove',
     category: 'Beaches',
-    image:
-      'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80',
+ image: '/images/c1 snorklelajolla.png',
     href: '/things-to-do',
   },
   {
     title: 'Hike Torrey Pines',
     category: 'Nature',
-    image:
-      'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80',
+    image: '/images/c2 hiketorreypines.png',
     href: '/things-to-do',
   },
   {
     title: 'Explore Balboa Park',
     category: 'Culture',
-    image:
-      'https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?auto=format&fit=crop&w=800&q=80',
+    image: '/images/c3-explorebalboa.png',
     href: '/things-to-do',
   },
   {
     title: 'Surf in Pacific Beach',
     category: 'Outdoors',
-    image:
-      'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80',
+   image: '/images/c4 surfpacificbeach.png',
     href: '/things-to-do',
   },
   {
     title: 'Dine in Little Italy',
     category: 'Food & Drink',
-    image:
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+    image: '/images/c5 dineinlittleitaly.png',
     href: '/things-to-do',
   },
   {
     title: 'Del Mar Thoroughbred Club',
     category: 'Events',
-    image:
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
+   image: '/images/c6 thoroughbred.png',
     href: '/things-to-do',
   },
 ]
@@ -138,43 +126,47 @@ export default async function HomePage() {
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative h-screen min-h-[700px] flex items-end">
-        <Image
-          src="https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&w=1920&q=80"
-          alt="San Diego coastal skyline at golden hour"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/60 via-stone-950/40 to-stone-950/80" />
+      <section className="relative h-[85vh] min-h-[600px] w-full overflow-hidden">
 
-        <div className="relative z-10 text-white px-6 lg:px-10 pb-24 lg:pb-32 max-w-7xl mx-auto w-full">
-          <div className="max-w-2xl">
-            <p className="label-text text-white/40 mb-8 fade-up fade-up-1">
-              San Diego &bull; California
-            </p>
-            <h1 className="font-serif font-normal text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.0] mb-8 fade-up fade-up-2">
-              Discover Life
-              <br />
-              in San Diego
-            </h1>
-            <p className="font-sans font-light text-base text-white/60 mb-14 leading-relaxed fade-up fade-up-3">
-              Your guide to the neighborhoods, local spots, and everyday experiences that make coastal San Diego one of the best places to live in the world.
-            </p>
-            <div className="flex flex-col sm:flex-row items-start gap-5 fade-up fade-up-4">
-              <Link href="/neighborhoods/la-jolla" className="btn-outline-white">
-                Explore Neighborhoods
-              </Link>
-              <Link
-                href="/things-to-do"
-                className="font-sans font-light text-xs tracking-widest uppercase text-white/50 hover:text-white/90 border-b border-white/20 hover:border-white/50 pb-0.5 transition-all duration-500 self-center"
-              >
-                Discover Local Spots →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+  {/* IMAGE */}
+  <Image
+    src="/images/a1 homepagehero.png"
+    alt="San Diego coastline at sunset"
+    fill
+    priority
+    className="object-cover"
+  />
+
+  {/* DARK OVERLAY */}
+  <div className="absolute inset-0 bg-black/40 z-10" />
+
+  {/* CONTENT */}
+  <div className="absolute inset-0 z-20 flex items-end">
+    <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-16 w-full">
+
+      <p className="text-white/70 text-xs tracking-widest uppercase mb-3">
+        Coastal California Real Estate
+      </p>
+
+      <h1 className="text-white text-5xl md:text-6xl font-serif mb-4">
+        San Diego Living
+      </h1>
+
+      <p className="text-white/80 max-w-xl text-lg">
+        Discover neighborhoods, lifestyle, and homes across San Diego’s most
+        sought-after coastal communities.
+      </p>
+
+      <div className="mt-6">
+        <button className="border border-white text-white px-6 py-3 text-sm tracking-wide hover:bg-white hover:text-black transition">
+          Get Local Insights
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</section>
 
       {/* ─── FEATURED NEIGHBORHOODS ───────────────────────────────────── */}
       <section className="bg-white pt-36 lg:pt-48">
@@ -493,7 +485,7 @@ export default async function HomePage() {
             <div className="relative lg:-mr-10 lg:-translate-y-10">
               <div className="relative h-[520px] lg:h-[720px] overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80"
+                  src="/images/e1 editorialheadshot.png"
                   alt="Sarah Chen — San Diego local specialist"
                   fill
                   className="object-cover object-top"
