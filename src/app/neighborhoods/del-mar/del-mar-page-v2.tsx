@@ -3,123 +3,135 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'La Jolla | Neighborhood Guide',
+  title: 'Del Mar | Neighborhood Guide',
   description:
-    'Your guide to life in La Jolla — the cliffs, the cove, the village, the schools, and the everyday rhythm of one of the most iconic coastal communities on the California coast.',
+    'Your guide to life in Del Mar — the village, the bluffs, the racetrack, the schools, and the everyday rhythm of one of the most distinctive coastal communities in San Diego.',
 }
 
 const quickFacts = [
-  { value: '71', label: 'Walk Score' },
-  { value: '9/10', label: 'School Rating' },
-  { value: '12 mi', label: 'to Downtown SD' },
-  { value: '7 mi', label: 'of Coastline' },
-  { value: '70°F', label: 'Avg Temp Year-Round' },
+  { value: '73', label: 'Walk Score' },
+  { value: '10/10', label: 'School Rating' },
+  { value: '263', label: 'Sunny Days/Year' },
+  { value: '2.5 mi', label: 'of Coastline' },
+  { value: '4,500', label: 'Residents' },
 ]
 
 const lifestyleItems = [
   {
     category: 'Beaches',
     description:
-      "La Jolla Cove, Children's Pool, and Windansea Beach offer world-class snorkeling, kayaking, and dramatic coastlines.",
-    image: '/images/d5-lajollacove.png',
+      "15th Street Beach, Dog Beach, and the dramatic bluffs along Camino del Mar make Del Mar's coastline one of San Diego's most photogenic stretches.",
+    image: '/images/DM-4a.png',
   },
   {
     category: 'Dining',
     description:
-      "From George's at the Cove to Girard Avenue bistros, La Jolla boasts Michelin-recognized cuisine and a dining culture that rivals any major city.",
-    image: '/images/d2-georges.png',
+      'Oceanfront classics like Jake’s Del Mar and Cucina Enoteca at Del Mar Plaza define a culinary scene that values setting as much as the food.',
+    image: '/images/DM-4b.png',
   },
   {
     category: 'Culture',
     description:
-      'Home to the Salk Institute, UCSD campus, La Jolla Playhouse, and the Museum of Contemporary Art — one of California’s most intellectually rich communities.',
-    image: '/images/c3-explorebalboa.png',
+      'Del Mar Plaza shopping, the historic 1922 train station, the Del Mar Theatre, and the summer racetrack social scene unique to North County.',
+    image: '/images/DM-4c.png',
   },
   {
     category: 'Outdoors',
     description:
-      'Torrey Pines State Reserve, coastal trails, and world-ranked golf at Torrey Pines Golf Course give residents unmatched access to nature.',
-    image: '/images/d3-torreypines.png',
+      "Torrey Pines Reserve immediately south, oceanfront cycling along Coast Highway 101, and bluff trails most San Diegans haven't found.",
+    image: '/images/DM-4d.png',
   },
 ]
 
 const thingsToDo = [
   {
-    title: 'Snorkel La Jolla Cove',
+    title: 'Watch the Races at Del Mar',
     description:
-      'One of the best snorkeling spots in Southern California, with sea caves, leopard sharks, and garibaldi fish just offshore.',
-    category: 'Beaches',
-    image: '/images/d5-lajollacove.png',
+      'The summer thoroughbred meet at Del Mar is a regional institution — opening day, sundresses, hats, and one of the most scenic tracks in the country.',
+    category: 'Events',
+    image: '/images/DM-3a.png',
   },
   {
-    title: "Dine at George's at the Cove",
+    title: 'Sunset at Powerhouse Park',
     description:
-      'James Beard-nominated rooftop dining with unobstructed Pacific views — go for sunset.',
-    category: 'Dining',
-    image: '/images/d2-georges.png',
+      'Sunset at Powerhouse Park is a Del Mar tradition — a restored 1920s building set against the wide Pacific bluffs and 15th Street Beach below.',
+    category: 'Lifestyle',
+    image: '/images/DM-3b.png',
   },
   {
-    title: 'Hike Torrey Pines',
+    title: 'Walk Dog Beach (North Beach)',
     description:
-      'Ancient pine forests, canyon trails, and sweeping coastal views just minutes from the village.',
-    category: 'Nature',
-    image: '/images/d3-torreypines.png',
+      "Off-leash dog beach at the mouth of the San Dieguito River — the unofficial morning ritual for North Del Mar locals.",
+    category: 'Outdoors',
+    image: '/images/DM-3c.png',
   },
 ]
 
 const localBusinesses = [
   {
-    name: 'Bird Rock Coffee Roasters',
-    type: 'Coffee',
+    name: "Jake's Del Mar",
+    type: 'Oceanfront Dining',
     description:
-      'The neighborhood standard for single-origin espresso and a laid-back morning atmosphere.',
-    image: '/images/d1-birdrock.png',
+      'The mid-century beachfront restaurant locals never get tired of — sunset cocktails, fresh seafood, the same view since 1978.',
+    image: '/images/DM-5a.png',
   },
   {
-    name: "George's at the Cove",
-    type: 'Fine Dining',
+    name: 'Del Mar Plaza',
+    type: 'Shopping & Dining',
     description:
-      "Ocean terrace dining that has defined La Jolla's culinary identity for decades.",
-    image: '/images/d2-georges.png',
+      'The Mediterranean-style open-air shopping plaza — the anchor of village life, with ocean views from the upper terrace.',
+    image: '/images/DM-5b.png',
   },
   {
-    name: 'UCSD Bookstore & Campus',
-    type: 'Culture',
+    name: 'Powerhouse Park',
+    type: 'Community Park',
     description:
-      "A world-class research university that anchors La Jolla's intellectual and cultural identity.",
-    image: '/images/d3-torreypines.png',
+      'The bluff-top park and restored 1920s building — sunsets, weddings, weekend picnics, and the unofficial heart of village life.',
+    image: '/images/DM-5c.png',
   },
   {
-    name: 'La Jolla Cove Snorkel',
-    type: 'Outdoors',
+    name: 'Stratford Court',
+    type: 'Boutique Shops',
     description:
-      'Rent gear and enter the water directly from the cove — sea lions often sunbathe nearby.',
-    image: '/images/d5-lajollacove.png',
+      "The pedestrian-only courtyard of independent shops, hand-painted signs, and a quiet locals' favorite for browsing.",
+    image: '/images/DM-5d.png',
   },
 ]
 
 const whoItsFor = [
-  { label: 'Families', description: 'Top-rated schools, safe streets, and abundant parks and outdoor space.' },
-  { label: 'Remote Professionals', description: 'Walkable village, great coffee shops, and a pace of life that supports deep work.' },
-  { label: 'Retirees', description: 'World-class healthcare proximity (Scripps, UCSD), cultural offerings, and coastal beauty.' },
-  { label: 'Second-Home Owners', description: 'One of the most consistently desirable communities in Southern California.' },
+  {
+    label: 'Families',
+    description: 'Excellent schools, walkable village, and weekend bluff trails just steps from home.',
+  },
+  {
+    label: 'Executives & Remote Pros',
+    description: 'Quiet streets, fast I-5 access, and a refined small-town feel that supports serious work.',
+  },
+  {
+    label: 'Retirees',
+    description: 'Coastal beauty, healthcare access via Scripps and UCSD, and a longtime stable village community.',
+  },
+  {
+    label: 'Second-Home Owners',
+    description: 'A consistently held coastal community — Del Mar residents tend to stay for decades, often generations.',
+  },
 ]
 
 const schools = [
-  { name: 'La Jolla Elementary', grades: 'K–5', rating: '10/10', type: 'Public' },
-  { name: 'Muirlands Middle School', grades: '6–8', rating: '9/10', type: 'Public' },
-  { name: 'La Jolla High School', grades: '9–12', rating: '9/10', type: 'Public' },
-  { name: "The Bishop's School", grades: '6–12', rating: 'Top Ranked', type: 'Private' },
+  { name: 'Del Mar Heights Elementary', grades: 'K–5', rating: '10/10', type: 'Public' },
+  { name: 'Del Mar Hills Academy', grades: 'K–5', rating: '9/10', type: 'Public' },
+  { name: 'Earl Warren Middle School', grades: '6–8', rating: '9/10', type: 'Public' },
+  { name: 'Torrey Pines High School', grades: '9–12', rating: '10/10', type: 'Public' },
 ]
 
-export default function LaJollaPage() {
+export default function DelMarPage() {
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative h-[70vh] min-h-[550px] flex items-end">
         <Image
-          src="/images/a1 homepagehero.png"
-          alt="La Jolla coastal cliffs at sunset"
+          src="/images/DM-1.png"
+          alt="Del Mar bluffs and coastline at sunset"
           fill
           className="object-cover"
           priority
@@ -136,13 +148,13 @@ export default function LaJollaPage() {
               Neighborhoods
             </Link>
             <span className="text-white/30 text-xs">/</span>
-            <span className="font-sans text-xs text-white/80">La Jolla</span>
+            <span className="font-sans text-xs text-white/80">Del Mar</span>
           </div>
 
           <p className="label-text text-white/60 mb-4">Neighborhood Guide</p>
-          <h1 className="font-serif text-6xl md:text-7xl text-white mb-4">La Jolla</h1>
+          <h1 className="font-serif text-6xl md:text-7xl text-white mb-4">Del Mar</h1>
           <p className="font-sans text-lg text-white/70 max-w-xl font-light">
-            Clifftop grandeur, world-class dining, and one of the most distinctive communities on the California coast.
+            Village charm, racetrack heritage, and one of the most distinctive coastal communities in San Diego.
           </p>
         </div>
       </section>
@@ -166,33 +178,33 @@ export default function LaJollaPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="label-text mb-4">About La Jolla</p>
+              <p className="label-text mb-4">About Del Mar</p>
               <h2 className="section-heading mb-8">
-                A Place That Earns
+                A Coastal Village
                 <br />
-                Its Reputation
+                With a Different Pace
               </h2>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Perched along seven miles of rugged Pacific coastline, La Jolla is one of those rare places that genuinely lives up to the hype. The beaches are dramatic. The restaurants are exceptional. The cultural offerings — UCSD, the Salk Institute, La Jolla Playhouse — are world-class.
+                Del Mar covers just 1.7 square miles — a small bluff-top village anchored by Camino del Mar, Del Mar Plaza, the historic 1922 train station, and the famous summer racetrack. Its population is around 4,500. Its coastline is dramatic. And its character has been preserved more carefully than almost anywhere else in San Diego County.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                The village along Prospect Street and Girard Avenue is walkable, independent, and decidedly local — galleries, coffee shops, boutiques, and long lunches that stretch into the afternoon. It has the feel of a small town that happens to sit inside one of the great cities in America.
+                The lifestyle is unhurried. Mornings start with locals walking dogs at North Beach. Days drift between the village and the bluffs. Sunset belongs to Powerhouse Park, and dinner happens at Jake&apos;s, at Cucina Enoteca on the upper Plaza terrace, or at one of the small bistros along Camino del Mar where the same regulars keep the same tables.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-10">
-                Residents tend to be lifers. Once people find La Jolla, they rarely leave — and that quiet stability is one of the things that makes it special.
+                Del Mar holds onto its small-town soul. Multi-generational families, second-home owners, and longtime residents form a tight community where neighbors know each other by name and most homes get passed down rather than listed.
               </p>
 
               <div className="grid grid-cols-2 gap-6 border-t border-stone-100 pt-8">
                 <div>
                   <p className="label-text mb-2">Vibe</p>
                   <p className="font-sans text-sm text-stone-700">
-                    Upscale village, walkable, coastal
+                    Refined, small-town, unhurried
                   </p>
                 </div>
                 <div>
                   <p className="label-text mb-2">Best Known For</p>
                   <p className="font-sans text-sm text-stone-700">
-                    Beaches, dining, UCSD, culture
+                    Racetrack, bluffs, dining
                   </p>
                 </div>
                 <div>
@@ -201,7 +213,7 @@ export default function LaJollaPage() {
                 </div>
                 <div>
                   <p className="label-text mb-2">Commute to Downtown</p>
-                  <p className="font-sans text-sm text-stone-700">20–25 min by car</p>
+                  <p className="font-sans text-sm text-stone-700">30–35 min by car</p>
                 </div>
               </div>
             </div>
@@ -209,8 +221,8 @@ export default function LaJollaPage() {
             <div className="relative">
               <div className="relative h-[500px] overflow-hidden">
                 <Image
-                  src="/images/d5-lajollacove.png"
-                  alt="La Jolla coastline"
+                  src="/images/DM-2.png"
+                  alt="Del Mar Village along Camino del Mar"
                   fill
                   className="object-cover"
                 />
@@ -220,7 +232,7 @@ export default function LaJollaPage() {
                   Local Note
                 </p>
                 <p className="font-serif text-lg leading-snug">
-                  La Jolla is one of the few coastal neighborhoods where you can walk from a Michelin-recognized dinner straight to the cove.
+                  Del Mar covers just 1.7 square miles — small enough to know everyone, big enough to surprise you.
                 </p>
               </div>
             </div>
@@ -232,7 +244,7 @@ export default function LaJollaPage() {
       <section className="bg-cream-50 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-12">
-            <p className="label-text mb-3">Is La Jolla Right for You?</p>
+            <p className="label-text mb-3">Is Del Mar Right for You?</p>
             <h2 className="section-heading max-w-lg">Who Loves Living Here</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -264,7 +276,7 @@ export default function LaJollaPage() {
             <h2 className="section-heading max-w-lg">
               Things To Do
               <br />
-              in La Jolla
+              in Del Mar
             </h2>
           </div>
 
@@ -305,7 +317,7 @@ export default function LaJollaPage() {
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-14">
-            <p className="label-text mb-3">Life in La Jolla</p>
+            <p className="label-text mb-3">Life in Del Mar</p>
             <h2 className="section-heading max-w-lg">
               The Everyday
               <br />
@@ -345,7 +357,7 @@ export default function LaJollaPage() {
               <h2 className="section-heading">
                 Worth Knowing
                 <br />
-                in La Jolla
+                in Del Mar
               </h2>
             </div>
             <Link
@@ -383,12 +395,12 @@ export default function LaJollaPage() {
             <div>
               <p className="label-text mb-4">Education</p>
               <h2 className="section-heading mb-6">
-                Among San Diego&apos;s
+                Among the Strongest
                 <br />
-                Top-Rated Schools
+                School Districts in California
               </h2>
               <p className="font-sans text-sm text-stone-600 leading-relaxed mb-8">
-                The La Jolla attendance area is consistently ranked among the top 5% in the state. Proximity to UC San Diego also provides unique enrichment and dual-enrollment opportunities for high school students.
+                Del Mar schools are part of the Del Mar Union School District (K-6) and the San Dieguito Union High School District (7-12). Both consistently rank among California&apos;s strongest. Torrey Pines High School in particular is a top public high school in the state, with deep STEM, arts, and athletics programs.
               </p>
 
               <div className="space-y-px">
@@ -414,8 +426,8 @@ export default function LaJollaPage() {
 
             <div className="relative h-80 lg:h-full min-h-[400px] overflow-hidden group rounded-sm">
               <Image
-                src="/images/school.png"
-                alt="Modern coastal campus in La Jolla"
+                src="/images/DM-6.png"
+                alt="Del Mar school campus"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -428,47 +440,32 @@ export default function LaJollaPage() {
 
       {/* ─── COST OF LIVING (editorial, not listings) ─────────────────── */}
       <section className="bg-white py-24 lg:py-32 border-t border-stone-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
-            <div>
-              <p className="label-text mb-3">A Note on the Market</p>
-              <h2 className="section-heading mb-10">
-                What It Costs
-                <br />
-                to Live Here
-              </h2>
-              <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                La Jolla&apos;s housing market reflects its reputation. Demand is consistent — locally, nationally, and increasingly internationally — and the inventory is famously tight. The right home often moves before it ever hits the public market.
-              </p>
-              <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Median home prices sit around <span className="font-medium text-stone-900">$2.4M</span>. Bluff-top oceanfront estates from La Jolla Shores down to Bird Rock typically command <span className="font-medium text-stone-900">$5M to $20M+</span>. Village walkable single-family homes generally fall between <span className="font-medium text-stone-900">$2M and $4M</span>. Condos in The Village or near UCSD start in the high six figures.
-              </p>
-              <p className="font-sans text-base text-stone-600 leading-relaxed">
-                Among San Diego coastal markets, La Jolla has historically been the most resilient through national down-cycles. Buyers here tend to hold for decades, and many homes never reach the open market — they pass between neighbors, friends, and families.
-              </p>
-            </div>
+        <div className="max-w-4xl mx-auto px-6 lg:px-10">
+          <p className="label-text mb-3">A Note on the Market</p>
+          <h2 className="section-heading mb-10 max-w-2xl">
+            What It Costs to Live Here
+          </h2>
+          <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
+            Del Mar&apos;s housing market reflects the village&apos;s scarcity. Inventory stays tight — typically under 100 active listings — and the right home moves quickly when it does come up.
+          </p>
+          <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
+            Median home prices sit around <span className="font-medium text-stone-900">$3.1M</span>. Bluff-top oceanfront properties along Camino del Mar generally command <span className="font-medium text-stone-900">$8M and up</span>. Village-walkable single-family homes typically run between <span className="font-medium text-stone-900">$3M and $5M</span>. Condos and smaller lots in the Del Mar Heights area can be found from the high six figures into the low seven.
+          </p>
+          <p className="font-sans text-base text-stone-600 leading-relaxed mb-10">
+            What people often don&apos;t expect: most Del Mar residents stay. Homes get passed down. Inventory turnover is among the lowest of any San Diego coastal market, which is part of why prices stay strong even when broader markets soften.
+          </p>
 
-            <div className="relative h-[500px] lg:h-[640px] overflow-hidden lg:sticky lg:top-24">
-              <Image
-                src="/images/d5-lajollacove.png"
-                alt="La Jolla cove and coastline"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-3 border-t border-stone-100 pt-8 max-w-3xl">
+          <div className="grid grid-cols-3 border-t border-stone-100 pt-8">
             <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">$2.4M</p>
+              <p className="font-serif text-2xl text-stone-900 mb-1">$3.1M</p>
               <p className="font-sans text-xs text-stone-500">Median Home Price</p>
             </div>
             <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">~150</p>
+              <p className="font-serif text-2xl text-stone-900 mb-1">~80</p>
               <p className="font-sans text-xs text-stone-500">Active Listings (avg)</p>
             </div>
             <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">35 days</p>
+              <p className="font-serif text-2xl text-stone-900 mb-1">28 days</p>
               <p className="font-sans text-xs text-stone-500">Median Days on Market</p>
             </div>
           </div>
@@ -478,14 +475,14 @@ export default function LaJollaPage() {
       {/* ─── SOFT EXPERT FEATURE ──────────────────────────────────────── */}
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="label-text mb-5">Curious About Life in La Jolla?</p>
+          <p className="label-text mb-5">Curious About Life in Del Mar?</p>
           <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-6 leading-tight">
             Talk to Someone
             <br />
             Who Lives Here
           </h2>
           <p className="font-sans text-base text-stone-600 leading-relaxed mb-3 max-w-xl mx-auto">
-            Sarah Chen has lived in La Jolla for fifteen years. If you are exploring the area, planning a move, or just want to understand what daily life is really like — she is happy to have an honest conversation.
+            Sarah Chen has lived in the Del Mar village for fifteen years. If you are exploring the area, planning a move, or just want to understand what daily life is really like — she is happy to have an honest conversation.
           </p>
           <p className="font-sans text-sm text-stone-500 leading-relaxed mb-12 max-w-md mx-auto italic">
             No pressure. No sales pitch. Just local knowledge, honestly shared.

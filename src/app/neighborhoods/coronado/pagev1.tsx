@@ -3,123 +3,168 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'La Jolla | Neighborhood Guide',
+  title: 'Coronado | Neighborhood Guide',
   description:
-    'Your guide to life in La Jolla — the cliffs, the cove, the village, the schools, and the everyday rhythm of one of the most iconic coastal communities on the California coast.',
+    'Your guide to living in Coronado — the Hotel del Coronado, Orange Avenue, beaches, schools, and the small-town island feel that makes this San Diego coastal community unlike anywhere else.',
 }
 
 const quickFacts = [
-  { value: '71', label: 'Walk Score' },
+  { value: '88', label: 'Walk Score' },
   { value: '9/10', label: 'School Rating' },
-  { value: '12 mi', label: 'to Downtown SD' },
-  { value: '7 mi', label: 'of Coastline' },
-  { value: '70°F', label: 'Avg Temp Year-Round' },
+  { value: '4 mi', label: 'to Downtown SD' },
+  { value: '5 mi', label: 'of Coastline' },
+  { value: '$3.4M', label: 'Median Home Price' },
 ]
 
 const lifestyleItems = [
   {
     category: 'Beaches',
     description:
-      "La Jolla Cove, Children's Pool, and Windansea Beach offer world-class snorkeling, kayaking, and dramatic coastlines.",
-    image: '/images/d5-lajollacove.png',
+      'Coronado Beach is consistently ranked among the best beaches in America, famous for its gold-flecked sparkling sand and the Hotel Del backdrop.',
+    image: '/images/COR-4a.png',
   },
   {
     category: 'Dining',
     description:
-      "From George's at the Cove to Girard Avenue bistros, La Jolla boasts Michelin-recognized cuisine and a dining culture that rivals any major city.",
-    image: '/images/d2-georges.png',
+      "From 1500 Ocean at Hotel Del to the bayfront patios at Ferry Landing, Coronado's dining culture is refined, scenic, and never rushed.",
+    image: '/images/COR-4b.png',
   },
   {
     category: 'Culture',
     description:
-      'Home to the Salk Institute, UCSD campus, La Jolla Playhouse, and the Museum of Contemporary Art — one of California’s most intellectually rich communities.',
-    image: '/images/c3-explorebalboa.png',
+      'Orange Avenue, the Spreckels Building, the historic Village Theater, and the Coronado Public Library — small-town America preserved on an island.',
+    image: '/images/COR-4c.png',
   },
   {
     category: 'Outdoors',
     description:
-      'Torrey Pines State Reserve, coastal trails, and world-ranked golf at Torrey Pines Golf Course give residents unmatched access to nature.',
-    image: '/images/d3-torreypines.png',
+      'Glorietta Bay paddleboarding, the Silver Strand bikeway, the Coronado Golf Course, and the iconic ferry across the bay to downtown.',
+    image: '/images/COR-4d.png',
   },
 ]
 
 const thingsToDo = [
   {
-    title: 'Snorkel La Jolla Cove',
+    title: 'Stay at Hotel del Coronado',
     description:
-      'One of the best snorkeling spots in Southern California, with sea caves, leopard sharks, and garibaldi fish just offshore.',
-    category: 'Beaches',
-    image: '/images/d5-lajollacove.png',
+      'The 1888 Victorian beachfront resort that put Coronado on the map — the most photographed building on the California coast.',
+    category: 'Landmark',
+    image: '/images/COR-3a.png',
   },
   {
-    title: "Dine at George's at the Cove",
+    title: 'Bike the Silver Strand',
     description:
-      'James Beard-nominated rooftop dining with unobstructed Pacific views — go for sunset.',
-    category: 'Dining',
-    image: '/images/d2-georges.png',
+      'The protected 7-mile bikeway connecting Coronado to Imperial Beach — flat, scenic, and one of the best rides in San Diego County.',
+    category: 'Outdoors',
+    image: '/images/COR-3b.png',
   },
   {
-    title: 'Hike Torrey Pines',
+    title: 'Coronado Ferry Landing',
     description:
-      'Ancient pine forests, canyon trails, and sweeping coastal views just minutes from the village.',
-    category: 'Nature',
-    image: '/images/d3-torreypines.png',
+      'Take the ferry from downtown San Diego, walk the bayfront marketplace, and watch the skyline glow at sunset across the water.',
+    category: 'Lifestyle',
+    image: '/images/COR-3c.png',
   },
 ]
 
 const localBusinesses = [
   {
-    name: 'Bird Rock Coffee Roasters',
-    type: 'Coffee',
+    name: 'Hotel del Coronado',
+    type: 'Landmark Resort',
     description:
-      'The neighborhood standard for single-origin espresso and a laid-back morning atmosphere.',
-    image: '/images/d1-birdrock.png',
+      'The 1888 island icon — afternoon tea, Sunday brunch, or a sunset cocktail on the Sun Deck with the Pacific stretching out behind you.',
+    image: '/images/COR-5a.png',
   },
   {
-    name: "George's at the Cove",
-    type: 'Fine Dining',
+    name: "Clayton's Coffee Shop",
+    type: 'Diner',
     description:
-      "Ocean terrace dining that has defined La Jolla's culinary identity for decades.",
-    image: '/images/d2-georges.png',
+      "The 1940s small-town diner on Orange Avenue — the unofficial breakfast headquarters for Coronado's longtime locals.",
+    image: '/images/COR-5b.png',
   },
   {
-    name: 'UCSD Bookstore & Campus',
-    type: 'Culture',
+    name: 'Bay Books',
+    type: 'Independent Bookstore',
     description:
-      "A world-class research university that anchors La Jolla's intellectual and cultural identity.",
-    image: '/images/d3-torreypines.png',
+      "Coronado's beloved indie bookstore — beautifully curated, locally run, and the kind of place where the staff actually reads.",
+    image: '/images/COR-5c.png',
   },
   {
-    name: 'La Jolla Cove Snorkel',
-    type: 'Outdoors',
+    name: 'Ferry Landing Marketplace',
+    type: 'Shopping & Dining',
     description:
-      'Rent gear and enter the water directly from the cove — sea lions often sunbathe nearby.',
-    image: '/images/d5-lajollacove.png',
+      'The bayfront village of shops, restaurants, and the Coronado ferry — best at golden hour with the downtown skyline as your backdrop.',
+    image: '/images/COR-5d.png',
   },
 ]
 
 const whoItsFor = [
-  { label: 'Families', description: 'Top-rated schools, safe streets, and abundant parks and outdoor space.' },
-  { label: 'Remote Professionals', description: 'Walkable village, great coffee shops, and a pace of life that supports deep work.' },
-  { label: 'Retirees', description: 'World-class healthcare proximity (Scripps, UCSD), cultural offerings, and coastal beauty.' },
-  { label: 'Second-Home Owners', description: 'One of the most consistently desirable communities in Southern California.' },
+  {
+    label: 'Multi-Generational Families',
+    description: 'Top-rated schools, low crime, walkable village, and the kind of stability where kids grow up and come back to raise their own.',
+  },
+  {
+    label: 'Military & Naval Officers',
+    description: "Adjacent to NAS North Island, with a long-standing community of active and retired military families integrated into the island.",
+  },
+  {
+    label: 'Second-Home Owners',
+    description: 'One of the most stable luxury markets in California — Coronado homes are typically held for decades, often passed down.',
+  },
+  {
+    label: 'Privacy Seekers',
+    description: 'The bridge gives Coronado a separated, contained feel — an island in spirit even though it is technically a peninsula.',
+  },
 ]
 
 const schools = [
-  { name: 'La Jolla Elementary', grades: 'K–5', rating: '10/10', type: 'Public' },
-  { name: 'Muirlands Middle School', grades: '6–8', rating: '9/10', type: 'Public' },
-  { name: 'La Jolla High School', grades: '9–12', rating: '9/10', type: 'Public' },
-  { name: "The Bishop's School", grades: '6–12', rating: 'Top Ranked', type: 'Private' },
+  { name: 'Silver Strand Elementary', grades: 'K–5', rating: '9/10', type: 'Public' },
+  { name: 'Coronado Middle School', grades: '6–8', rating: '9/10', type: 'Public' },
+  { name: 'Coronado High School', grades: '9–12', rating: '9/10', type: 'Public' },
+  { name: 'Sacred Heart Academy', grades: 'K–8', rating: 'Top Ranked', type: 'Private' },
 ]
 
-export default function LaJollaPage() {
+const properties = [
+  {
+    address: '825 Ocean Boulevard',
+    price: '$14,950,000',
+    beds: 6,
+    baths: 6.5,
+    sqft: '7,800',
+    type: 'Single Family',
+    image: '/images/COR-7a.png',
+    tag: 'Oceanfront Estate',
+  },
+  {
+    address: '1620 Glorietta Boulevard',
+    price: '$8,495,000',
+    beds: 5,
+    baths: 5,
+    sqft: '5,200',
+    type: 'Single Family',
+    image: '/images/COR-7b.png',
+    tag: 'Bayfront',
+  },
+  {
+    address: '22 Sandpiper Strand',
+    price: '$4,250,000',
+    beds: 4,
+    baths: 4,
+    sqft: '3,800',
+    type: 'Single Family',
+    image: '/images/COR-7c.png',
+    tag: 'Cays Waterfront',
+  },
+]
+
+export default function CoronadoPage() {
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative h-[70vh] min-h-[550px] flex items-end">
         <Image
-          src="/images/a1 homepagehero.png"
-          alt="La Jolla coastal cliffs at sunset"
+          src="/images/COR-1.png"
+          alt="Coronado Island and Hotel del Coronado at sunset"
           fill
           className="object-cover"
           priority
@@ -136,13 +181,13 @@ export default function LaJollaPage() {
               Neighborhoods
             </Link>
             <span className="text-white/30 text-xs">/</span>
-            <span className="font-sans text-xs text-white/80">La Jolla</span>
+            <span className="font-sans text-xs text-white/80">Coronado</span>
           </div>
 
           <p className="label-text text-white/60 mb-4">Neighborhood Guide</p>
-          <h1 className="font-serif text-6xl md:text-7xl text-white mb-4">La Jolla</h1>
+          <h1 className="font-serif text-6xl md:text-7xl text-white mb-4">Coronado</h1>
           <p className="font-sans text-lg text-white/70 max-w-xl font-light">
-            Clifftop grandeur, world-class dining, and one of the most distinctive communities on the California coast.
+            Island elegance, historic soul, and one of the most preserved small-town communities anywhere on the California coast.
           </p>
         </div>
       </section>
@@ -166,42 +211,42 @@ export default function LaJollaPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="label-text mb-4">About La Jolla</p>
+              <p className="label-text mb-4">About Coronado</p>
               <h2 className="section-heading mb-8">
-                A Place That Earns
+                An Island That
                 <br />
-                Its Reputation
+                Stayed a Small Town
               </h2>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Perched along seven miles of rugged Pacific coastline, La Jolla is one of those rare places that genuinely lives up to the hype. The beaches are dramatic. The restaurants are exceptional. The cultural offerings — UCSD, the Salk Institute, La Jolla Playhouse — are world-class.
+                Coronado is connected to the mainland by a bridge, but the moment you cross it, you understand why locals always call it the island. The pace slows. The streets quiet. Mature palms line every avenue. The 1888 Hotel del Coronado, with its red-shingled turrets and white Victorian wood, presides over Coronado Beach as it has for over a century.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                The village along Prospect Street and Girard Avenue is walkable, independent, and decidedly local — galleries, coffee shops, boutiques, and long lunches that stretch into the afternoon. It has the feel of a small town that happens to sit inside one of the great cities in America.
+                Orange Avenue — the village main street — is the kind of small-town American downtown most communities lost decades ago. Independent shops, restored mid-century diners, the historic Village Theater, the local bookstore where the staff knows your name. Cruiser bikes outnumber cars. Kids walk to school. Neighbors actually know each other.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-10">
-                Residents tend to be lifers. Once people find La Jolla, they rarely leave — and that quiet stability is one of the things that makes it special.
+                The community is anchored by multi-generational families, military households tied to NAS North Island, and longtime second-home owners who treat Coronado as a constant. Buyers who land here typically hold for decades — and the homes that do change hands are often passed down rather than sold.
               </p>
 
               <div className="grid grid-cols-2 gap-6 border-t border-stone-100 pt-8">
                 <div>
-                  <p className="label-text mb-2">Vibe</p>
+                  <p className="label-text mb-2">Ideal For</p>
                   <p className="font-sans text-sm text-stone-700">
-                    Upscale village, walkable, coastal
+                    Families, retirees, second-home owners
+                  </p>
+                </div>
+                <div>
+                  <p className="label-text mb-2">Neighborhood Feel</p>
+                  <p className="font-sans text-sm text-stone-700">
+                    Refined, small-town, preserved
                   </p>
                 </div>
                 <div>
                   <p className="label-text mb-2">Best Known For</p>
-                  <p className="font-sans text-sm text-stone-700">
-                    Beaches, dining, UCSD, culture
-                  </p>
-                </div>
-                <div>
-                  <p className="label-text mb-2">Climate</p>
-                  <p className="font-sans text-sm text-stone-700">Mild year-round, ocean breeze</p>
+                  <p className="font-sans text-sm text-stone-700">Hotel Del, Orange Ave, beaches</p>
                 </div>
                 <div>
                   <p className="label-text mb-2">Commute to Downtown</p>
-                  <p className="font-sans text-sm text-stone-700">20–25 min by car</p>
+                  <p className="font-sans text-sm text-stone-700">10–15 min by car or ferry</p>
                 </div>
               </div>
             </div>
@@ -209,8 +254,8 @@ export default function LaJollaPage() {
             <div className="relative">
               <div className="relative h-[500px] overflow-hidden">
                 <Image
-                  src="/images/d5-lajollacove.png"
-                  alt="La Jolla coastline"
+                  src="/images/COR-2.png"
+                  alt="Orange Avenue Coronado"
                   fill
                   className="object-cover"
                 />
@@ -220,7 +265,7 @@ export default function LaJollaPage() {
                   Local Note
                 </p>
                 <p className="font-serif text-lg leading-snug">
-                  La Jolla is one of the few coastal neighborhoods where you can walk from a Michelin-recognized dinner straight to the cove.
+                  Coronado homes change hands less frequently than almost any other San Diego coastal market — most are held for generations.
                 </p>
               </div>
             </div>
@@ -232,7 +277,7 @@ export default function LaJollaPage() {
       <section className="bg-cream-50 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-12">
-            <p className="label-text mb-3">Is La Jolla Right for You?</p>
+            <p className="label-text mb-3">Is Coronado Right for You?</p>
             <h2 className="section-heading max-w-lg">Who Loves Living Here</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -264,7 +309,7 @@ export default function LaJollaPage() {
             <h2 className="section-heading max-w-lg">
               Things To Do
               <br />
-              in La Jolla
+              in Coronado
             </h2>
           </div>
 
@@ -305,7 +350,7 @@ export default function LaJollaPage() {
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-14">
-            <p className="label-text mb-3">Life in La Jolla</p>
+            <p className="label-text mb-3">Life in Coronado</p>
             <h2 className="section-heading max-w-lg">
               The Everyday
               <br />
@@ -345,7 +390,7 @@ export default function LaJollaPage() {
               <h2 className="section-heading">
                 Worth Knowing
                 <br />
-                in La Jolla
+                in Coronado
               </h2>
             </div>
             <Link
@@ -383,12 +428,12 @@ export default function LaJollaPage() {
             <div>
               <p className="label-text mb-4">Education</p>
               <h2 className="section-heading mb-6">
-                Among San Diego&apos;s
+                One of California's
                 <br />
-                Top-Rated Schools
+                Top-Performing Districts
               </h2>
               <p className="font-sans text-sm text-stone-600 leading-relaxed mb-8">
-                The La Jolla attendance area is consistently ranked among the top 5% in the state. Proximity to UC San Diego also provides unique enrichment and dual-enrollment opportunities for high school students.
+                Coronado Unified School District is consistently ranked among the strongest public school districts in the state — a major reason multi-generational families stay. The K–12 path from Silver Strand Elementary to Coronado High is uninterrupted, walkable, and tightly knit.
               </p>
 
               <div className="space-y-px">
@@ -414,8 +459,8 @@ export default function LaJollaPage() {
 
             <div className="relative h-80 lg:h-full min-h-[400px] overflow-hidden group rounded-sm">
               <Image
-                src="/images/school.png"
-                alt="Modern coastal campus in La Jolla"
+                src="/images/COR-6.png"
+                alt="Coronado High School campus"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -426,87 +471,88 @@ export default function LaJollaPage() {
         </div>
       </section>
 
-      {/* ─── COST OF LIVING (editorial, not listings) ─────────────────── */}
-      <section className="bg-white py-24 lg:py-32 border-t border-stone-100">
+      {/* ─── REAL ESTATE ──────────────────────────────────────────────── */}
+      <section className="bg-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-14 gap-4">
             <div>
-              <p className="label-text mb-3">A Note on the Market</p>
-              <h2 className="section-heading mb-10">
-                What It Costs
+              <p className="label-text mb-3">Real Estate</p>
+              <h2 className="section-heading">
+                Thinking About
                 <br />
-                to Live Here
+                Moving to Coronado?
               </h2>
-              <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                La Jolla&apos;s housing market reflects its reputation. Demand is consistent — locally, nationally, and increasingly internationally — and the inventory is famously tight. The right home often moves before it ever hits the public market.
-              </p>
-              <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Median home prices sit around <span className="font-medium text-stone-900">$2.4M</span>. Bluff-top oceanfront estates from La Jolla Shores down to Bird Rock typically command <span className="font-medium text-stone-900">$5M to $20M+</span>. Village walkable single-family homes generally fall between <span className="font-medium text-stone-900">$2M and $4M</span>. Condos in The Village or near UCSD start in the high six figures.
-              </p>
-              <p className="font-sans text-base text-stone-600 leading-relaxed">
-                Among San Diego coastal markets, La Jolla has historically been the most resilient through national down-cycles. Buyers here tend to hold for decades, and many homes never reach the open market — they pass between neighbors, friends, and families.
-              </p>
             </div>
-
-            <div className="relative h-[500px] lg:h-[640px] overflow-hidden lg:sticky lg:top-24">
-              <Image
-                src="/images/d5-lajollacove.png"
-                alt="La Jolla cove and coastline"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <Link
+              href="/contact"
+              className="font-sans text-sm tracking-wider text-stone-500 hover:text-stone-900 border-b border-stone-300 hover:border-stone-900 pb-0.5 transition-colors self-start sm:self-auto"
+            >
+              Talk to a Local Expert →
+            </Link>
           </div>
 
-          <div className="grid grid-cols-3 border-t border-stone-100 pt-8 max-w-3xl">
-            <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">$2.4M</p>
-              <p className="font-sans text-xs text-stone-500">Median Home Price</p>
-            </div>
-            <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">~150</p>
-              <p className="font-sans text-xs text-stone-500">Active Listings (avg)</p>
-            </div>
-            <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">35 days</p>
-              <p className="font-sans text-xs text-stone-500">Median Days on Market</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {properties.map((property) => (
+              <div key={property.address} className="group border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={property.image}
+                    alt={property.address}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-white font-sans text-xs tracking-wider px-3 py-1 text-stone-700">
+                      {property.tag}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="font-serif text-2xl text-stone-900 mb-1">{property.price}</p>
+                  <p className="font-sans text-sm text-stone-500 mb-4">{property.address}</p>
+                  <div className="flex items-center gap-4 text-xs font-sans text-stone-600 border-t border-stone-100 pt-4">
+                    <span>{property.beds} Beds</span>
+                    <span className="w-1 h-1 rounded-full bg-stone-300" />
+                    <span>{property.baths} Baths</span>
+                    <span className="w-1 h-1 rounded-full bg-stone-300" />
+                    <span>{property.sqft} sf</span>
+                    <span className="w-1 h-1 rounded-full bg-stone-300" />
+                    <span>{property.type}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
+
+          <p className="mt-8 font-sans text-xs text-stone-400">
+            Listings provided in partnership with Sarah Chen, Compass Real Estate · DRE #02054123. All information sourced from SANDICOR MLS and deemed reliable but not guaranteed.
+          </p>
         </div>
       </section>
 
-      {/* ─── SOFT EXPERT FEATURE ──────────────────────────────────────── */}
-      <section className="bg-cream-50 py-24 lg:py-32">
+      {/* ─── CTA ──────────────────────────────────────────────────────── */}
+      <section className="bg-stone-950 py-24">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="label-text mb-5">Curious About Life in La Jolla?</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-6 leading-tight">
-            Talk to Someone
+          <p className="label-text text-stone-500 mb-5">Thinking About Coronado?</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6 leading-tight">
+            We Can Help You
             <br />
-            Who Lives Here
+            Find a Home on the Island
           </h2>
-          <p className="font-sans text-base text-stone-600 leading-relaxed mb-3 max-w-xl mx-auto">
-            Sarah Chen has lived in La Jolla for fifteen years. If you are exploring the area, planning a move, or just want to understand what daily life is really like — she is happy to have an honest conversation.
-          </p>
-          <p className="font-sans text-sm text-stone-500 leading-relaxed mb-12 max-w-md mx-auto italic">
-            No pressure. No sales pitch. Just local knowledge, honestly shared.
+          <p className="font-sans text-stone-400 text-base leading-relaxed mb-10 max-w-lg mx-auto">
+            Coronado homes do not come on the market often. If you are exploring a move, planning a second home, or simply want to understand the island — connect with a local expert who knows Coronado well.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="font-sans text-sm tracking-wider uppercase border border-stone-900 text-stone-900 px-8 py-3 hover:bg-stone-900 hover:text-white transition-colors"
-            >
-              Get in Touch
+            <Link href="/contact" className="btn-outline-white">
+              Connect with a Local Expert
             </Link>
             <a
               href="tel:+16195550142"
-              className="font-sans text-sm tracking-wider text-stone-500 hover:text-stone-900 border-b border-stone-300 hover:border-stone-900 pb-0.5 transition-colors"
+              className="font-sans text-sm tracking-wider text-stone-400 hover:text-white border-b border-stone-700 hover:border-white pb-0.5 transition-colors"
             >
               (619) 555-0142
             </a>
           </div>
-          <p className="font-sans text-xs text-stone-400 mt-10">
-            Sarah Chen · Compass Real Estate · CA DRE #02054123
-          </p>
         </div>
       </section>
     </>

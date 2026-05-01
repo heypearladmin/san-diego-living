@@ -5,7 +5,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'La Jolla | Neighborhood Guide',
   description:
-    'Your guide to life in La Jolla — the cliffs, the cove, the village, the schools, and the everyday rhythm of one of the most iconic coastal communities on the California coast.',
+    'Your guide to living in La Jolla — the best restaurants, things to do, lifestyle, schools, and community character of this iconic coastal neighborhood.',
 }
 
 const quickFacts = [
@@ -13,7 +13,7 @@ const quickFacts = [
   { value: '9/10', label: 'School Rating' },
   { value: '12 mi', label: 'to Downtown SD' },
   { value: '7 mi', label: 'of Coastline' },
-  { value: '70°F', label: 'Avg Temp Year-Round' },
+  { value: '$2.4M', label: 'Median Home Price' },
 ]
 
 const lifestyleItems = [
@@ -66,7 +66,6 @@ const thingsToDo = [
     image: '/images/d3-torreypines.png',
   },
 ]
-
 const localBusinesses = [
   {
     name: 'Bird Rock Coffee Roasters',
@@ -88,12 +87,12 @@ const localBusinesses = [
     description:
       "A world-class research university that anchors La Jolla's intellectual and cultural identity.",
     image: '/images/d3-torreypines.png',
-  },
+  }, // ✅ THIS WAS MISSING
   {
     name: 'La Jolla Cove Snorkel',
     type: 'Outdoors',
     description:
-      'Rent gear and enter the water directly from the cove — sea lions often sunbathe nearby.',
+      'Rent gear and enter the water directly from the cove – sea lions often sunbathe nearby.',
     image: '/images/d5-lajollacove.png',
   },
 ]
@@ -102,7 +101,7 @@ const whoItsFor = [
   { label: 'Families', description: 'Top-rated schools, safe streets, and abundant parks and outdoor space.' },
   { label: 'Remote Professionals', description: 'Walkable village, great coffee shops, and a pace of life that supports deep work.' },
   { label: 'Retirees', description: 'World-class healthcare proximity (Scripps, UCSD), cultural offerings, and coastal beauty.' },
-  { label: 'Second-Home Owners', description: 'One of the most consistently desirable communities in Southern California.' },
+  { label: 'Second-Home Buyers', description: 'One of the most consistently desirable locations in Southern California.' },
 ]
 
 const schools = [
@@ -110,6 +109,39 @@ const schools = [
   { name: 'Muirlands Middle School', grades: '6–8', rating: '9/10', type: 'Public' },
   { name: 'La Jolla High School', grades: '9–12', rating: '9/10', type: 'Public' },
   { name: "The Bishop's School", grades: '6–12', rating: 'Top Ranked', type: 'Private' },
+]
+
+const properties = [
+  {
+    address: '1248 Prospect Street',
+    price: '$4,295,000',
+    beds: 4,
+    baths: 4.5,
+    sqft: '4,200',
+    type: 'Single Family',
+    image: '/images/d5-lajollacove.png',
+    tag: 'Ocean Views',
+  },
+  {
+    address: '7522 Eads Avenue',
+    price: '$2,875,000',
+    beds: 3,
+    baths: 3,
+    sqft: '2,850',
+    type: 'Condominium',
+    image: '/images/d7-communalcoffee.png',
+    tag: 'Newly Renovated',
+  },
+  {
+    address: '5580 La Jolla Blvd',
+    price: '$3,650,000',
+    beds: 5,
+    baths: 5,
+    sqft: '5,100',
+    type: 'Single Family',
+    image: '/images/d8-carnitas.png',
+    tag: 'Corner Lot',
+  },
 ]
 
 export default function LaJollaPage() {
@@ -184,20 +216,20 @@ export default function LaJollaPage() {
 
               <div className="grid grid-cols-2 gap-6 border-t border-stone-100 pt-8">
                 <div>
-                  <p className="label-text mb-2">Vibe</p>
+                  <p className="label-text mb-2">Ideal For</p>
+                  <p className="font-sans text-sm text-stone-700">
+                    Families, professionals, retirees
+                  </p>
+                </div>
+                <div>
+                  <p className="label-text mb-2">Neighborhood Feel</p>
                   <p className="font-sans text-sm text-stone-700">
                     Upscale village, walkable, coastal
                   </p>
                 </div>
                 <div>
                   <p className="label-text mb-2">Best Known For</p>
-                  <p className="font-sans text-sm text-stone-700">
-                    Beaches, dining, UCSD, culture
-                  </p>
-                </div>
-                <div>
-                  <p className="label-text mb-2">Climate</p>
-                  <p className="font-sans text-sm text-stone-700">Mild year-round, ocean breeze</p>
+                  <p className="font-sans text-sm text-stone-700">Beaches, dining, UCSD, culture</p>
                 </div>
                 <div>
                   <p className="label-text mb-2">Commute to Downtown</p>
@@ -208,19 +240,19 @@ export default function LaJollaPage() {
 
             <div className="relative">
               <div className="relative h-[500px] overflow-hidden">
-                <Image
-                  src="/images/d5-lajollacove.png"
-                  alt="La Jolla coastline"
-                  fill
-                  className="object-cover"
-                />
+               <Image
+  src="/images/d5-lajollacove.png"
+  alt="La Jolla coastline"
+  fill
+  className="object-cover"
+/>
               </div>
               <div className="absolute -bottom-4 -left-4 bg-stone-950 text-white px-6 py-5 max-w-xs">
                 <p className="font-sans text-xs text-stone-400 uppercase tracking-widest mb-1">
                   Local Note
                 </p>
                 <p className="font-serif text-lg leading-snug">
-                  La Jolla is one of the few coastal neighborhoods where you can walk from a Michelin-recognized dinner straight to the cove.
+                  La Jolla has one of the highest rates of walkability among San Diego coastal neighborhoods.
                 </p>
               </div>
             </div>
@@ -236,22 +268,23 @@ export default function LaJollaPage() {
             <h2 className="section-heading max-w-lg">Who Loves Living Here</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whoItsFor.map((item, index) => (
-              <div
-                key={index}
-                className="group border border-stone-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-              >
-                <p className="text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-3">
-                  {item.label}
-                </p>
+       {whoItsFor.map((item, index) => (
+  <div
+  key={index}
+  className="group border border-stone-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+>
+    <p className="text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-3">
+      {item.label}
+    </p>
 
-                <p className="text-sm text-stone-700 leading-relaxed group-hover:text-stone-900 transition">
-                  {item.description}
-                </p>
+    <p className="text-sm text-stone-700 leading-relaxed group-hover:text-stone-900 transition">
+      {item.description}
+    </p>
 
-                <div className="mt-6 h-[1px] w-0 bg-amber-600 group-hover:w-full transition-all duration-300" />
-              </div>
-            ))}
+    {/* subtle animated line */}
+    <div className="mt-6 h-[1px] w-0 bg-amber-600 group-hover:w-full transition-all duration-300" />
+  </div>
+))}
           </div>
         </div>
       </section>
@@ -268,36 +301,42 @@ export default function LaJollaPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-10">
-            {thingsToDo.map((item, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className="relative h-[320px] overflow-hidden rounded-sm">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+<div className="grid md:grid-cols-3 gap-8 mt-10">
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+  {thingsToDo.map((item, index) => (
+    <div key={index} className="group cursor-pointer">
 
-                  <div className="absolute bottom-0 p-6 text-white">
-                    <p className="text-xs tracking-widest uppercase text-white/70 mb-2">
-                      {item.category}
-                    </p>
+      <div className="relative h-[320px] overflow-hidden rounded-sm">
 
-                    <h3 className="text-xl font-serif mb-2">
-                      {item.title}
-                    </h3>
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
 
-                    <p className="text-sm text-white/80 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+        <div className="absolute bottom-0 p-6 text-white">
+          <p className="text-xs tracking-widest uppercase text-white/70 mb-2">
+            {item.category}
+          </p>
+
+          <h3 className="text-xl font-serif mb-2">
+            {item.title}
+          </h3>
+
+          <p className="text-sm text-white/80 leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  ))}
+
+</div>
         </div>
       </section>
 
@@ -383,7 +422,7 @@ export default function LaJollaPage() {
             <div>
               <p className="label-text mb-4">Education</p>
               <h2 className="section-heading mb-6">
-                Among San Diego&apos;s
+                Among San Diego's
                 <br />
                 Top-Rated Schools
               </h2>
@@ -412,101 +451,102 @@ export default function LaJollaPage() {
               </p>
             </div>
 
-            <div className="relative h-80 lg:h-full min-h-[400px] overflow-hidden group rounded-sm">
-              <Image
-                src="/images/school.png"
-                alt="Modern coastal campus in La Jolla"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+          <div className="relative h-80 lg:h-full min-h-[400px] overflow-hidden group rounded-sm">
+  <Image
+    src="/images/school.png"
+    alt="Modern coastal campus in La Jolla"
+    fill
+    className="object-cover transition-transform duration-700 group-hover:scale-105"
+  />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-            </div>
+  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+</div>
           </div>
         </div>
       </section>
 
-      {/* ─── COST OF LIVING (editorial, not listings) ─────────────────── */}
-      <section className="bg-white py-24 lg:py-32 border-t border-stone-100">
+      {/* ─── REAL ESTATE ──────────────────────────────────────────────── */}
+      <section className="bg-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-14 gap-4">
             <div>
-              <p className="label-text mb-3">A Note on the Market</p>
-              <h2 className="section-heading mb-10">
-                What It Costs
+              <p className="label-text mb-3">Real Estate</p>
+              <h2 className="section-heading">
+                Thinking About
                 <br />
-                to Live Here
+                Moving to La Jolla?
               </h2>
-              <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                La Jolla&apos;s housing market reflects its reputation. Demand is consistent — locally, nationally, and increasingly internationally — and the inventory is famously tight. The right home often moves before it ever hits the public market.
-              </p>
-              <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Median home prices sit around <span className="font-medium text-stone-900">$2.4M</span>. Bluff-top oceanfront estates from La Jolla Shores down to Bird Rock typically command <span className="font-medium text-stone-900">$5M to $20M+</span>. Village walkable single-family homes generally fall between <span className="font-medium text-stone-900">$2M and $4M</span>. Condos in The Village or near UCSD start in the high six figures.
-              </p>
-              <p className="font-sans text-base text-stone-600 leading-relaxed">
-                Among San Diego coastal markets, La Jolla has historically been the most resilient through national down-cycles. Buyers here tend to hold for decades, and many homes never reach the open market — they pass between neighbors, friends, and families.
-              </p>
             </div>
-
-            <div className="relative h-[500px] lg:h-[640px] overflow-hidden lg:sticky lg:top-24">
-              <Image
-                src="/images/d5-lajollacove.png"
-                alt="La Jolla cove and coastline"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-3 border-t border-stone-100 pt-8 max-w-3xl">
-            <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">$2.4M</p>
-              <p className="font-sans text-xs text-stone-500">Median Home Price</p>
-            </div>
-            <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">~150</p>
-              <p className="font-sans text-xs text-stone-500">Active Listings (avg)</p>
-            </div>
-            <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">35 days</p>
-              <p className="font-sans text-xs text-stone-500">Median Days on Market</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── SOFT EXPERT FEATURE ──────────────────────────────────────── */}
-      <section className="bg-cream-50 py-24 lg:py-32">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="label-text mb-5">Curious About Life in La Jolla?</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-6 leading-tight">
-            Talk to Someone
-            <br />
-            Who Lives Here
-          </h2>
-          <p className="font-sans text-base text-stone-600 leading-relaxed mb-3 max-w-xl mx-auto">
-            Sarah Chen has lived in La Jolla for fifteen years. If you are exploring the area, planning a move, or just want to understand what daily life is really like — she is happy to have an honest conversation.
-          </p>
-          <p className="font-sans text-sm text-stone-500 leading-relaxed mb-12 max-w-md mx-auto italic">
-            No pressure. No sales pitch. Just local knowledge, honestly shared.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="font-sans text-sm tracking-wider uppercase border border-stone-900 text-stone-900 px-8 py-3 hover:bg-stone-900 hover:text-white transition-colors"
+              className="font-sans text-sm tracking-wider text-stone-500 hover:text-stone-900 border-b border-stone-300 hover:border-stone-900 pb-0.5 transition-colors self-start sm:self-auto"
             >
-              Get in Touch
+              Talk to a Local Expert →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {properties.map((property) => (
+              <div key={property.address} className="group border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={property.image}
+                    alt={property.address}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-white font-sans text-xs tracking-wider px-3 py-1 text-stone-700">
+                      {property.tag}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="font-serif text-2xl text-stone-900 mb-1">{property.price}</p>
+                  <p className="font-sans text-sm text-stone-500 mb-4">{property.address}</p>
+                  <div className="flex items-center gap-4 text-xs font-sans text-stone-600 border-t border-stone-100 pt-4">
+                    <span>{property.beds} Beds</span>
+                    <span className="w-1 h-1 rounded-full bg-stone-300" />
+                    <span>{property.baths} Baths</span>
+                    <span className="w-1 h-1 rounded-full bg-stone-300" />
+                    <span>{property.sqft} sf</span>
+                    <span className="w-1 h-1 rounded-full bg-stone-300" />
+                    <span>{property.type}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 font-sans text-xs text-stone-400">
+            Listings provided in partnership with Sarah Chen, Compass Real Estate · DRE #02054123. All information sourced from SANDICOR MLS and deemed reliable but not guaranteed.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── CTA ──────────────────────────────────────────────────────── */}
+      <section className="bg-stone-950 py-24">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="label-text text-stone-500 mb-5">Thinking About La Jolla?</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6 leading-tight">
+            We Can Help You
+            <br />
+            Find Your Place Here
+          </h2>
+          <p className="font-sans text-stone-400 text-base leading-relaxed mb-10 max-w-lg mx-auto">
+            Whether you are curious about the neighborhood, exploring a potential move, or ready to take the next step — connect with a local expert who knows La Jolla well.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/contact" className="btn-outline-white">
+              Connect with a Local Expert
             </Link>
             <a
               href="tel:+16195550142"
-              className="font-sans text-sm tracking-wider text-stone-500 hover:text-stone-900 border-b border-stone-300 hover:border-stone-900 pb-0.5 transition-colors"
+              className="font-sans text-sm tracking-wider text-stone-400 hover:text-white border-b border-stone-700 hover:border-white pb-0.5 transition-colors"
             >
               (619) 555-0142
             </a>
           </div>
-          <p className="font-sans text-xs text-stone-400 mt-10">
-            Sarah Chen · Compass Real Estate · CA DRE #02054123
-          </p>
         </div>
       </section>
     </>

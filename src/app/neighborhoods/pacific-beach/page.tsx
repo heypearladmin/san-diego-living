@@ -3,123 +3,135 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'La Jolla | Neighborhood Guide',
+  title: 'Pacific Beach | Neighborhood Guide',
   description:
-    'Your guide to life in La Jolla — the cliffs, the cove, the village, the schools, and the everyday rhythm of one of the most iconic coastal communities on the California coast.',
+    'Your guide to life in Pacific Beach — the boardwalk, Crystal Pier, surf culture, walkable village, and the most authentic beach town energy in San Diego.',
 }
 
 const quickFacts = [
-  { value: '71', label: 'Walk Score' },
-  { value: '9/10', label: 'School Rating' },
-  { value: '12 mi', label: 'to Downtown SD' },
-  { value: '7 mi', label: 'of Coastline' },
-  { value: '70°F', label: 'Avg Temp Year-Round' },
+  { value: '92', label: 'Walk Score' },
+  { value: '7/10', label: 'School Rating' },
+  { value: '8 mi', label: 'to Downtown SD' },
+  { value: '3 mi', label: 'of Coastline' },
+  { value: '3 mi', label: 'Boardwalk' },
 ]
 
 const lifestyleItems = [
   {
     category: 'Beaches',
     description:
-      "La Jolla Cove, Children's Pool, and Windansea Beach offer world-class snorkeling, kayaking, and dramatic coastlines.",
-    image: '/images/d5-lajollacove.png',
+      "From Crystal Pier to Tourmaline Surfing Park, PB's beach culture is the real thing — surfers, longboarders, and the daily ritual of sunset watching.",
+    image: '/images/PB-4a.png',
   },
   {
     category: 'Dining',
     description:
-      "From George's at the Cove to Girard Avenue bistros, La Jolla boasts Michelin-recognized cuisine and a dining culture that rivals any major city.",
-    image: '/images/d2-georges.png',
+      'JRDN at Tower 23, beachfront patios on Mission Boulevard, and the kind of casual coastal dining you do not have to dress up for.',
+    image: '/images/PB-4b.png',
   },
   {
     category: 'Culture',
     description:
-      'Home to the Salk Institute, UCSD campus, La Jolla Playhouse, and the Museum of Contemporary Art — one of California’s most intellectually rich communities.',
-    image: '/images/c3-explorebalboa.png',
+      "Garnet Avenue's vintage neon, surf shops, hand-painted murals, and the unbroken thread of California beach-town heritage you cannot fake.",
+    image: '/images/PB-4c.png',
   },
   {
     category: 'Outdoors',
     description:
-      'Torrey Pines State Reserve, coastal trails, and world-ranked golf at Torrey Pines Golf Course give residents unmatched access to nature.',
-    image: '/images/d3-torreypines.png',
+      'Mission Bay Park, paddleboarding, beach volleyball, and morning runs along the boardwalk — the active lifestyle is lived outdoors here.',
+    image: '/images/PB-4d.png',
   },
 ]
 
 const thingsToDo = [
   {
-    title: 'Snorkel La Jolla Cove',
+    title: 'Surf at Crystal Pier',
     description:
-      'One of the best snorkeling spots in Southern California, with sea caves, leopard sharks, and garibaldi fish just offshore.',
-    category: 'Beaches',
-    image: '/images/d5-lajollacove.png',
+      'One of the most consistent and friendly surf breaks in San Diego — perfect for longboarders and the place locals learned how to surf.',
+    category: 'Outdoors',
+    image: '/images/PB-3a.png',
   },
   {
-    title: "Dine at George's at the Cove",
+    title: 'Cruise the Boardwalk',
     description:
-      'James Beard-nominated rooftop dining with unobstructed Pacific views — go for sunset.',
+      'The 3-mile concrete boardwalk along PB and Mission Beach is the unofficial main street — best at golden hour on a vintage cruiser bike.',
+    category: 'Lifestyle',
+    image: '/images/PB-3b.png',
+  },
+  {
+    title: 'Sunset at Tower 23',
+    description:
+      "Modern oceanfront rooftop with craft cocktails and an unobstructed Pacific view — the most refined sunset move PB has to offer.",
     category: 'Dining',
-    image: '/images/d2-georges.png',
-  },
-  {
-    title: 'Hike Torrey Pines',
-    description:
-      'Ancient pine forests, canyon trails, and sweeping coastal views just minutes from the village.',
-    category: 'Nature',
-    image: '/images/d3-torreypines.png',
+    image: '/images/PB-3c.png',
   },
 ]
 
 const localBusinesses = [
   {
-    name: 'Bird Rock Coffee Roasters',
-    type: 'Coffee',
+    name: "Kono's Cafe",
+    type: 'Breakfast',
     description:
-      'The neighborhood standard for single-origin espresso and a laid-back morning atmosphere.',
-    image: '/images/d1-birdrock.png',
+      'The legendary tiny breakfast joint at the foot of Crystal Pier — locals call it a PB rite of passage.',
+    image: '/images/PB-5a.png',
   },
   {
-    name: "George's at the Cove",
+    name: 'JRDN at Tower 23',
     type: 'Fine Dining',
     description:
-      "Ocean terrace dining that has defined La Jolla's culinary identity for decades.",
-    image: '/images/d2-georges.png',
+      "PB's only oceanfront luxury hotel restaurant — the rooftop that elevated the neighborhood's dining scene.",
+    image: '/images/PB-5b.png',
   },
   {
-    name: 'UCSD Bookstore & Campus',
-    type: 'Culture',
+    name: 'Crystal Pier',
+    type: 'Landmark',
     description:
-      "A world-class research university that anchors La Jolla's intellectual and cultural identity.",
-    image: '/images/d3-torreypines.png',
+      'The 700-foot wooden pier and beach cottages — one of the last working public piers on the California coast.',
+    image: '/images/PB-5c.png',
   },
   {
-    name: 'La Jolla Cove Snorkel',
-    type: 'Outdoors',
+    name: 'PB Surf Shops',
+    type: 'Surf',
     description:
-      'Rent gear and enter the water directly from the cove — sea lions often sunbathe nearby.',
-    image: '/images/d5-lajollacove.png',
+      'Independent surf shops along Mission Boulevard — where local surfers actually buy their boards and wax.',
+    image: '/images/PB-5d.png',
   },
 ]
 
 const whoItsFor = [
-  { label: 'Families', description: 'Top-rated schools, safe streets, and abundant parks and outdoor space.' },
-  { label: 'Remote Professionals', description: 'Walkable village, great coffee shops, and a pace of life that supports deep work.' },
-  { label: 'Retirees', description: 'World-class healthcare proximity (Scripps, UCSD), cultural offerings, and coastal beauty.' },
-  { label: 'Second-Home Owners', description: 'One of the most consistently desirable communities in Southern California.' },
+  {
+    label: 'Young Professionals',
+    description: 'Walkable village, vibrant nightlife, and a community where work-life balance includes a morning surf.',
+  },
+  {
+    label: 'Surfers & Beach Lovers',
+    description: 'Consistent surf, easy Mission Bay access, and a community built entirely around the water.',
+  },
+  {
+    label: 'Active Lifestyle Seekers',
+    description: 'Boardwalk runners, paddle sports, beach volleyball, bike culture — PB rewards living outdoors.',
+  },
+  {
+    label: 'First-Time Coastal Buyers',
+    description: 'A more accessible coastal entry point than La Jolla or Del Mar, with all the upside of being on the water.',
+  },
 ]
 
 const schools = [
-  { name: 'La Jolla Elementary', grades: 'K–5', rating: '10/10', type: 'Public' },
-  { name: 'Muirlands Middle School', grades: '6–8', rating: '9/10', type: 'Public' },
-  { name: 'La Jolla High School', grades: '9–12', rating: '9/10', type: 'Public' },
-  { name: "The Bishop's School", grades: '6–12', rating: 'Top Ranked', type: 'Private' },
+  { name: 'Crown Point Elementary', grades: 'K–5', rating: '8/10', type: 'Public' },
+  { name: 'Pacific Beach Elementary', grades: 'K–5', rating: '7/10', type: 'Public' },
+  { name: 'Pacific Beach Middle School', grades: '6–8', rating: '6/10', type: 'Public' },
+  { name: 'Mission Bay High School', grades: '9–12', rating: '7/10', type: 'Public' },
 ]
 
-export default function LaJollaPage() {
+export default function PacificBeachPage() {
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative h-[70vh] min-h-[550px] flex items-end">
         <Image
-          src="/images/a1 homepagehero.png"
-          alt="La Jolla coastal cliffs at sunset"
+          src="/images/PB-1.png"
+          alt="Pacific Beach Crystal Pier at sunset"
           fill
           className="object-cover"
           priority
@@ -136,13 +148,13 @@ export default function LaJollaPage() {
               Neighborhoods
             </Link>
             <span className="text-white/30 text-xs">/</span>
-            <span className="font-sans text-xs text-white/80">La Jolla</span>
+            <span className="font-sans text-xs text-white/80">Pacific Beach</span>
           </div>
 
           <p className="label-text text-white/60 mb-4">Neighborhood Guide</p>
-          <h1 className="font-serif text-6xl md:text-7xl text-white mb-4">La Jolla</h1>
+          <h1 className="font-serif text-6xl md:text-7xl text-white mb-4">Pacific Beach</h1>
           <p className="font-sans text-lg text-white/70 max-w-xl font-light">
-            Clifftop grandeur, world-class dining, and one of the most distinctive communities on the California coast.
+            Vibrant beach culture, walkable streets, and the most authentic surf town energy in San Diego.
           </p>
         </div>
       </section>
@@ -166,42 +178,42 @@ export default function LaJollaPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="label-text mb-4">About La Jolla</p>
+              <p className="label-text mb-4">About Pacific Beach</p>
               <h2 className="section-heading mb-8">
-                A Place That Earns
+                The Beach Town
                 <br />
-                Its Reputation
+                That Stayed a Beach Town
               </h2>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Perched along seven miles of rugged Pacific coastline, La Jolla is one of those rare places that genuinely lives up to the hype. The beaches are dramatic. The restaurants are exceptional. The cultural offerings — UCSD, the Salk Institute, La Jolla Playhouse — are world-class.
+                Pacific Beach is the rare San Diego coastal neighborhood that did not lose its soul to gentrification. The boardwalk is still concrete. The pier is still wooden. The surf shops still sell boards to people who actually surf. And on any given morning at Crystal Pier, you will find the same lineup of locals you would have found in 1985.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                The village along Prospect Street and Girard Avenue is walkable, independent, and decidedly local — galleries, coffee shops, boutiques, and long lunches that stretch into the afternoon. It has the feel of a small town that happens to sit inside one of the great cities in America.
+                The village along Garnet Avenue and Mission Boulevard is walkable, vibrant, and densely packed with restaurants, dive bars, vintage shops, and trendy newer cafes. It is the kind of place where dinner happens at 6, sunset happens at the boardwalk, and you do not need shoes for either.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-10">
-                Residents tend to be lifers. Once people find La Jolla, they rarely leave — and that quiet stability is one of the things that makes it special.
+                Residents skew younger and more active than other San Diego coastal neighborhoods, but families and longtime locals anchor the community. Living here means you live outside — boardwalk, beach, bay, repeat.
               </p>
 
               <div className="grid grid-cols-2 gap-6 border-t border-stone-100 pt-8">
                 <div>
                   <p className="label-text mb-2">Vibe</p>
                   <p className="font-sans text-sm text-stone-700">
-                    Upscale village, walkable, coastal
+                    Casual, vibrant, surf-forward
                   </p>
                 </div>
                 <div>
                   <p className="label-text mb-2">Best Known For</p>
                   <p className="font-sans text-sm text-stone-700">
-                    Beaches, dining, UCSD, culture
+                    Crystal Pier, boardwalk, surf
                   </p>
                 </div>
                 <div>
                   <p className="label-text mb-2">Climate</p>
-                  <p className="font-sans text-sm text-stone-700">Mild year-round, ocean breeze</p>
+                  <p className="font-sans text-sm text-stone-700">Warm summers, mild winters</p>
                 </div>
                 <div>
                   <p className="label-text mb-2">Commute to Downtown</p>
-                  <p className="font-sans text-sm text-stone-700">20–25 min by car</p>
+                  <p className="font-sans text-sm text-stone-700">15–20 min by car</p>
                 </div>
               </div>
             </div>
@@ -209,8 +221,8 @@ export default function LaJollaPage() {
             <div className="relative">
               <div className="relative h-[500px] overflow-hidden">
                 <Image
-                  src="/images/d5-lajollacove.png"
-                  alt="La Jolla coastline"
+                  src="/images/PB-2.png"
+                  alt="Garnet Avenue Pacific Beach"
                   fill
                   className="object-cover"
                 />
@@ -220,7 +232,7 @@ export default function LaJollaPage() {
                   Local Note
                 </p>
                 <p className="font-serif text-lg leading-snug">
-                  La Jolla is one of the few coastal neighborhoods where you can walk from a Michelin-recognized dinner straight to the cove.
+                  Pacific Beach has more cruiser bikes per capita than almost any neighborhood in California.
                 </p>
               </div>
             </div>
@@ -232,7 +244,7 @@ export default function LaJollaPage() {
       <section className="bg-cream-50 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-12">
-            <p className="label-text mb-3">Is La Jolla Right for You?</p>
+            <p className="label-text mb-3">Is Pacific Beach Right for You?</p>
             <h2 className="section-heading max-w-lg">Who Loves Living Here</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -264,7 +276,7 @@ export default function LaJollaPage() {
             <h2 className="section-heading max-w-lg">
               Things To Do
               <br />
-              in La Jolla
+              in Pacific Beach
             </h2>
           </div>
 
@@ -305,7 +317,7 @@ export default function LaJollaPage() {
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-14">
-            <p className="label-text mb-3">Life in La Jolla</p>
+            <p className="label-text mb-3">Life in Pacific Beach</p>
             <h2 className="section-heading max-w-lg">
               The Everyday
               <br />
@@ -345,7 +357,7 @@ export default function LaJollaPage() {
               <h2 className="section-heading">
                 Worth Knowing
                 <br />
-                in La Jolla
+                in Pacific Beach
               </h2>
             </div>
             <Link
@@ -383,12 +395,12 @@ export default function LaJollaPage() {
             <div>
               <p className="label-text mb-4">Education</p>
               <h2 className="section-heading mb-6">
-                Among San Diego&apos;s
+                Solid Schools,
                 <br />
-                Top-Rated Schools
+                Strong Community Pull
               </h2>
               <p className="font-sans text-sm text-stone-600 leading-relaxed mb-8">
-                The La Jolla attendance area is consistently ranked among the top 5% in the state. Proximity to UC San Diego also provides unique enrichment and dual-enrollment opportunities for high school students.
+                Pacific Beach schools are part of San Diego Unified School District. Crown Point Elementary consistently ranks among the strongest public elementary options on the coast, and Mission Bay High School has invested heavily in its IB program. Many families also tap into nearby private and charter alternatives.
               </p>
 
               <div className="space-y-px">
@@ -414,8 +426,8 @@ export default function LaJollaPage() {
 
             <div className="relative h-80 lg:h-full min-h-[400px] overflow-hidden group rounded-sm">
               <Image
-                src="/images/school.png"
-                alt="Modern coastal campus in La Jolla"
+                src="/images/PB-6.png"
+                alt="Mission Bay High School campus"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -438,20 +450,20 @@ export default function LaJollaPage() {
                 to Live Here
               </h2>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                La Jolla&apos;s housing market reflects its reputation. Demand is consistent — locally, nationally, and increasingly internationally — and the inventory is famously tight. The right home often moves before it ever hits the public market.
+                Pacific Beach is the most accessible coastal entry point of San Diego&apos;s major beach neighborhoods — and it moves fast. Inventory turnover is higher than La Jolla or Del Mar, but the right home in the right block still goes quickly, especially under the median.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Median home prices sit around <span className="font-medium text-stone-900">$2.4M</span>. Bluff-top oceanfront estates from La Jolla Shores down to Bird Rock typically command <span className="font-medium text-stone-900">$5M to $20M+</span>. Village walkable single-family homes generally fall between <span className="font-medium text-stone-900">$2M and $4M</span>. Condos in The Village or near UCSD start in the high six figures.
+                Median home prices sit around <span className="font-medium text-stone-900">$1.6M</span>. Oceanfront condos near Crystal Pier and Tourmaline can run from <span className="font-medium text-stone-900">$2M to $5M+</span>. Mission Bay waterfront homes typically command <span className="font-medium text-stone-900">$3M to $4M</span>. Single-family homes in North PB and Crown Point generally fall between <span className="font-medium text-stone-900">$1.5M and $2.5M</span>.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed">
-                Among San Diego coastal markets, La Jolla has historically been the most resilient through national down-cycles. Buyers here tend to hold for decades, and many homes never reach the open market — they pass between neighbors, friends, and families.
+                PB attracts a different kind of buyer than the more refined coastal markets — younger, more active, often first-time coastal owners drawn by the lifestyle. Many people who land here a few blocks back from the beach trade up to oceanfront over time.
               </p>
             </div>
 
             <div className="relative h-[500px] lg:h-[640px] overflow-hidden lg:sticky lg:top-24">
               <Image
-                src="/images/d5-lajollacove.png"
-                alt="La Jolla cove and coastline"
+                src="/images/PB-7a.png"
+                alt="Oceanfront condo near Crystal Pier"
                 fill
                 className="object-cover"
               />
@@ -460,15 +472,15 @@ export default function LaJollaPage() {
 
           <div className="grid grid-cols-3 border-t border-stone-100 pt-8 max-w-3xl">
             <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">$2.4M</p>
+              <p className="font-serif text-2xl text-stone-900 mb-1">$1.6M</p>
               <p className="font-sans text-xs text-stone-500">Median Home Price</p>
             </div>
             <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">~150</p>
+              <p className="font-serif text-2xl text-stone-900 mb-1">~210</p>
               <p className="font-sans text-xs text-stone-500">Active Listings (avg)</p>
             </div>
             <div>
-              <p className="font-serif text-2xl text-stone-900 mb-1">35 days</p>
+              <p className="font-serif text-2xl text-stone-900 mb-1">22 days</p>
               <p className="font-sans text-xs text-stone-500">Median Days on Market</p>
             </div>
           </div>
@@ -478,14 +490,14 @@ export default function LaJollaPage() {
       {/* ─── SOFT EXPERT FEATURE ──────────────────────────────────────── */}
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="label-text mb-5">Curious About Life in La Jolla?</p>
+          <p className="label-text mb-5">Curious About Life in Pacific Beach?</p>
           <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-6 leading-tight">
             Talk to Someone
             <br />
             Who Lives Here
           </h2>
           <p className="font-sans text-base text-stone-600 leading-relaxed mb-3 max-w-xl mx-auto">
-            Sarah Chen has lived in La Jolla for fifteen years. If you are exploring the area, planning a move, or just want to understand what daily life is really like — she is happy to have an honest conversation.
+            Sarah Chen has lived in San Diego&apos;s coastal communities for fifteen years and knows Pacific Beach inside out. If you are exploring the area, planning a move, or just want to understand what daily life is really like — she is happy to have an honest conversation.
           </p>
           <p className="font-sans text-sm text-stone-500 leading-relaxed mb-12 max-w-md mx-auto italic">
             No pressure. No sales pitch. Just local knowledge, honestly shared.

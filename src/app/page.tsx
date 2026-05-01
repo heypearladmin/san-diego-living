@@ -145,7 +145,7 @@ export default async function HomePage() {
     <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-16 w-full">
 
       <p className="text-white/70 text-xs tracking-widest uppercase mb-3">
-        San Diego | Callifornia
+        SAN DIEGO • CALIFORNIA
       </p>
 
       <h1 className="text-white text-5xl md:text-6xl font-serif mb-4">
