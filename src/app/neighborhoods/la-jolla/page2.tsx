@@ -5,101 +5,64 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'La Jolla | Neighborhood Guide',
   description:
-    'A guide to life in La Jolla — the cliffs, the cove, the village, the schools, and the everyday rhythm of one of the most iconic coastal communities on the California coast.',
-}
-
-// ─────────────────────────────────────────────────────────────────────
-// LOCAL EXPERT (per neighborhood)
-// ─────────────────────────────────────────────────────────────────────
-const expert = {
-  name: 'Maya Chen',
-  area: 'La Jolla',
-  years: 15,
-  phone: '(619) 555-0142',
-  brokerage: 'Compass Real Estate',
-  license: 'CA DRE #02054123',
+    'Your guide to life in La Jolla — the cliffs, the cove, the village, the schools, and the everyday rhythm of one of the most iconic coastal communities on the California coast.',
 }
 
 const quickFacts = [
-  {
-    label: 'Walkability',
-    value: '71 Walk Score',
-    explanation: 'Walkable village core with the cove a short stroll away.',
-  },
-  {
-    label: 'Schools',
-    value: '9/10 Rating',
-    explanation: 'Among California’s strongest public school zones, with private options nearby.',
-  },
-  {
-    label: 'Commute',
-    value: '12 mi to Downtown',
-    explanation: '20–25 min by car along I-5 or the coastal route.',
-  },
-  {
-    label: 'Climate',
-    value: '65–75°F year-round',
-    explanation: 'Mild ocean climate, low humidity, and a sea breeze most afternoons.',
-  },
-  {
-    label: 'Lifestyle',
-    value: '7 mi of coastline',
-    explanation: 'Beaches, cliffs, and tide pools at your doorstep.',
-  },
-  {
-    label: 'Community',
-    value: 'Multi-generational, refined',
-    explanation: 'Researchers, retirees, families who arrive and rarely leave.',
-  },
+  { value: '71', label: 'Walk Score' },
+  { value: '9/10', label: 'School Rating' },
+  { value: '12 mi', label: 'to Downtown SD' },
+  { value: '7 mi', label: 'of Coastline' },
+  { value: '70°F', label: 'Avg Temp Year-Round' },
 ]
 
 const lifestyleItems = [
   {
     category: 'Beaches',
     description:
-      "La Jolla Cove for snorkeling, Children's Pool for the seal colony, Windansea for the surf — three beaches within minutes of each other, each with its own crowd.",
+      "La Jolla Cove, Children's Pool, and Windansea Beach offer world-class snorkeling, kayaking, and dramatic coastlines.",
     image: '/images/d5-lajollacove.png',
   },
   {
     category: 'Dining',
     description:
-      "Long lunches at George's, Girard Avenue bistros, and the kind of dinner reservations regulars never have to make twice.",
+      "From George's at the Cove to Girard Avenue bistros, La Jolla boasts Michelin-recognized cuisine and a dining culture that rivals any major city.",
     image: '/images/d2-georges.png',
   },
   {
     category: 'Culture',
     description:
-      'The Salk Institute, UCSD, La Jolla Playhouse, the Museum of Contemporary Art — a small village that punches well above its weight.',
+      'Home to the Salk Institute, UCSD campus, La Jolla Playhouse, and the Museum of Contemporary Art — one of California’s most intellectually rich communities.',
     image: '/images/c3-explorebalboa.png',
   },
   {
     category: 'Outdoors',
     description:
-      'Torrey Pines trails, Coast Walk above the cove, and the world-class fairways at Torrey Pines Golf Course just up the road.',
+      'Torrey Pines State Reserve, coastal trails, and world-ranked golf at Torrey Pines Golf Course give residents unmatched access to nature.',
     image: '/images/d3-torreypines.png',
   },
 ]
 
 const thingsToDo = [
   {
-    title: 'Slip Into La Jolla Cove',
+    title: 'Snorkel La Jolla Cove',
     description:
-      'Snorkel through the kelp forest, swim with garibaldi, and watch the sea lions pull themselves up onto the rocks at noon.',
-    category: 'Mornings',
+      'One of the best snorkeling spots in Southern California, with sea caves, leopard sharks, and garibaldi fish just offshore.',
+    category: 'Beaches',
     image: '/images/d5-lajollacove.png',
   },
   {
-    title: "A Long Lunch at George's",
+    title: "Dine at George's at the Cove",
     description:
-      'James Beard recognition, an ocean terrace, and a bottle of wine that turns into the rest of the afternoon.',
-    category: 'Afternoons',
+      'James Beard-nominated rooftop dining with unobstructed Pacific views — go for sunset.',
+    category: 'Dining',
     image: '/images/d2-georges.png',
   },
   {
-    title: 'Walk Torrey Pines at Sunrise',
+    title: 'Hike Torrey Pines',
     description:
-      'Hundred-year-old pines, sandstone cliffs, and the Pacific waking up below — the quietest hour in San Diego.',
-    category: 'Trails',
+      'Ancient pine forests, canyon trails, and sweeping coastal views just minutes from the village.',
+    category: 'Nature',
     image: '/images/d3-torreypines.png',
   },
 ]
@@ -109,59 +72,50 @@ const localBusinesses = [
     name: 'Bird Rock Coffee Roasters',
     type: 'Coffee',
     description:
-      'The kind of place locals return to every morning without thinking twice — single-origin, sun-drenched, a few minutes from the cliffs.',
+      'The neighborhood standard for single-origin espresso and a laid-back morning atmosphere.',
     image: '/images/d1-birdrock.png',
   },
   {
     name: "George's at the Cove",
-    type: 'Dining',
+    type: 'Fine Dining',
     description:
-      "The rooftop terrace that has defined La Jolla's culinary identity for decades — and still does.",
+      "Ocean terrace dining that has defined La Jolla's culinary identity for decades.",
     image: '/images/d2-georges.png',
   },
   {
-    name: 'UCSD & The Village',
+    name: 'UCSD Bookstore & Campus',
     type: 'Culture',
     description:
-      'A world-class research university just up the hill — visiting lectures, weekend bookstores, the kind of intellectual current most coastal towns lack.',
+      "A world-class research university that anchors La Jolla's intellectual and cultural identity.",
     image: '/images/d3-torreypines.png',
   },
   {
-    name: 'La Jolla Cove',
+    name: 'La Jolla Cove Snorkel',
     type: 'Outdoors',
     description:
-      'Snorkel rentals, the seal colony, and the sea caves — accessible directly from the village without ever needing a car.',
+      'Rent gear and enter the water directly from the cove — sea lions often sunbathe nearby.',
     image: '/images/d5-lajollacove.png',
   },
 ]
 
 const whoItsFor = [
-  {
-    label: 'Families',
-    description:
-      'School-pickup walks, weekend tide-pooling, and a village small enough that you know the other parents by name.',
-  },
-  {
-    label: 'Remote Professionals',
-    description:
-      'Coffee shops where laptops are tolerated for hours, the cove for a midday swim, and the kind of focus you only find in quieter places.',
-  },
-  {
-    label: 'Retirees',
-    description:
-      'World-class healthcare close by, daily cliff walks, and a community where neighbors check in on each other across decades.',
-  },
-  {
-    label: 'Second-Home Owners',
-    description:
-      'Held quietly between trips. Somewhere to land when work stops and the rest of life finally starts.',
-  },
+  { label: 'Families', description: 'Top-rated schools, safe streets, and abundant parks and outdoor space.' },
+  { label: 'Remote Professionals', description: 'Walkable village, great coffee shops, and a pace of life that supports deep work.' },
+  { label: 'Retirees', description: 'World-class healthcare proximity (Scripps, UCSD), cultural offerings, and coastal beauty.' },
+  { label: 'Second-Home Owners', description: 'One of the most consistently desirable communities in Southern California.' },
+]
+
+const schools = [
+  { name: 'La Jolla Elementary', grades: 'K–5', rating: '10/10', type: 'Public' },
+  { name: 'Muirlands Middle School', grades: '6–8', rating: '9/10', type: 'Public' },
+  { name: 'La Jolla High School', grades: '9–12', rating: '9/10', type: 'Public' },
+  { name: "The Bishop's School", grades: '6–12', rating: 'Top Ranked', type: 'Private' },
 ]
 
 export default function LaJollaPage() {
   return (
     <>
-      {/* ─── HERO ─────────────────────────────────────────────────── */}
+      {/* ─── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative h-[70vh] min-h-[550px] flex items-end">
         <Image
           src="/images/a1 homepagehero.png"
@@ -187,61 +141,52 @@ export default function LaJollaPage() {
 
           <p className="label-text text-white/60 mb-4">Neighborhood Guide</p>
           <h1 className="font-serif text-6xl md:text-7xl text-white mb-4">La Jolla</h1>
-          <p className="font-sans text-lg text-white/75 max-w-xl font-light leading-relaxed">
-            The cliffs, the cove, and a village that has not lost its quiet.
+          <p className="font-sans text-lg text-white/70 max-w-xl font-light">
+            Clifftop grandeur, world-class dining, and one of the most distinctive communities on the California coast.
           </p>
         </div>
       </section>
 
-      {/* ─── QUICK FACTS ──────────────────────────────────────────── */}
-      <section className="bg-white border-b border-stone-100 py-16 lg:py-20">
+      {/* ─── QUICK FACTS BAR ──────────────────────────────────────────── */}
+      <section className="bg-white border-b border-stone-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="mb-12">
-            <p className="label-text mb-3">A Quick Read</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-stone-900 leading-tight max-w-lg">
-              What You Should Know About La Jolla
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-x divide-stone-100">
             {quickFacts.map((fact) => (
-              <div key={fact.label} className="border-t border-stone-200 pt-5">
-                <p className="label-text mb-3">{fact.label}</p>
-                <p className="font-serif text-xl text-stone-900 mb-3">{fact.value}</p>
-                <p className="font-sans font-light text-sm text-stone-500 leading-relaxed">
-                  {fact.explanation}
-                </p>
+              <div key={fact.label} className="px-6 py-7 text-center">
+                <p className="font-serif text-2xl text-stone-900 mb-1">{fact.value}</p>
+                <p className="font-sans text-xs text-stone-500">{fact.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── OVERVIEW (editorial storytelling) ────────────────────── */}
+      {/* ─── OVERVIEW ─────────────────────────────────────────────────── */}
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <p className="label-text mb-4">About La Jolla</p>
               <h2 className="section-heading mb-8">
-                A Village
+                A Place That Earns
                 <br />
-                On the Cliffs
+                Its Reputation
               </h2>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Mornings start with marine layer. Locals walk past the cove on the way to coffee, the seals already arguing on the rocks. The village wakes up slowly — the bookstore opens, surfers pull into Windansea, the schools fill, and Prospect Street settles into the rhythm of a small town that happens to sit on one of the most photographed coastlines in California.
+                Perched along seven miles of rugged Pacific coastline, La Jolla is one of those rare places that genuinely lives up to the hype. The beaches are dramatic. The restaurants are exceptional. The cultural offerings — UCSD, the Salk Institute, La Jolla Playhouse — are world-class.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Afternoons drift between the village and the cliffs. People meet for lunch at George&apos;s and stay through the second bottle. The Salk Institute lights up with researchers heading home through the eucalyptus. Couples walk Coast Walk Trail with the sun lower, the cove wider, the air cool against the bluffs.
+                The village along Prospect Street and Girard Avenue is walkable, independent, and decidedly local — galleries, coffee shops, boutiques, and long lunches that stretch into the afternoon. It has the feel of a small town that happens to sit inside one of the great cities in America.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-10">
-                Evenings end the way they started — quietly. The village is residential at heart. Neighbors recognize each other. Restaurants close earlier than you would expect. Most people who land here are still here a decade later, often longer. La Jolla rewards staying.
+                Residents tend to be lifers. Once people find La Jolla, they rarely leave — and that quiet stability is one of the things that makes it special.
               </p>
 
               <div className="grid grid-cols-2 gap-6 border-t border-stone-100 pt-8">
                 <div>
                   <p className="label-text mb-2">Vibe</p>
                   <p className="font-sans text-sm text-stone-700">
-                    Refined village, quiet, coastal
+                    Upscale village, walkable, coastal
                   </p>
                 </div>
                 <div>
@@ -255,7 +200,7 @@ export default function LaJollaPage() {
                   <p className="font-sans text-sm text-stone-700">Mild year-round, ocean breeze</p>
                 </div>
                 <div>
-                  <p className="label-text mb-2">To Downtown</p>
+                  <p className="label-text mb-2">Commute to Downtown</p>
                   <p className="font-sans text-sm text-stone-700">20–25 min by car</p>
                 </div>
               </div>
@@ -265,7 +210,7 @@ export default function LaJollaPage() {
               <div className="relative h-[500px] overflow-hidden">
                 <Image
                   src="/images/d5-lajollacove.png"
-                  alt="La Jolla cove and coastline"
+                  alt="La Jolla coastline"
                   fill
                   className="object-cover"
                 />
@@ -275,7 +220,7 @@ export default function LaJollaPage() {
                   Local Note
                 </p>
                 <p className="font-serif text-lg leading-snug">
-                  La Jolla is one of the few coastal villages where you can walk from a Michelin-recognized dinner straight to the cove.
+                  La Jolla is one of the few coastal neighborhoods where you can walk from a Michelin-recognized dinner straight to the cove.
                 </p>
               </div>
             </div>
@@ -283,12 +228,12 @@ export default function LaJollaPage() {
         </div>
       </section>
 
-      {/* ─── WHO IT'S FOR ─────────────────────────────────────────── */}
+      {/* ─── WHO IT'S FOR ─────────────────────────────────────────────── */}
       <section className="bg-cream-50 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-12">
-            <p className="label-text mb-3">Is La Jolla a Match?</p>
-            <h2 className="section-heading max-w-lg">Who Actually Lives Here</h2>
+            <p className="label-text mb-3">Is La Jolla Right for You?</p>
+            <h2 className="section-heading max-w-lg">Who Loves Living Here</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whoItsFor.map((item, index) => (
@@ -299,9 +244,11 @@ export default function LaJollaPage() {
                 <p className="text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-3">
                   {item.label}
                 </p>
+
                 <p className="text-sm text-stone-700 leading-relaxed group-hover:text-stone-900 transition">
                   {item.description}
                 </p>
+
                 <div className="mt-6 h-[1px] w-0 bg-amber-600 group-hover:w-full transition-all duration-300" />
               </div>
             ))}
@@ -309,15 +256,15 @@ export default function LaJollaPage() {
         </div>
       </section>
 
-      {/* ─── THINGS TO DO ─────────────────────────────────────────── */}
+      {/* ─── THINGS TO DO ─────────────────────────────────────────────── */}
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-14">
-            <p className="label-text mb-3">A Day in La Jolla</p>
+            <p className="label-text mb-3">Activities & Attractions</p>
             <h2 className="section-heading max-w-lg">
-              How Locals
+              Things To Do
               <br />
-              Spend Their Time
+              in La Jolla
             </h2>
           </div>
 
@@ -331,12 +278,18 @@ export default function LaJollaPage() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
                   <div className="absolute bottom-0 p-6 text-white">
                     <p className="text-xs tracking-widest uppercase text-white/70 mb-2">
                       {item.category}
                     </p>
-                    <h3 className="text-xl font-serif mb-2">{item.title}</h3>
+
+                    <h3 className="text-xl font-serif mb-2">
+                      {item.title}
+                    </h3>
+
                     <p className="text-sm text-white/80 leading-relaxed">
                       {item.description}
                     </p>
@@ -348,7 +301,7 @@ export default function LaJollaPage() {
         </div>
       </section>
 
-      {/* ─── LOCAL LIFESTYLE ──────────────────────────────────────── */}
+      {/* ─── LOCAL LIFESTYLE ──────────────────────────────────────────── */}
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-14">
@@ -362,10 +315,7 @@ export default function LaJollaPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {lifestyleItems.map((item) => (
-              <div
-                key={item.category}
-                className="group flex gap-6 bg-white border border-stone-100 p-6 hover:shadow-lg transition-shadow duration-300"
-              >
+              <div key={item.category} className="group flex gap-6 bg-white border border-stone-100 p-6 hover:shadow-lg transition-shadow duration-300">
                 <div className="relative w-28 h-28 flex-shrink-0 overflow-hidden">
                   <Image
                     src={item.image}
@@ -386,16 +336,16 @@ export default function LaJollaPage() {
         </div>
       </section>
 
-      {/* ─── LOCAL BUSINESSES ─────────────────────────────────────── */}
+      {/* ─── LOCAL BUSINESSES ─────────────────────────────────────────── */}
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-14 gap-4">
             <div>
-              <p className="label-text mb-3">Worth Knowing</p>
+              <p className="label-text mb-3">Local Businesses</p>
               <h2 className="section-heading">
-                Places We
+                Worth Knowing
                 <br />
-                Keep Going Back To
+                in La Jolla
               </h2>
             </div>
             <Link
@@ -426,106 +376,137 @@ export default function LaJollaPage() {
         </div>
       </section>
 
-      {/* ─── SCHOOLS (light touch) ────────────────────────────────── */}
+      {/* ─── SCHOOLS ──────────────────────────────────────────────────── */}
       <section className="bg-cream-100 py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <p className="label-text mb-4">Education</p>
-              <h2 className="section-heading mb-8">
-                Among California&apos;s
+              <h2 className="section-heading mb-6">
+                Among San Diego&apos;s
                 <br />
-                Strongest School Zones
+                Top-Rated Schools
               </h2>
-              <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                The La Jolla attendance area consistently ranks among California&apos;s top public school zones — La Jolla Elementary, Muirlands Middle, and La Jolla High among the most cited. Proximity to UC San Diego adds enrichment and dual-enrollment paths most coastal communities cannot match.
+              <p className="font-sans text-sm text-stone-600 leading-relaxed mb-8">
+                The La Jolla attendance area is consistently ranked among the top 5% in the state. Proximity to UC San Diego also provides unique enrichment and dual-enrollment opportunities for high school students.
               </p>
-              <p className="font-sans text-base text-stone-600 leading-relaxed">
-                Private alternatives like The Bishop&apos;s School offer additional options for families seeking smaller class sizes or parochial settings. Most families in the village walk or bike their kids to school.
+
+              <div className="space-y-px">
+                {schools.map((school) => (
+                  <div
+                    key={school.name}
+                    className="flex items-center justify-between bg-white px-6 py-4"
+                  >
+                    <div>
+                      <p className="font-sans text-sm font-medium text-stone-900">{school.name}</p>
+                      <p className="font-sans text-xs text-stone-500">
+                        Grades {school.grades} · {school.type}
+                      </p>
+                    </div>
+                    <span className="font-serif text-base text-gold">{school.rating}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 font-sans text-xs text-stone-400">
+                Ratings sourced from GreatSchools.org. Verify school boundaries with the district.
               </p>
             </div>
 
-            <div className="relative h-80 lg:h-[480px] overflow-hidden group rounded-sm">
+            <div className="relative h-80 lg:h-full min-h-[400px] overflow-hidden group rounded-sm">
               <Image
                 src="/images/school.png"
-                alt="Coastal campus near La Jolla"
+                alt="Modern coastal campus in La Jolla"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── HOUSING SNAPSHOT (subtle) ────────────────────────────── */}
+      {/* ─── COST OF LIVING (editorial, not listings) ─────────────────── */}
       <section className="bg-white py-24 lg:py-32 border-t border-stone-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
             <div>
-              <p className="label-text mb-3">Housing</p>
+              <p className="label-text mb-3">A Note on the Market</p>
               <h2 className="section-heading mb-10">
-                What the Homes
+                What It Costs
                 <br />
-                Look Like
+                to Live Here
               </h2>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Primarily single-family homes — Spanish revivals in the village, mid-century moderns in Bird Rock, contemporary architecture along the bluffs. A small condo market exists in the village core for those who want walkability without the maintenance.
+                La Jolla&apos;s housing market reflects its reputation. Demand is consistent — locally, nationally, and increasingly internationally — and the inventory is famously tight. The right home often moves before it ever hits the public market.
+              </p>
+              <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
+                Median home prices sit around <span className="font-medium text-stone-900">$2.4M</span>. Bluff-top oceanfront estates from La Jolla Shores down to Bird Rock typically command <span className="font-medium text-stone-900">$5M to $20M+</span>. Village walkable single-family homes generally fall between <span className="font-medium text-stone-900">$2M and $4M</span>. Condos in The Village or near UCSD start in the high six figures.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed">
-                Inventory tends to be tight. Many homes here are passed quietly between neighbors before they ever reach the open market — a pattern shaped by how long people stay.
+                Among San Diego coastal markets, La Jolla has historically been the most resilient through national down-cycles. Buyers here tend to hold for decades, and many homes never reach the open market — they pass between neighbors, friends, and families.
               </p>
             </div>
 
-            <div className="relative h-[500px] lg:h-[600px] overflow-hidden lg:sticky lg:top-24">
+            <div className="relative h-[500px] lg:h-[640px] overflow-hidden lg:sticky lg:top-24">
               <Image
                 src="/images/d5-lajollacove.png"
-                alt="La Jolla coastline and homes"
+                alt="La Jolla cove and coastline"
                 fill
                 className="object-cover"
               />
             </div>
           </div>
+
+          <div className="grid grid-cols-3 border-t border-stone-100 pt-8 max-w-3xl">
+            <div>
+              <p className="font-serif text-2xl text-stone-900 mb-1">$2.4M</p>
+              <p className="font-sans text-xs text-stone-500">Median Home Price</p>
+            </div>
+            <div>
+              <p className="font-serif text-2xl text-stone-900 mb-1">~150</p>
+              <p className="font-sans text-xs text-stone-500">Active Listings (avg)</p>
+            </div>
+            <div>
+              <p className="font-serif text-2xl text-stone-900 mb-1">35 days</p>
+              <p className="font-sans text-xs text-stone-500">Median Days on Market</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ─── LOCAL EXPERT (soft CTA) ──────────────────────────────── */}
+      {/* ─── SOFT EXPERT FEATURE ──────────────────────────────────────── */}
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="label-text mb-5">Curious About Life in La Jolla?</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8 leading-tight">
+          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-6 leading-tight">
             Talk to Someone
             <br />
             Who Lives Here
           </h2>
-          <p className="font-sans text-base text-stone-600 leading-relaxed mb-4 max-w-xl mx-auto">
-            {expert.name} has lived in {expert.area} for {expert.years} years. If you are exploring the area, planning a move, or just want to understand what daily life is really like — they are happy to have an honest conversation.
+          <p className="font-sans text-base text-stone-600 leading-relaxed mb-3 max-w-xl mx-auto">
+            Sarah Chen has lived in La Jolla for fifteen years. If you are exploring the area, planning a move, or just want to understand what daily life is really like — she is happy to have an honest conversation.
           </p>
           <p className="font-sans text-sm text-stone-500 leading-relaxed mb-12 max-w-md mx-auto italic">
             No pressure. No sales pitch. Just local knowledge, honestly shared.
           </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="font-sans text-xs tracking-[0.25em] uppercase border border-stone-900 text-stone-900 px-10 py-4 hover:bg-stone-900 hover:text-white transition-colors duration-500"
+              className="font-sans text-sm tracking-wider uppercase border border-stone-900 text-stone-900 px-8 py-3 hover:bg-stone-900 hover:text-white transition-colors"
             >
               Get in Touch
             </Link>
             <a
-              href={`tel:${expert.phone.replace(/\D/g, '')}`}
-              className="font-sans text-sm tracking-wider text-stone-500 hover:text-stone-900 border-b border-stone-300 hover:border-stone-900 pb-0.5 transition-colors duration-500"
+              href="tel:+16195550142"
+              className="font-sans text-sm tracking-wider text-stone-500 hover:text-stone-900 border-b border-stone-300 hover:border-stone-900 pb-0.5 transition-colors"
             >
-              {expert.phone}
+              (619) 555-0142
             </a>
           </div>
-
-          <div className="border-t border-stone-200 pt-8 max-w-md mx-auto">
-            <p className="font-sans text-sm font-medium text-stone-700 mb-1">{expert.name}</p>
-            <p className="font-sans font-light text-xs text-stone-400 tracking-wider">
-              {expert.brokerage} · {expert.license}
-            </p>
-          </div>
+          <p className="font-sans text-xs text-stone-400 mt-10">
+            Sarah Chen · Compass Real Estate · CA DRE #02054123
+          </p>
         </div>
       </section>
     </>

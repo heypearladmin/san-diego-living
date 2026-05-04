@@ -3,53 +3,53 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Del Mar | Neighborhood Guide',
+  title: 'Pacific Beach | Neighborhood Guide',
   description:
-    'A guide to life in Del Mar — the village, the bluffs, the racetrack, the schools, and the everyday rhythm of one of the most distinctive coastal communities in San Diego.',
+    'A guide to life in Pacific Beach — the boardwalk, Crystal Pier, surf culture, walkable village, and the most authentic beach town energy in San Diego.',
 }
 
 // ─────────────────────────────────────────────────────────────────────
 // LOCAL EXPERT (per neighborhood)
 // ─────────────────────────────────────────────────────────────────────
 const expert = {
-  name: 'James Wright',
-  area: 'Del Mar',
-  years: 10,
-  phone: '(619) 555-0143',
+  name: 'Sara Lin',
+  area: 'Pacific Beach',
+  years: 8,
+  phone: '(619) 555-0144',
   brokerage: 'Compass Real Estate',
-  license: 'CA DRE #02054124',
+  license: 'CA DRE #02054125',
 }
 
 const quickFacts = [
   {
     label: 'Walkability',
-    value: '73 Walk Score',
-    explanation: 'Most of village life happens on foot — coffee, dinner, the bluffs.',
+    value: '92 Walk Score',
+    explanation: 'Most errands can be done on foot — coffee, surf, dinner, sunset.',
   },
   {
     label: 'Schools',
-    value: '10/10 Rating',
-    explanation: 'Some of the strongest public schools in California, including Torrey Pines High.',
+    value: '7/10 Rating',
+    explanation: 'Solid public schools with strong nearby private and charter options.',
   },
   {
     label: 'Commute',
-    value: '25 mi to Downtown',
-    explanation: '30–35 min by car, or take the train station in the village.',
+    value: '15–20 min to Downtown',
+    explanation: 'Easy access via I-5 and the coastal route along Mission Bay.',
   },
   {
     label: 'Climate',
-    value: '65–75°F year-round',
-    explanation: 'Mild coastal climate, constant ocean breeze, low humidity.',
+    value: '60–75°F year-round',
+    explanation: 'Warm summers, mild winters, ocean breeze almost every afternoon.',
   },
   {
     label: 'Lifestyle',
-    value: '2.5 mi of bluff coast',
-    explanation: 'Beaches, racetrack, and the village within walking distance.',
+    value: '3-mile boardwalk',
+    explanation: 'Surf, biking, and sunset every day, no shoes required.',
   },
   {
     label: 'Community',
-    value: '4,500 residents',
-    explanation: 'Multi-generational families, second-home owners, and longtime locals.',
+    value: 'Young, active, coastal',
+    explanation: 'A mix of professionals, surfers, and longtime locals.',
   },
 ]
 
@@ -57,115 +57,115 @@ const lifestyleItems = [
   {
     category: 'Beaches',
     description:
-      '15th Street Beach for surf, Dog Beach for the morning ritual, and the dramatic bluffs along Camino del Mar that make the coast unmistakably Del Mar.',
-    image: '/images/DM-4a.png',
+      "From Crystal Pier to Tourmaline, PB's beach culture is the real thing — surfers, longboarders, and the daily ritual of sunset watching.",
+    image: '/images/PB-4a.png',
   },
   {
     category: 'Dining',
     description:
-      'Oceanfront classics like Jake&apos;s and Cucina Enoteca on the upper Plaza terrace — a culinary scene that values setting as much as the food itself.',
-    image: '/images/DM-4b.png',
+      'JRDN at Tower 23, beachfront patios on Mission Boulevard, and the kind of casual coastal dining you do not have to dress up for.',
+    image: '/images/PB-4b.png',
   },
   {
     category: 'Culture',
     description:
-      'Del Mar Plaza, the historic 1922 train station, the Del Mar Theatre, and the summer racetrack social scene unique to North County.',
-    image: '/images/DM-4c.png',
+      "Garnet Avenue's vintage neon, surf shops, hand-painted murals, and the unbroken thread of California beach-town heritage.",
+    image: '/images/PB-4c.png',
   },
   {
     category: 'Outdoors',
     description:
-      "Torrey Pines Reserve immediately south, oceanfront cycling along Coast Highway 101, and bluff trails that most San Diegans haven't found.",
-    image: '/images/DM-4d.png',
+      'Mission Bay Park, paddleboarding, beach volleyball, and morning runs along the boardwalk — the active life lived outdoors.',
+    image: '/images/PB-4d.png',
   },
 ]
 
 const thingsToDo = [
   {
-    title: 'Opening Day at Del Mar',
+    title: 'Paddle Out at Crystal Pier',
     description:
-      'Sundresses, wide-brimmed hats, and one of the most scenic tracks in the country — a regional ritual every summer.',
-    category: 'Summer',
-    image: '/images/DM-3a.png',
-  },
-  {
-    title: 'Sunset at Powerhouse Park',
-    description:
-      'A restored 1920s building, a manicured lawn on the bluff, and the Pacific lighting up below as the village quiets down.',
-    category: 'Evenings',
-    image: '/images/DM-3b.png',
-  },
-  {
-    title: 'Mornings at Dog Beach',
-    description:
-      'Off-leash mornings at the mouth of the San Dieguito River — the unofficial start to the day for North Del Mar locals.',
+      'One of the most consistent and friendly surf breaks in San Diego — perfect for longboarders and the place locals learned how to surf.',
     category: 'Mornings',
-    image: '/images/DM-3c.png',
+    image: '/images/PB-3a.png',
+  },
+  {
+    title: 'Cruise the Boardwalk',
+    description:
+      'Three miles of concrete along PB and Mission Beach — best at golden hour on a vintage cruiser bike with iced coffees.',
+    category: 'Afternoons',
+    image: '/images/PB-3b.png',
+  },
+  {
+    title: 'Sunset at Tower 23',
+    description:
+      "Modern oceanfront rooftop with craft cocktails and an unobstructed Pacific view — the most refined sunset move PB has to offer.",
+    category: 'Evenings',
+    image: '/images/PB-3c.png',
   },
 ]
 
 const localBusinesses = [
   {
-    name: "Jake's Del Mar",
-    type: 'Oceanfront Dining',
+    name: "Kono's Cafe",
+    type: 'Breakfast',
     description:
-      'A mid-century classic that locals never get tired of — sunset cocktails, fresh seafood, the same view since 1978.',
-    image: '/images/DM-5a.png',
+      'The legendary tiny breakfast joint at the foot of Crystal Pier — locals call it a PB rite of passage.',
+    image: '/images/PB-5a.png',
   },
   {
-    name: 'Del Mar Plaza',
-    type: 'Shopping & Dining',
+    name: 'JRDN at Tower 23',
+    type: 'Fine Dining',
     description:
-      'The Mediterranean-style open-air plaza that anchors village life, with a quiet upper terrace overlooking the Pacific.',
-    image: '/images/DM-5b.png',
+      "The oceanfront luxury hotel restaurant that elevated the neighborhood's dining scene.",
+    image: '/images/PB-5b.png',
   },
   {
-    name: 'Powerhouse Park',
-    type: 'Community Park',
+    name: 'Crystal Pier',
+    type: 'Landmark',
     description:
-      'The bluff-top park and restored 1920s building — sunsets, weddings, weekend picnics, and the unofficial heart of the village.',
-    image: '/images/DM-5c.png',
+      'A 700-foot wooden pier with hotel cottages — one of the last working public piers on the California coast.',
+    image: '/images/PB-5c.png',
   },
   {
-    name: 'Stratford Court',
-    type: 'Boutique Shops',
+    name: 'PB Surf Shops',
+    type: 'Surf',
     description:
-      "A pedestrian-only courtyard of independent shops — the kind of quiet block locals walk through twice on the same afternoon.",
-    image: '/images/DM-5d.png',
+      'Independent surf shops along Mission Boulevard — where local surfers actually buy their boards and wax.',
+    image: '/images/PB-5d.png',
   },
 ]
 
 const whoItsFor = [
   {
-    label: 'Families',
+    label: 'Young Professionals',
     description:
-      "School-pickup walks, weekend bluff trails, and the kind of small-town childhood that's hard to find on the coast.",
+      'Walkable streets, vibrant nightlife, and a community where work-life balance includes a morning surf before the laptop opens.',
   },
   {
-    label: 'Executives & Remote Pros',
+    label: 'Surfers & Beach People',
     description:
-      'Quiet streets, Zoom-friendly mornings, and an oceanfront lunch you can fit between meetings.',
+      'Consistent surf, easy Mission Bay access, and a community built entirely around the water.',
   },
   {
-    label: 'Retirees',
+    label: 'Active Lifestyle Seekers',
     description:
-      'Daily walks, Powerhouse Park sunsets, and a community where dinner companions are easy to find.',
+      'Boardwalk runners, paddle sports, beach volleyball, bike culture — PB rewards living outside, every day.',
   },
   {
-    label: 'Second-Home Owners',
+    label: 'First-Time Coastal Buyers',
     description:
-      'Held for decades, often passed down. The kind of place where keys stay in the family.',
+      'A more accessible coastal entry point than La Jolla or Del Mar, with all the upside of being on the water.',
   },
 ]
 
-export default function DelMarPage() {
+export default function PacificBeachPage() {
   return (
     <>
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section className="relative h-[70vh] min-h-[550px] flex items-end">
         <Image
-          src="/images/DM-1.png"
-          alt="Del Mar bluffs and coastline at sunset"
+          src="/images/PB-1.png"
+          alt="Pacific Beach Crystal Pier at sunset"
           fill
           className="object-cover"
           priority
@@ -182,13 +182,13 @@ export default function DelMarPage() {
               Neighborhoods
             </Link>
             <span className="text-white/30 text-xs">/</span>
-            <span className="font-sans text-xs text-white/80">Del Mar</span>
+            <span className="font-sans text-xs text-white/80">Pacific Beach</span>
           </div>
 
           <p className="label-text text-white/60 mb-4">Neighborhood Guide</p>
-          <h1 className="font-serif text-6xl md:text-7xl text-white mb-4">Del Mar</h1>
+          <h1 className="font-serif text-6xl md:text-7xl text-white mb-4">Pacific Beach</h1>
           <p className="font-sans text-lg text-white/75 max-w-xl font-light leading-relaxed">
-            One point seven square miles where everyone knows everyone — and the bluffs do the rest.
+            Boardwalk mornings, barefoot evenings, and a beach town that never tried to be anything else.
           </p>
         </div>
       </section>
@@ -199,7 +199,7 @@ export default function DelMarPage() {
           <div className="mb-12">
             <p className="label-text mb-3">A Quick Read</p>
             <h2 className="font-serif text-3xl md:text-4xl text-stone-900 leading-tight max-w-lg">
-              What You Should Know About Del Mar
+              What You Should Know About Pacific Beach
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
@@ -221,42 +221,42 @@ export default function DelMarPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="label-text mb-4">About Del Mar</p>
+              <p className="label-text mb-4">About Pacific Beach</p>
               <h2 className="section-heading mb-8">
-                A Coastal Village
+                The Beach Town
                 <br />
-                With a Different Pace
+                That Stayed One
               </h2>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Del Mar covers just under two square miles. Mornings begin with locals walking dogs at North Beach, the marine layer still hugging the bluffs. The historic 1922 train station hums quietly through the village. Camino del Mar wakes up — bistros, the Plaza terrace opening for early light, the same regulars folding into the same tables.
+                Mornings here begin at the pier. Surfers paddle out before sunrise. The boardwalk fills slowly with runners, dog walkers, and locals on cruiser bikes carrying iced coffees from Kono&apos;s. The marine layer lifts. Garnet Avenue wakes up. Pacific Beach starts the day the way it has for fifty years.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Days drift between the village and the bluffs. Lunch at Cucina Enoteca on the upper terrace stretches into the afternoon. Surfers paddle out at 15th Street. Cyclists climb Coast Highway 101 toward Torrey Pines. The summer racetrack adds its own seasonal energy — sundresses, hats, dinners that run long.
+                Afternoons drift between the beach and the bay. Mission Bay Park fills with paddleboarders and beach volleyball. Cottages on Crystal Pier take their tenants in for lunch. The boardwalk hums steadily until the sun starts dipping, when the beach refills with locals settling in for the evening ritual.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-10">
-                Sunset belongs to Powerhouse Park. The lawn fills with picnic blankets. The Pacific lights up. Then the village quiets, the streets darken under the palms, and Del Mar settles into the kind of evening it has been settling into for decades.
+                Evenings are casual and loud and warm. Dinner is barefoot. The streets stay alive late on weekends. PB is the rare coastal neighborhood that did not lose its soul to gentrification — the boardwalk is still concrete, the pier is still wooden, and the locals are still the locals.
               </p>
 
               <div className="grid grid-cols-2 gap-6 border-t border-stone-100 pt-8">
                 <div>
                   <p className="label-text mb-2">Vibe</p>
                   <p className="font-sans text-sm text-stone-700">
-                    Refined, small-town, unhurried
+                    Casual, vibrant, surf-forward
                   </p>
                 </div>
                 <div>
                   <p className="label-text mb-2">Best Known For</p>
                   <p className="font-sans text-sm text-stone-700">
-                    Racetrack, bluffs, the village
+                    Crystal Pier, boardwalk, surf
                   </p>
                 </div>
                 <div>
                   <p className="label-text mb-2">Climate</p>
-                  <p className="font-sans text-sm text-stone-700">Mild year-round, ocean breeze</p>
+                  <p className="font-sans text-sm text-stone-700">Warm summers, mild winters</p>
                 </div>
                 <div>
                   <p className="label-text mb-2">To Downtown</p>
-                  <p className="font-sans text-sm text-stone-700">30–35 min by car</p>
+                  <p className="font-sans text-sm text-stone-700">15–20 min by car</p>
                 </div>
               </div>
             </div>
@@ -264,8 +264,8 @@ export default function DelMarPage() {
             <div className="relative">
               <div className="relative h-[500px] overflow-hidden">
                 <Image
-                  src="/images/DM-2.png"
-                  alt="Del Mar Village along Camino del Mar"
+                  src="/images/PB-2.png"
+                  alt="Garnet Avenue Pacific Beach"
                   fill
                   className="object-cover"
                 />
@@ -275,7 +275,7 @@ export default function DelMarPage() {
                   Local Note
                 </p>
                 <p className="font-serif text-lg leading-snug">
-                  Del Mar covers just 1.7 square miles — small enough to know everyone, big enough to surprise you.
+                  Pacific Beach has more cruiser bikes per capita than almost any neighborhood in California.
                 </p>
               </div>
             </div>
@@ -287,7 +287,7 @@ export default function DelMarPage() {
       <section className="bg-cream-50 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-12">
-            <p className="label-text mb-3">Is Del Mar a Match?</p>
+            <p className="label-text mb-3">Is Pacific Beach a Match?</p>
             <h2 className="section-heading max-w-lg">Who Actually Lives Here</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -313,7 +313,7 @@ export default function DelMarPage() {
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-14">
-            <p className="label-text mb-3">A Day in Del Mar</p>
+            <p className="label-text mb-3">A Day in Pacific Beach</p>
             <h2 className="section-heading max-w-lg">
               How Locals
               <br />
@@ -352,7 +352,7 @@ export default function DelMarPage() {
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-14">
-            <p className="label-text mb-3">Life in Del Mar</p>
+            <p className="label-text mb-3">Life in Pacific Beach</p>
             <h2 className="section-heading max-w-lg">
               The Everyday
               <br />
@@ -433,22 +433,22 @@ export default function DelMarPage() {
             <div>
               <p className="label-text mb-4">Education</p>
               <h2 className="section-heading mb-8">
-                Some of California&apos;s
+                Solid Schools,
                 <br />
-                Strongest Schools
+                Strong Options Nearby
               </h2>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Del Mar schools are part of two districts — the Del Mar Union School District for K–6 and San Dieguito Union High for 7–12. Both regularly rank among California&apos;s strongest. Torrey Pines High in particular is cited as one of the state&apos;s top public high schools.
+                PB schools are part of San Diego Unified. Crown Point Elementary is consistently the strongest of the local public elementary options. Mission Bay High runs a respected International Baccalaureate program that draws students from across the area.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed">
-                Most families in the village walk or bike their kids to school. Private and parochial alternatives are within easy reach for those who want them.
+                Many families also tap into nearby private and charter alternatives — most are within a fifteen-minute drive. The community itself is school-flexible by nature.
               </p>
             </div>
 
             <div className="relative h-80 lg:h-[480px] overflow-hidden group rounded-sm">
               <Image
-                src="/images/DM-6.png"
-                alt="Del Mar school campus"
+                src="/images/PB-6.png"
+                alt="Mission Bay High School campus"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -470,17 +470,17 @@ export default function DelMarPage() {
                 Look Like
               </h2>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Mostly single-family homes — bluff-top estates along Camino del Mar, walkable village homes a few streets back, and modern Mediterranean builds in Del Mar Mesa. A small condo market exists in the village core.
+                A mix of beach cottages, modern condos, Mission Bay waterfronts, and craftsman bungalows in the quieter side streets of North PB. Density gets higher closer to the boardwalk, lower as you head inland toward Crown Point.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed">
-                The village is finite. Inventory turnover is among the lowest of any San Diego coastal market — many homes here are passed down rather than listed.
+                Inventory turns over more often than most coastal markets — PB is where many people land when they first move to the area, then trade up over time.
               </p>
             </div>
 
             <div className="relative h-[500px] lg:h-[600px] overflow-hidden lg:sticky lg:top-24">
               <Image
-                src="/images/DM-7a.png"
-                alt="Bluff-top home along Camino del Mar"
+                src="/images/PB-7a.png"
+                alt="Oceanfront condo near Crystal Pier"
                 fill
                 className="object-cover"
               />
@@ -492,7 +492,7 @@ export default function DelMarPage() {
       {/* ─── LOCAL EXPERT (soft CTA) ──────────────────────────────── */}
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="label-text mb-5">Curious About Life in Del Mar?</p>
+          <p className="label-text mb-5">Curious About Life in Pacific Beach?</p>
           <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8 leading-tight">
             Talk to Someone
             <br />

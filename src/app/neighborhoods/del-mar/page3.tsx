@@ -5,101 +5,64 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Del Mar | Neighborhood Guide',
   description:
-    'A guide to life in Del Mar — the village, the bluffs, the racetrack, the schools, and the everyday rhythm of one of the most distinctive coastal communities in San Diego.',
-}
-
-// ─────────────────────────────────────────────────────────────────────
-// LOCAL EXPERT (per neighborhood)
-// ─────────────────────────────────────────────────────────────────────
-const expert = {
-  name: 'James Wright',
-  area: 'Del Mar',
-  years: 10,
-  phone: '(619) 555-0143',
-  brokerage: 'Compass Real Estate',
-  license: 'CA DRE #02054124',
+    'Your guide to life in Del Mar — the village, the bluffs, the racetrack, the schools, and the everyday rhythm of one of the most distinctive coastal communities in San Diego.',
 }
 
 const quickFacts = [
-  {
-    label: 'Walkability',
-    value: '73 Walk Score',
-    explanation: 'Most of village life happens on foot — coffee, dinner, the bluffs.',
-  },
-  {
-    label: 'Schools',
-    value: '10/10 Rating',
-    explanation: 'Some of the strongest public schools in California, including Torrey Pines High.',
-  },
-  {
-    label: 'Commute',
-    value: '25 mi to Downtown',
-    explanation: '30–35 min by car, or take the train station in the village.',
-  },
-  {
-    label: 'Climate',
-    value: '65–75°F year-round',
-    explanation: 'Mild coastal climate, constant ocean breeze, low humidity.',
-  },
-  {
-    label: 'Lifestyle',
-    value: '2.5 mi of bluff coast',
-    explanation: 'Beaches, racetrack, and the village within walking distance.',
-  },
-  {
-    label: 'Community',
-    value: '4,500 residents',
-    explanation: 'Multi-generational families, second-home owners, and longtime locals.',
-  },
+  { value: '73', label: 'Walk Score' },
+  { value: '10/10', label: 'School Rating' },
+  { value: '263', label: 'Sunny Days/Year' },
+  { value: '2.5 mi', label: 'of Coastline' },
+  { value: '4,500', label: 'Residents' },
 ]
 
 const lifestyleItems = [
   {
     category: 'Beaches',
     description:
-      '15th Street Beach for surf, Dog Beach for the morning ritual, and the dramatic bluffs along Camino del Mar that make the coast unmistakably Del Mar.',
+      "15th Street Beach, Dog Beach, and the dramatic bluffs along Camino del Mar make Del Mar's coastline one of San Diego's most photogenic stretches.",
     image: '/images/DM-4a.png',
   },
   {
     category: 'Dining',
     description:
-      'Oceanfront classics like Jake&apos;s and Cucina Enoteca on the upper Plaza terrace — a culinary scene that values setting as much as the food itself.',
+      'Oceanfront classics like Jake’s Del Mar and Cucina Enoteca at Del Mar Plaza define a culinary scene that values setting as much as the food.',
     image: '/images/DM-4b.png',
   },
   {
     category: 'Culture',
     description:
-      'Del Mar Plaza, the historic 1922 train station, the Del Mar Theatre, and the summer racetrack social scene unique to North County.',
+      'Del Mar Plaza shopping, the historic 1922 train station, the Del Mar Theatre, and the summer racetrack social scene unique to North County.',
     image: '/images/DM-4c.png',
   },
   {
     category: 'Outdoors',
     description:
-      "Torrey Pines Reserve immediately south, oceanfront cycling along Coast Highway 101, and bluff trails that most San Diegans haven't found.",
+      "Torrey Pines Reserve immediately south, oceanfront cycling along Coast Highway 101, and bluff trails most San Diegans haven't found.",
     image: '/images/DM-4d.png',
   },
 ]
 
 const thingsToDo = [
   {
-    title: 'Opening Day at Del Mar',
+    title: 'Watch the Races at Del Mar',
     description:
-      'Sundresses, wide-brimmed hats, and one of the most scenic tracks in the country — a regional ritual every summer.',
-    category: 'Summer',
+      'The summer thoroughbred meet at Del Mar is a regional institution — opening day, sundresses, hats, and one of the most scenic tracks in the country.',
+    category: 'Events',
     image: '/images/DM-3a.png',
   },
   {
     title: 'Sunset at Powerhouse Park',
     description:
-      'A restored 1920s building, a manicured lawn on the bluff, and the Pacific lighting up below as the village quiets down.',
-    category: 'Evenings',
+      'Sunset at Powerhouse Park is a Del Mar tradition — a restored 1920s building set against the wide Pacific bluffs and 15th Street Beach below.',
+    category: 'Lifestyle',
     image: '/images/DM-3b.png',
   },
   {
-    title: 'Mornings at Dog Beach',
+    title: 'Walk Dog Beach (North Beach)',
     description:
-      'Off-leash mornings at the mouth of the San Dieguito River — the unofficial start to the day for North Del Mar locals.',
-    category: 'Mornings',
+      "Off-leash dog beach at the mouth of the San Dieguito River — the unofficial morning ritual for North Del Mar locals.",
+    category: 'Outdoors',
     image: '/images/DM-3c.png',
   },
 ]
@@ -109,28 +72,28 @@ const localBusinesses = [
     name: "Jake's Del Mar",
     type: 'Oceanfront Dining',
     description:
-      'A mid-century classic that locals never get tired of — sunset cocktails, fresh seafood, the same view since 1978.',
+      'The mid-century beachfront restaurant locals never get tired of — sunset cocktails, fresh seafood, the same view since 1978.',
     image: '/images/DM-5a.png',
   },
   {
     name: 'Del Mar Plaza',
     type: 'Shopping & Dining',
     description:
-      'The Mediterranean-style open-air plaza that anchors village life, with a quiet upper terrace overlooking the Pacific.',
+      'The Mediterranean-style open-air shopping plaza — the anchor of village life, with ocean views from the upper terrace.',
     image: '/images/DM-5b.png',
   },
   {
     name: 'Powerhouse Park',
     type: 'Community Park',
     description:
-      'The bluff-top park and restored 1920s building — sunsets, weddings, weekend picnics, and the unofficial heart of the village.',
+      'The bluff-top park and restored 1920s building — sunsets, weddings, weekend picnics, and the unofficial heart of village life.',
     image: '/images/DM-5c.png',
   },
   {
     name: 'Stratford Court',
     type: 'Boutique Shops',
     description:
-      "A pedestrian-only courtyard of independent shops — the kind of quiet block locals walk through twice on the same afternoon.",
+      "The pedestrian-only courtyard of independent shops, hand-painted signs, and a quiet locals' favorite for browsing.",
     image: '/images/DM-5d.png',
   },
 ]
@@ -138,30 +101,33 @@ const localBusinesses = [
 const whoItsFor = [
   {
     label: 'Families',
-    description:
-      "School-pickup walks, weekend bluff trails, and the kind of small-town childhood that's hard to find on the coast.",
+    description: 'Excellent schools, walkable village, and weekend bluff trails just steps from home.',
   },
   {
     label: 'Executives & Remote Pros',
-    description:
-      'Quiet streets, Zoom-friendly mornings, and an oceanfront lunch you can fit between meetings.',
+    description: 'Quiet streets, fast I-5 access, and a refined small-town feel that supports serious work.',
   },
   {
     label: 'Retirees',
-    description:
-      'Daily walks, Powerhouse Park sunsets, and a community where dinner companions are easy to find.',
+    description: 'Coastal beauty, healthcare access via Scripps and UCSD, and a longtime stable village community.',
   },
   {
     label: 'Second-Home Owners',
-    description:
-      'Held for decades, often passed down. The kind of place where keys stay in the family.',
+    description: 'A consistently held coastal community — Del Mar residents tend to stay for decades, often generations.',
   },
+]
+
+const schools = [
+  { name: 'Del Mar Heights Elementary', grades: 'K–5', rating: '10/10', type: 'Public' },
+  { name: 'Del Mar Hills Academy', grades: 'K–5', rating: '9/10', type: 'Public' },
+  { name: 'Earl Warren Middle School', grades: '6–8', rating: '9/10', type: 'Public' },
+  { name: 'Torrey Pines High School', grades: '9–12', rating: '10/10', type: 'Public' },
 ]
 
 export default function DelMarPage() {
   return (
     <>
-      {/* ─── HERO ─────────────────────────────────────────────────── */}
+      {/* ─── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative h-[70vh] min-h-[550px] flex items-end">
         <Image
           src="/images/DM-1.png"
@@ -187,36 +153,27 @@ export default function DelMarPage() {
 
           <p className="label-text text-white/60 mb-4">Neighborhood Guide</p>
           <h1 className="font-serif text-6xl md:text-7xl text-white mb-4">Del Mar</h1>
-          <p className="font-sans text-lg text-white/75 max-w-xl font-light leading-relaxed">
-            One point seven square miles where everyone knows everyone — and the bluffs do the rest.
+          <p className="font-sans text-lg text-white/70 max-w-xl font-light">
+            Village charm, racetrack heritage, and one of the most distinctive coastal communities in San Diego.
           </p>
         </div>
       </section>
 
-      {/* ─── QUICK FACTS ──────────────────────────────────────────── */}
-      <section className="bg-white border-b border-stone-100 py-16 lg:py-20">
+      {/* ─── QUICK FACTS BAR ──────────────────────────────────────────── */}
+      <section className="bg-white border-b border-stone-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="mb-12">
-            <p className="label-text mb-3">A Quick Read</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-stone-900 leading-tight max-w-lg">
-              What You Should Know About Del Mar
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-x divide-stone-100">
             {quickFacts.map((fact) => (
-              <div key={fact.label} className="border-t border-stone-200 pt-5">
-                <p className="label-text mb-3">{fact.label}</p>
-                <p className="font-serif text-xl text-stone-900 mb-3">{fact.value}</p>
-                <p className="font-sans font-light text-sm text-stone-500 leading-relaxed">
-                  {fact.explanation}
-                </p>
+              <div key={fact.label} className="px-6 py-7 text-center">
+                <p className="font-serif text-2xl text-stone-900 mb-1">{fact.value}</p>
+                <p className="font-sans text-xs text-stone-500">{fact.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── OVERVIEW ─────────────────────────────────────────────── */}
+      {/* ─── OVERVIEW ─────────────────────────────────────────────────── */}
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -228,13 +185,13 @@ export default function DelMarPage() {
                 With a Different Pace
               </h2>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Del Mar covers just under two square miles. Mornings begin with locals walking dogs at North Beach, the marine layer still hugging the bluffs. The historic 1922 train station hums quietly through the village. Camino del Mar wakes up — bistros, the Plaza terrace opening for early light, the same regulars folding into the same tables.
+                Del Mar covers just 1.7 square miles — a small bluff-top village anchored by Camino del Mar, Del Mar Plaza, the historic 1922 train station, and the famous summer racetrack. Its population is around 4,500. Its coastline is dramatic. And its character has been preserved more carefully than almost anywhere else in San Diego County.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Days drift between the village and the bluffs. Lunch at Cucina Enoteca on the upper terrace stretches into the afternoon. Surfers paddle out at 15th Street. Cyclists climb Coast Highway 101 toward Torrey Pines. The summer racetrack adds its own seasonal energy — sundresses, hats, dinners that run long.
+                The lifestyle is unhurried. Mornings start with locals walking dogs at North Beach. Days drift between the village and the bluffs. Sunset belongs to Powerhouse Park, and dinner happens at Jake&apos;s, at Cucina Enoteca on the upper Plaza terrace, or at one of the small bistros along Camino del Mar where the same regulars keep the same tables.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-10">
-                Sunset belongs to Powerhouse Park. The lawn fills with picnic blankets. The Pacific lights up. Then the village quiets, the streets darken under the palms, and Del Mar settles into the kind of evening it has been settling into for decades.
+                Del Mar holds onto its small-town soul. Multi-generational families, second-home owners, and longtime residents form a tight community where neighbors know each other by name and most homes get passed down rather than listed.
               </p>
 
               <div className="grid grid-cols-2 gap-6 border-t border-stone-100 pt-8">
@@ -247,7 +204,7 @@ export default function DelMarPage() {
                 <div>
                   <p className="label-text mb-2">Best Known For</p>
                   <p className="font-sans text-sm text-stone-700">
-                    Racetrack, bluffs, the village
+                    Racetrack, bluffs, dining
                   </p>
                 </div>
                 <div>
@@ -255,7 +212,7 @@ export default function DelMarPage() {
                   <p className="font-sans text-sm text-stone-700">Mild year-round, ocean breeze</p>
                 </div>
                 <div>
-                  <p className="label-text mb-2">To Downtown</p>
+                  <p className="label-text mb-2">Commute to Downtown</p>
                   <p className="font-sans text-sm text-stone-700">30–35 min by car</p>
                 </div>
               </div>
@@ -283,12 +240,12 @@ export default function DelMarPage() {
         </div>
       </section>
 
-      {/* ─── WHO IT'S FOR ─────────────────────────────────────────── */}
+      {/* ─── WHO IT'S FOR ─────────────────────────────────────────────── */}
       <section className="bg-cream-50 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-12">
-            <p className="label-text mb-3">Is Del Mar a Match?</p>
-            <h2 className="section-heading max-w-lg">Who Actually Lives Here</h2>
+            <p className="label-text mb-3">Is Del Mar Right for You?</p>
+            <h2 className="section-heading max-w-lg">Who Loves Living Here</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whoItsFor.map((item, index) => (
@@ -299,9 +256,11 @@ export default function DelMarPage() {
                 <p className="text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-3">
                   {item.label}
                 </p>
+
                 <p className="text-sm text-stone-700 leading-relaxed group-hover:text-stone-900 transition">
                   {item.description}
                 </p>
+
                 <div className="mt-6 h-[1px] w-0 bg-amber-600 group-hover:w-full transition-all duration-300" />
               </div>
             ))}
@@ -309,15 +268,15 @@ export default function DelMarPage() {
         </div>
       </section>
 
-      {/* ─── THINGS TO DO ─────────────────────────────────────────── */}
+      {/* ─── THINGS TO DO ─────────────────────────────────────────────── */}
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-14">
-            <p className="label-text mb-3">A Day in Del Mar</p>
+            <p className="label-text mb-3">Activities & Attractions</p>
             <h2 className="section-heading max-w-lg">
-              How Locals
+              Things To Do
               <br />
-              Spend Their Time
+              in Del Mar
             </h2>
           </div>
 
@@ -331,12 +290,18 @@ export default function DelMarPage() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
                   <div className="absolute bottom-0 p-6 text-white">
                     <p className="text-xs tracking-widest uppercase text-white/70 mb-2">
                       {item.category}
                     </p>
-                    <h3 className="text-xl font-serif mb-2">{item.title}</h3>
+
+                    <h3 className="text-xl font-serif mb-2">
+                      {item.title}
+                    </h3>
+
                     <p className="text-sm text-white/80 leading-relaxed">
                       {item.description}
                     </p>
@@ -348,7 +313,7 @@ export default function DelMarPage() {
         </div>
       </section>
 
-      {/* ─── LOCAL LIFESTYLE ──────────────────────────────────────── */}
+      {/* ─── LOCAL LIFESTYLE ──────────────────────────────────────────── */}
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-14">
@@ -362,10 +327,7 @@ export default function DelMarPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {lifestyleItems.map((item) => (
-              <div
-                key={item.category}
-                className="group flex gap-6 bg-white border border-stone-100 p-6 hover:shadow-lg transition-shadow duration-300"
-              >
+              <div key={item.category} className="group flex gap-6 bg-white border border-stone-100 p-6 hover:shadow-lg transition-shadow duration-300">
                 <div className="relative w-28 h-28 flex-shrink-0 overflow-hidden">
                   <Image
                     src={item.image}
@@ -386,16 +348,16 @@ export default function DelMarPage() {
         </div>
       </section>
 
-      {/* ─── LOCAL BUSINESSES ─────────────────────────────────────── */}
+      {/* ─── LOCAL BUSINESSES ─────────────────────────────────────────── */}
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-14 gap-4">
             <div>
-              <p className="label-text mb-3">Worth Knowing</p>
+              <p className="label-text mb-3">Local Businesses</p>
               <h2 className="section-heading">
-                Places We
+                Worth Knowing
                 <br />
-                Keep Going Back To
+                in Del Mar
               </h2>
             </div>
             <Link
@@ -426,58 +388,79 @@ export default function DelMarPage() {
         </div>
       </section>
 
-      {/* ─── SCHOOLS (light touch) ────────────────────────────────── */}
+      {/* ─── SCHOOLS ──────────────────────────────────────────────────── */}
       <section className="bg-cream-100 py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <p className="label-text mb-4">Education</p>
-              <h2 className="section-heading mb-8">
-                Some of California&apos;s
+              <h2 className="section-heading mb-6">
+                Among the Strongest
                 <br />
-                Strongest Schools
+                School Districts in California
               </h2>
-              <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Del Mar schools are part of two districts — the Del Mar Union School District for K–6 and San Dieguito Union High for 7–12. Both regularly rank among California&apos;s strongest. Torrey Pines High in particular is cited as one of the state&apos;s top public high schools.
+              <p className="font-sans text-sm text-stone-600 leading-relaxed mb-8">
+                Del Mar schools are part of the Del Mar Union School District (K-6) and the San Dieguito Union High School District (7-12). Both consistently rank among California&apos;s strongest. Torrey Pines High School in particular is a top public high school in the state, with deep STEM, arts, and athletics programs.
               </p>
-              <p className="font-sans text-base text-stone-600 leading-relaxed">
-                Most families in the village walk or bike their kids to school. Private and parochial alternatives are within easy reach for those who want them.
+
+              <div className="space-y-px">
+                {schools.map((school) => (
+                  <div
+                    key={school.name}
+                    className="flex items-center justify-between bg-white px-6 py-4"
+                  >
+                    <div>
+                      <p className="font-sans text-sm font-medium text-stone-900">{school.name}</p>
+                      <p className="font-sans text-xs text-stone-500">
+                        Grades {school.grades} · {school.type}
+                      </p>
+                    </div>
+                    <span className="font-serif text-base text-gold">{school.rating}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 font-sans text-xs text-stone-400">
+                Ratings sourced from GreatSchools.org. Verify school boundaries with the district.
               </p>
             </div>
 
-            <div className="relative h-80 lg:h-[480px] overflow-hidden group rounded-sm">
+            <div className="relative h-80 lg:h-full min-h-[400px] overflow-hidden group rounded-sm">
               <Image
                 src="/images/DM-6.png"
                 alt="Del Mar school campus"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── HOUSING SNAPSHOT (subtle) ────────────────────────────── */}
+      {/* ─── COST OF LIVING (editorial, not listings) ─────────────────── */}
       <section className="bg-white py-24 lg:py-32 border-t border-stone-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
             <div>
-              <p className="label-text mb-3">Housing</p>
+              <p className="label-text mb-3">A Note on the Market</p>
               <h2 className="section-heading mb-10">
-                What the Homes
+                What It Costs
                 <br />
-                Look Like
+                to Live Here
               </h2>
               <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
-                Mostly single-family homes — bluff-top estates along Camino del Mar, walkable village homes a few streets back, and modern Mediterranean builds in Del Mar Mesa. A small condo market exists in the village core.
+                Del Mar&apos;s housing market reflects the village&apos;s scarcity. Inventory stays tight — typically under 100 active listings — and the right home moves quickly when it does come up.
+              </p>
+              <p className="font-sans text-base text-stone-600 leading-relaxed mb-5">
+                Median home prices sit around <span className="font-medium text-stone-900">$3.1M</span>. Bluff-top oceanfront properties along Camino del Mar generally command <span className="font-medium text-stone-900">$8M and up</span>. Village-walkable single-family homes typically run between <span className="font-medium text-stone-900">$3M and $5M</span>. Condos and smaller lots in the Del Mar Heights area can be found from the high six figures into the low seven.
               </p>
               <p className="font-sans text-base text-stone-600 leading-relaxed">
-                The village is finite. Inventory turnover is among the lowest of any San Diego coastal market — many homes here are passed down rather than listed.
+                What people often don&apos;t expect: most Del Mar residents stay. Homes get passed down. Inventory turnover is among the lowest of any San Diego coastal market, which is part of why prices stay strong even when broader markets soften.
               </p>
             </div>
 
-            <div className="relative h-[500px] lg:h-[600px] overflow-hidden lg:sticky lg:top-24">
+            <div className="relative h-[500px] lg:h-[640px] overflow-hidden lg:sticky lg:top-24">
               <Image
                 src="/images/DM-7a.png"
                 alt="Bluff-top home along Camino del Mar"
@@ -486,46 +469,56 @@ export default function DelMarPage() {
               />
             </div>
           </div>
+
+          <div className="grid grid-cols-3 border-t border-stone-100 pt-8 max-w-3xl">
+            <div>
+              <p className="font-serif text-2xl text-stone-900 mb-1">$3.1M</p>
+              <p className="font-sans text-xs text-stone-500">Median Home Price</p>
+            </div>
+            <div>
+              <p className="font-serif text-2xl text-stone-900 mb-1">~80</p>
+              <p className="font-sans text-xs text-stone-500">Active Listings (avg)</p>
+            </div>
+            <div>
+              <p className="font-serif text-2xl text-stone-900 mb-1">28 days</p>
+              <p className="font-sans text-xs text-stone-500">Median Days on Market</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ─── LOCAL EXPERT (soft CTA) ──────────────────────────────── */}
+      {/* ─── SOFT EXPERT FEATURE ──────────────────────────────────────── */}
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="label-text mb-5">Curious About Life in Del Mar?</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-8 leading-tight">
+          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-6 leading-tight">
             Talk to Someone
             <br />
             Who Lives Here
           </h2>
-          <p className="font-sans text-base text-stone-600 leading-relaxed mb-4 max-w-xl mx-auto">
-            {expert.name} has lived in {expert.area} for {expert.years} years. If you are exploring the area, planning a move, or just want to understand what daily life is really like — they are happy to have an honest conversation.
+          <p className="font-sans text-base text-stone-600 leading-relaxed mb-3 max-w-xl mx-auto">
+            Sarah Chen has lived in the Del Mar village for fifteen years. If you are exploring the area, planning a move, or just want to understand what daily life is really like — she is happy to have an honest conversation.
           </p>
           <p className="font-sans text-sm text-stone-500 leading-relaxed mb-12 max-w-md mx-auto italic">
             No pressure. No sales pitch. Just local knowledge, honestly shared.
           </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="font-sans text-xs tracking-[0.25em] uppercase border border-stone-900 text-stone-900 px-10 py-4 hover:bg-stone-900 hover:text-white transition-colors duration-500"
+              className="font-sans text-sm tracking-wider uppercase border border-stone-900 text-stone-900 px-8 py-3 hover:bg-stone-900 hover:text-white transition-colors"
             >
               Get in Touch
             </Link>
             <a
-              href={`tel:${expert.phone.replace(/\D/g, '')}`}
-              className="font-sans text-sm tracking-wider text-stone-500 hover:text-stone-900 border-b border-stone-300 hover:border-stone-900 pb-0.5 transition-colors duration-500"
+              href="tel:+16195550142"
+              className="font-sans text-sm tracking-wider text-stone-500 hover:text-stone-900 border-b border-stone-300 hover:border-stone-900 pb-0.5 transition-colors"
             >
-              {expert.phone}
+              (619) 555-0142
             </a>
           </div>
-
-          <div className="border-t border-stone-200 pt-8 max-w-md mx-auto">
-            <p className="font-sans text-sm font-medium text-stone-700 mb-1">{expert.name}</p>
-            <p className="font-sans font-light text-xs text-stone-400 tracking-wider">
-              {expert.brokerage} · {expert.license}
-            </p>
-          </div>
+          <p className="font-sans text-xs text-stone-400 mt-10">
+            Sarah Chen · Compass Real Estate · CA DRE #02054123
+          </p>
         </div>
       </section>
     </>
