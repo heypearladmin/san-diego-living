@@ -1,272 +1,231 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import BlogNewsletterForm from '@/components/BlogNewsletterForm'
-import { getAllPosts, type BlogPost } from '@/lib/blog'
+import { getAllPosts } from '@/lib/blog'
 
 export const metadata: Metadata = {
-  title: 'Stories & Guides',
+  title: 'Stories | San Diego Living',
   description:
-    'Neighborhood guides, local business spotlights, things to do, and community stories from across coastal San Diego.',
+    'Honest writing about life in coastal San Diego — neighborhoods, families, weekends, and the small details that make the city feel like home.',
 }
 
-const categories = ['All', 'Neighborhoods', 'Local Guides', 'Things To Do', 'Restaurants', 'Real Estate']
-
-const featuredArticle = {
-  category: 'Local Guide',
-  title: "The Best Neighborhoods in San Diego for Every Type of Person",
-  excerpt:
-    'La Jolla for the culture-seeker, Pacific Beach for the beach lover, Del Mar for the family — a genuine guide to finding where you belong in San Diego.',
-  author: 'San Diego Living',
-  date: 'April 14, 2026',
-  readTime: '8 min read',
-  image:
-    'https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&w=1920&q=80',
-  href: '/blog/best-neighborhoods-for-every-person',
+// ─────────────────────────────────────────────────────────────────────
+// LOCAL EXPERT (global)
+// ─────────────────────────────────────────────────────────────────────
+const expert = {
+  name: 'Alex Rivera',
+  area: 'San Diego',
+  years: 12,
+  phone: '(619) 555-0101',
+  brokerage: 'Compass Real Estate',
+  license: 'CA DRE #02123456',
 }
 
-const articles = [
+// ─────────────────────────────────────────────────────────────────────
+// EDITORIAL THEMES — content threads we cover
+// ─────────────────────────────────────────────────────────────────────
+const editorialThemes = [
   {
-    category: 'Local Guide',
-    title: 'The Best Coffee Shops in La Jolla',
-    excerpt:
-      "From third-wave roasters to sun-drenched patios with Pacific views, La Jolla's coffee culture is worth exploring slowly.",
-    date: 'April 2, 2026',
-    readTime: '4 min read',
-    image:
-      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/coffee-shops-la-jolla',
+    label: 'Living Here',
+    description:
+      'Honest accounts of what it actually feels like — the slow mornings, the marine layer, the pace that takes most newcomers a year to adjust to.',
   },
   {
-    category: 'Neighborhoods',
-    title: 'Living in Pacific Beach: An Honest Lifestyle Guide',
-    excerpt:
-      "What's it actually like to live in PB? We break down the vibe, walkability, dining scene, and who it's genuinely perfect for.",
-    date: 'March 28, 2026',
-    readTime: '6 min read',
-    image:
-      'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/living-in-pacific-beach',
+    label: 'Family Life',
+    description:
+      'Where families actually go. What weekends look like with kids. How the neighborhoods compare for families at different stages.',
   },
   {
-    category: 'Things To Do',
-    title: 'Hidden Gems in San Diego You Need to Visit',
-    excerpt:
-      'Beyond Balboa Park and the Zoo — the spots that only residents know about, from secret tide pools to off-menu dining experiences.',
-    date: 'March 15, 2026',
-    readTime: '5 min read',
-    image:
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/san-diego-hidden-gems',
+    label: 'Neighborhood Notes',
+    description:
+      'Field guides to the communities that make up coastal San Diego — the quirks, the rituals, the unwritten rules.',
   },
   {
-    category: 'Restaurants',
-    title: "Little Italy's Best Restaurants Right Now",
-    excerpt:
-      "San Diego's most walkable dining neighborhood keeps getting better. Here are the tables worth booking this month.",
-    date: 'February 22, 2026',
-    readTime: '5 min read',
-    image:
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/little-italy-restaurants',
-  },
-  {
-    category: 'Neighborhoods',
-    title: 'Del Mar vs. Rancho Santa Fe: Which Is Right for You?',
-    excerpt:
-      "Two of San Diego County's most storied communities appeal to entirely different lifestyles. We break down the honest tradeoffs.",
-    date: 'January 30, 2026',
-    readTime: '7 min read',
-    image:
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/del-mar-vs-rancho-santa-fe',
-  },
-  {
-    category: 'Real Estate',
-    title: "San Diego's Coastal Market: What Buyers Need to Know in 2026",
-    excerpt:
-      'A grounded look at where the market stands — inventory, pricing trends, and what experienced buyers are doing differently this year.',
-    date: 'January 10, 2026',
-    readTime: '9 min read',
-    image:
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
-    href: '/blog/coastal-market-buyers-guide-2026',
+    label: 'Market Perspective',
+    description:
+      'Plain-language context on housing and the broader local market. What the trends mean. What they do not.',
   },
 ]
 
-export default async function BlogPage() {
-  const mdPosts = getAllPosts()
-
-  // Markdown posts take priority; hardcoded articles fill in the rest
-  const mdSlugs = new Set(mdPosts.map((p) => p.slug))
-  const fallbackArticles = articles.filter((a) => !mdSlugs.has(a.href.replace('/blog/', '')))
-  const allArticles: (BlogPost | (typeof articles)[0])[] = [...mdPosts, ...fallbackArticles]
-
-  const hero = mdPosts.length > 0
-    ? { ...mdPosts[0], href: `/blog/${mdPosts[0].slug}`, date: mdPosts[0].date ?? '', author: 'San Diego Living' }
-    : featuredArticle
+// ─────────────────────────────────────────────────────────────────────
+// PAGE
+// ─────────────────────────────────────────────────────────────────────
+export default function BlogPage() {
+  const posts = getAllPosts()
+  const featured = posts[0]
+  const rest = posts.slice(1)
 
   return (
     <>
-      {/* ─── FEATURED ARTICLE HERO ────────────────────────────────────── */}
-      <section className="relative h-[65vh] min-h-[520px] flex items-end pt-20">
-        <Image
-          src={hero.image}
-          alt={hero.title}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/50 to-stone-950/10" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pb-16 w-full">
-          <div className="max-w-2xl">
-            <p className="label-text text-gold mb-4">{hero.category}</p>
-            <Link href={hero.href} className="group">
-              <h1 className="font-serif text-3xl md:text-5xl text-white leading-tight mb-5 group-hover:text-stone-200 transition-colors">
-                {hero.title}
-              </h1>
+      {/* ─── HERO ─────────────────────────────────────────────────── */}
+      <section className="relative bg-stone-950 py-32 lg:py-44">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="flex items-center gap-2 mb-8">
+            <Link href="/" className="font-sans text-xs text-white/40 hover:text-white/70 transition-colors">
+              San Diego Living
             </Link>
-            <p className="font-sans text-base text-white/70 leading-relaxed mb-6 max-w-xl font-light">
-              {hero.excerpt}
+            <span className="text-white/25 text-xs">/</span>
+            <span className="font-sans text-xs text-white/70">Stories</span>
+          </div>
+
+          <p className="label-text text-white/50 mb-5">Editorial</p>
+          <h1 className="font-serif font-normal text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-8 max-w-4xl">
+            Life in San Diego,
+            <br />
+            Written Honestly
+          </h1>
+          <p className="font-sans font-light text-lg text-white/65 max-w-2xl leading-relaxed">
+            Field notes from the coast. The people, the places, the rituals, and the small details that make a neighborhood feel like home — for individuals, couples, and families trying to understand what life here is actually like.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── FEATURED ARTICLE ─────────────────────────────────────── */}
+      {featured && (
+        <section className="bg-white py-24 lg:py-32">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <p className="label-text mb-10">Latest</p>
+            <Link href={`/blog/${featured.slug}`} className="group block">
+              <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-0 lg:gap-16 items-center">
+                <div className="relative overflow-hidden h-72 lg:h-[480px] mb-8 lg:mb-0">
+                  {featured.image && (
+                    <Image
+                      src={featured.image}
+                      alt={featured.title}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  )}
+                </div>
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="label-text text-gold">{featured.category}</span>
+                    <span className="w-4 h-px bg-stone-300" />
+                    <span className="font-sans text-xs text-stone-400">{featured.readTime}</span>
+                  </div>
+                  <h2 className="font-serif font-normal text-3xl md:text-4xl lg:text-5xl text-stone-900 leading-[1.1] mb-6 group-hover:text-stone-500 transition-colors duration-300">
+                    {featured.title}
+                  </h2>
+                  <p className="font-sans font-light text-base text-stone-500 leading-relaxed mb-8 max-w-xl">
+                    {featured.excerpt}
+                  </p>
+                  <span className="font-sans text-xs tracking-[0.25em] uppercase text-stone-500 group-hover:text-stone-900 transition-colors duration-300 border-b border-stone-200 group-hover:border-stone-900 pb-0.5">
+                    Read Article →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* ─── EDITORIAL THEMES ─────────────────────────────────────── */}
+      <section className="bg-cream-50 py-28 lg:py-36">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="mb-14 max-w-2xl">
+            <p className="label-text mb-4">What We Write About</p>
+            <h2 className="font-serif font-normal text-3xl md:text-4xl text-stone-900 leading-tight mb-6">
+              The Threads That Run
+              <br />
+              Through Coastal Life
+            </h2>
+            <p className="font-sans font-light text-base text-stone-600 leading-relaxed">
+              Independent. Community-first. Written by people who actually live here.
             </p>
-            <div className="flex items-center gap-4">
-              {'date' in hero && hero.date && (
-                <>
-                  <span className="font-sans text-xs text-white/50">{hero.date}</span>
-                  <span className="w-1 h-1 rounded-full bg-white/30" />
-                </>
-              )}
-              <span className="font-sans text-xs text-white/50">{hero.readTime}</span>
-              <Link
-                href={hero.href}
-                className="ml-4 font-sans text-xs tracking-widest uppercase text-gold hover:text-gold-light border-b border-gold/40 hover:border-gold pb-0.5 transition-colors"
-              >
-                Read Article →
-              </Link>
-            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-t border-stone-200 pt-12">
+            {editorialThemes.map((theme) => (
+              <div key={theme.label}>
+                <p className="label-text text-gold mb-4">{theme.label}</p>
+                <p className="font-sans font-light text-sm text-stone-600 leading-relaxed">
+                  {theme.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ─── PAGE HEADER ──────────────────────────────────────────────── */}
-      <section className="bg-white border-b border-stone-100 py-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div>
-              <p className="label-text mb-1">San Diego Living</p>
-              <h2 className="font-serif text-3xl text-stone-900">Stories & Guides</h2>
+      {/* ─── ARTICLE ARCHIVE ──────────────────────────────────────── */}
+      {rest.length > 0 && (
+        <section className="bg-white py-28 lg:py-36">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="mb-14">
+              <p className="label-text mb-4">More Stories</p>
+              <h2 className="font-serif font-normal text-3xl md:text-4xl text-stone-900 leading-tight max-w-xl">
+                Field Notes from the Coast
+              </h2>
             </div>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((cat, i) => (
-                <button
-                  key={cat}
-                  className={`font-sans text-xs tracking-wider px-4 py-2 border transition-colors ${
-                    i === 0
-                      ? 'bg-stone-900 text-white border-stone-900'
-                      : 'bg-white text-stone-600 border-stone-200 hover:border-stone-900 hover:text-stone-900'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── ARTICLE GRID ─────────────────────────────────────────────── */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-
-          {/* First article — full-width horizontal */}
-          {allArticles[0] && (() => {
-            const a = allArticles[0]
-            const href = 'slug' in a ? `/blog/${a.slug}` : a.href
-            return (
-              <Link href={href} className="group block mb-16">
-                <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-0 lg:gap-16 items-center">
-                  <div className="relative overflow-hidden h-72 lg:h-[400px] mb-8 lg:mb-0 bg-stone-100">
-                    {a.image && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+              {rest.map((post) => (
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
+                  <div className="relative h-60 overflow-hidden mb-6">
+                    {post.image && (
                       <Image
-                        src={a.image}
-                        alt={a.title}
+                        src={post.image}
+                        alt={post.title}
                         fill
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                     )}
                   </div>
-                  <div>
-                    <div className="flex items-center gap-3 mb-5">
-                      <span className="label-text text-gold">{a.category}</span>
-                      <span className="w-4 h-px bg-stone-200" />
-                      <span className="font-sans text-xs text-stone-400">{a.readTime}</span>
-                    </div>
-                    <h3 className="font-serif text-3xl md:text-4xl text-stone-900 leading-snug mb-5 group-hover:text-stone-500 transition-colors duration-300">
-                      {a.title}
-                    </h3>
-                    <p className="font-sans font-light text-sm text-stone-500 leading-relaxed mb-8">
-                      {a.excerpt}
-                    </p>
-                    <span className="font-sans text-xs tracking-widest uppercase text-stone-400 group-hover:text-stone-900 transition-colors duration-300 border-b border-stone-200 group-hover:border-stone-900 pb-0.5">
-                      Read Article →
-                    </span>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="label-text text-gold">{post.category}</span>
+                    <span className="w-3 h-px bg-stone-300" />
+                    <span className="font-sans text-xs text-stone-400">{post.readTime}</span>
                   </div>
-                </div>
-              </Link>
-            )
-          })()}
-
-          {/* Remaining articles — compact 3-column, no card frames */}
-          {allArticles.length > 1 && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 border-t border-stone-100 pt-16">
-              {allArticles.slice(1).map((a) => {
-                const href = 'slug' in a ? `/blog/${a.slug}` : a.href
-                return (
-                  <Link key={a.title} href={href} className="group block">
-                    <div className="relative h-44 overflow-hidden mb-5 bg-stone-100">
-                      {a.image && (
-                        <Image
-                          src={a.image}
-                          alt={a.title}
-                          fill
-                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
-                      )}
-                    </div>
-                    <p className="label-text text-gold mb-3">{a.category}</p>
-                    <h3 className="font-serif text-xl text-stone-900 leading-snug mb-3 group-hover:text-stone-500 transition-colors duration-300">
-                      {a.title}
-                    </h3>
-                    <div className="flex items-center gap-3 mt-4">
-                      <span className="font-sans text-xs text-stone-400">{a.readTime}</span>
-                    </div>
-                  </Link>
-                )
-              })}
+                  <h3 className="font-serif font-normal text-xl text-stone-900 leading-snug mb-3 group-hover:text-stone-500 transition-colors duration-300">
+                    {post.title}
+                  </h3>
+                  <p className="font-sans font-light text-sm text-stone-500 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                </Link>
+              ))}
             </div>
-          )}
-
-          {/* Load More */}
-          <div className="text-center mt-16">
-            <button className="btn-outline">Load More Stories</button>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* ─── NEWSLETTER ───────────────────────────────────────────────── */}
-      <section className="bg-cream-100 py-20">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <p className="label-text mb-4">Stay in the Loop</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-4">
-            The San Diego Living Brief
+      {/* ─── LOCAL EXPERT ─────────────────────────────────────────── */}
+      <section className="bg-cream-50 py-28 lg:py-36">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="label-text mb-5">Curious About Life in San Diego?</p>
+          <h2 className="font-serif font-normal text-3xl md:text-4xl text-stone-900 mb-8 leading-tight">
+            Talk to Someone
+            <br />
+            Who Lives Here
           </h2>
-          <p className="font-sans text-stone-500 text-sm leading-relaxed mb-8 max-w-md mx-auto">
-            Neighborhood guides, local spots, community stories, and the occasional market insight — once a month, nothing more.
+          <p className="font-sans text-base text-stone-600 leading-relaxed mb-4 max-w-xl mx-auto">
+            {expert.name} has lived in {expert.area} for {expert.years} years. If you are exploring the area, planning a move, or just want to understand what daily life is really like — they are happy to have an honest conversation.
           </p>
-          <BlogNewsletterForm />
+          <p className="font-sans text-sm text-stone-500 leading-relaxed mb-12 max-w-md mx-auto italic">
+            No pressure. No sales pitch. Just local knowledge, honestly shared.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-12">
+            <Link
+              href="/contact"
+              className="font-sans text-xs tracking-[0.25em] uppercase border border-stone-900 text-stone-900 px-10 py-4 hover:bg-stone-900 hover:text-white transition-colors duration-500"
+            >
+              Get in Touch
+            </Link>
+            <a
+              href={`tel:${expert.phone.replace(/\D/g, '')}`}
+              className="font-sans text-sm tracking-wider text-stone-500 hover:text-stone-900 border-b border-stone-300 hover:border-stone-900 pb-0.5 transition-colors duration-500"
+            >
+              {expert.phone}
+            </a>
+          </div>
+
+          <div className="border-t border-stone-200 pt-8 max-w-md mx-auto">
+            <p className="font-sans text-sm font-medium text-stone-700 mb-1">{expert.name}</p>
+            <p className="font-sans font-light text-xs text-stone-400 tracking-wider">
+              {expert.brokerage} · {expert.license}
+            </p>
+          </div>
         </div>
       </section>
     </>
