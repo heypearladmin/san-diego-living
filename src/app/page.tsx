@@ -60,28 +60,28 @@ const neighborhoods = [
     tagline: 'Cliffs, cove, and a village that has not changed',
     vibe: 'Cliffs · Cove · Old Village',
     href: '/neighborhoods/la-jolla',
-    image: '/images/b1 lajollacard.png',
+    image: '/images/b1-lajollacard.png',
   },
   {
     name: 'Del Mar',
     tagline: '1.7 square miles where everyone knows everyone',
     vibe: 'Bluff Homes · Racetrack · Village',
     href: '/neighborhoods/del-mar',
-    image: '/images/b2 delmarcard.png',
+    image: '/images/b2-delmarcard.png',
   },
   {
     name: 'Pacific Beach',
     tagline: 'Boardwalk mornings and barefoot evenings',
     vibe: 'Crystal Pier · Surf · Cruiser Bikes',
     href: '/neighborhoods/pacific-beach',
-    image: '/images/b3 pacificbeachcard.png',
+    image: '/images/b3-pacificbeachcard.png',
   },
   {
     name: 'Coronado',
     tagline: 'Across the bridge, time slows',
     vibe: 'Hotel Del · Orange Avenue · Ferry',
     href: '/neighborhoods/coronado',
-    image: '/images/b4 coronadocard.png',
+    image: '/images/b4-coronadocard.png',
   },
 ]
 
@@ -128,13 +128,13 @@ const activities = [
   {
     title: 'Slip Into La Jolla Cove',
     category: 'Mornings',
-    image: '/images/c1 snorklelajolla.png',
+    image: '/images/c1-snorklelajolla.png',
     href: '/things-to-do',
   },
   {
     title: 'Walk Torrey Pines at Sunrise',
     category: 'Trails',
-    image: '/images/c2 hiketorreypines.png',
+    image: '/images/c2-hiketorreypines.png',
     href: '/things-to-do',
   },
   {
@@ -146,19 +146,19 @@ const activities = [
   {
     title: 'Paddle Out at Crystal Pier',
     category: 'Water',
-    image: '/images/c4 surfpacificbeach.png',
+    image: '/images/c4-surfpacificbeach.png',
     href: '/things-to-do',
   },
   {
     title: 'A Long Dinner in Little Italy',
     category: 'Evenings',
-    image: '/images/c5 dineinlittleitaly.png',
+    image: '/images/c5-dineinlittleitaly.png',
     href: '/things-to-do',
   },
   {
     title: 'Opening Day at Del Mar',
     category: 'Summer',
-    image: '/images/c6 thoroughbred.png',
+    image: '/images/c6-thoroughbred.png',
     href: '/things-to-do',
   },
 ]
@@ -175,7 +175,7 @@ export default async function HomePage() {
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section className="relative h-[90vh] min-h-[640px] w-full overflow-hidden">
         <Image
-          src="/images/a1 homepagehero.png"
+          src="/images/a1-homepagehero.png"
           alt="San Diego coastline at golden hour"
           fill
           priority

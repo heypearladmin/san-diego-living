@@ -48,7 +48,7 @@ const activities: Array<{
     description:
       'Snorkel through the kelp forest, swim with garibaldi, and watch the sea lions pull themselves up onto the rocks at noon. Calm protected water, even on big-swell days.',
     familyNote: 'Tide pools, harbor seals, and protected swimming — older kids love it.',
-    image: '/images/c1 snorklelajolla.png',
+    image: '/images/c1-snorklelajolla.png',
   },
   {
     id: 'hike-torrey-pines',
@@ -58,7 +58,7 @@ const activities: Array<{
     description:
       'Hundred-year-old pines, sandstone cliffs, and the Pacific waking up below. The Razor Point Trail at golden hour is the quietest hour in San Diego.',
     familyNote: 'Easy trails, safe paths, and one of the best places to bring kids outdoors.',
-    image: '/images/c2 hiketorreypines.png',
+    image: '/images/c2-hiketorreypines.png',
   },
   {
     id: 'balboa-park',
@@ -78,7 +78,7 @@ const activities: Array<{
     description:
       'One of the most consistent and friendly surf breaks in San Diego — perfect for longboarders and the place plenty of locals learned how to surf.',
     familyNote: 'Surf schools welcome kids; soft-top rentals on the boardwalk.',
-    image: '/images/c4 surfpacificbeach.png',
+    image: '/images/c4-surfpacificbeach.png',
   },
   {
     id: 'little-italy-dinner',
@@ -88,7 +88,7 @@ const activities: Array<{
     description:
       'Walk India Street for dinner — Born and Raised, Juniper & Ivy, Ironside Fish. San Diego&apos;s most concentrated stretch of serious cooking, end-to-end.',
     familyNote: 'Piazza seating at the Food Hall is stroller-friendly with options for picky eaters.',
-    image: '/images/c5 dineinlittleitaly.png',
+    image: '/images/c5-dineinlittleitaly.png',
   },
   {
     id: 'del-mar-track',
@@ -98,7 +98,7 @@ const activities: Array<{
     description:
       'Sundresses, wide-brimmed hats, and one of the most scenic tracks in the country. The summer racing season is a regional ritual you only need to do once to understand.',
     familyNote: 'Family days during the meet include infield kid activities and pony rides.',
-    image: '/images/c6 thoroughbred.png',
+    image: '/images/c6-thoroughbred.png',
   },
   {
     id: 'walk-embarcadero',
@@ -108,7 +108,7 @@ const activities: Array<{
     description:
       'The harbor path from the Maritime Museum down to Seaport Village is the best free walk in the city — especially at golden hour with the Coronado Bridge in the distance.',
     familyNote: 'Maritime Museum and the Seaport Village carousel are kid magnets.',
-    image: '/images/c7 walkembarcadero.png',
+    image: '/images/c7-walktheembarcadero.png',
   },
   {
     id: 'birch-aquarium',
@@ -118,7 +118,7 @@ const activities: Array<{
     description:
       'Perched above Scripps Institution of Oceanography with panoramic ocean views. Calm, manageable, and one of the most underrated museums in California.',
     familyNote: "One of San Diego's most-loved spots for kids — the kelp tank, the tide pool plaza, the cliff view.",
-    image: '/images/c8 birchaquarium.png',
+    image: '/images/c8-birch.png',
   },
   {
     id: 'north-park-brewery',
@@ -127,7 +127,7 @@ const activities: Array<{
     neighborhood: 'North Park',
     description:
       'San Diego is one of the great craft beer cities in the country. North Park&apos;s 30th Street corridor is the best place to start — walkable, packed, and patient with first-timers.',
-    image: '/images/c9 northparkbrewery.png',
+    image: '/images/c9-northpark.png',
   },
 ]
 
