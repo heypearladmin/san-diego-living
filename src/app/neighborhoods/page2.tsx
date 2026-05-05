@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// LOCAL EXPERT (global)
+// LOCAL EXPERT (global, used on the index)
+// Mirrors the homepage `localExperts.global`.
 // ─────────────────────────────────────────────────────────────────────
 const expert = {
   name: 'Alex Rivera',
@@ -21,7 +22,7 @@ const expert = {
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// FEATURED NEIGHBORHOOD
+// FEATURED NEIGHBORHOOD (large immersive block)
 // ─────────────────────────────────────────────────────────────────────
 const featured = {
   name: 'La Jolla',
@@ -67,7 +68,7 @@ const neighborhoods = [
 ]
 
 // ─────────────────────────────────────────────────────────────────────
-// LIFESTYLE CONTEXT
+// LIFESTYLE CONTEXT (categorization to help readers locate themselves)
 // ─────────────────────────────────────────────────────────────────────
 const lifestyleContext = [
   {
@@ -93,8 +94,8 @@ const lifestyleContext = [
 export default function NeighborhoodsPage() {
   return (
     <>
-      {/* ─── HERO (matches working homepage pattern) ─────────────── */}
-      <section className="relative h-[80vh] min-h-[600px] w-full overflow-hidden">
+      {/* ─── HERO ─────────────────────────────────────────────────── */}
+      <section className="relative h-[70vh] min-h-[540px] flex items-end overflow-hidden">
         <Image
           src="/images/a1 homepagehero.png"
           alt="San Diego coastal communities at golden hour"
@@ -102,44 +103,39 @@ export default function NeighborhoodsPage() {
           priority
           className="object-cover"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-stone-950/20" />
 
-        <div className="absolute inset-0 bg-black/45 z-10" />
-
-        <div className="absolute inset-0 z-20 flex items-end">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-20 w-full">
-            <div className="flex items-center gap-2 mb-6">
-              <Link
-                href="/"
-                className="font-sans text-xs text-white/50 hover:text-white/80 transition-colors"
-              >
-                San Diego Living
-              </Link>
-              <span className="text-white/30 text-xs">/</span>
-              <span className="font-sans text-xs text-white/80">Neighborhoods</span>
-            </div>
-
-            <p className="text-white/60 text-xs tracking-widest uppercase mb-4">
-              Coastal San Diego
-            </p>
-
-            <h1 className="text-white font-serif font-normal text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6 max-w-4xl">
-              Each Part of San Diego
-              <br />
-              Has Its Own Rhythm
-            </h1>
-
-            <p className="font-sans font-light text-lg text-white/75 max-w-2xl leading-relaxed">
-              Some communities slow down by design. Others never stop. The right one has less to do with where it sits on the map and more to do with how you actually want to spend a day.
-            </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pb-20 w-full">
+          <div className="flex items-center gap-2 mb-6">
+            <Link
+              href="/"
+              className="font-sans text-xs text-white/50 hover:text-white/80 transition-colors"
+            >
+              San Diego Living
+            </Link>
+            <span className="text-white/30 text-xs">/</span>
+            <span className="font-sans text-xs text-white/80">Neighborhoods</span>
           </div>
+
+          <p className="label-text text-white/60 mb-4">Coastal San Diego</p>
+
+          <h1 className="font-serif font-normal text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-7 max-w-4xl">
+            Each Part of San Diego
+            <br />
+            Has Its Own Rhythm
+          </h1>
+
+          <p className="font-sans font-light text-lg text-white/75 max-w-2xl leading-relaxed">
+            Some communities slow down by design. Others never stop. The right one has less to do with where it sits on the map and more to do with how you actually want to spend a day.
+          </p>
         </div>
       </section>
 
-      {/* ─── FEATURED NEIGHBORHOOD ─────────────────────────────────── */}
+      {/* ─── FEATURED NEIGHBORHOOD (immersive) ────────────────────── */}
       <section className="bg-white pt-32 lg:pt-44">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 mb-12">
-          <p className="text-stone-400 text-xs tracking-widest uppercase mb-4">A Closer Look</p>
-          <h2 className="font-serif font-normal text-3xl md:text-4xl text-stone-900 leading-tight max-w-2xl">
+          <p className="label-text mb-4">A Closer Look</p>
+          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 leading-tight max-w-2xl">
             Start with the One Everyone Knows.
           </h2>
           <p className="font-sans font-light text-sm text-stone-400 mt-5 max-w-md leading-relaxed">
@@ -149,7 +145,7 @@ export default function NeighborhoodsPage() {
 
         <Link
           href={featured.href}
-          className="group relative block overflow-hidden h-72 sm:h-[480px] lg:h-[700px] w-full"
+          className="group relative block overflow-hidden h-[480px] lg:h-[700px] w-full"
         >
           <Image
             src={featured.image}
@@ -157,10 +153,10 @@ export default function NeighborhoodsPage() {
             fill
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/88 via-stone-950/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/88 via-stone-950/25 to-transparent" />
 
           <div className="absolute bottom-0 left-0 p-8 lg:p-16 max-w-3xl">
-            <p className="text-white/45 text-xs tracking-widest uppercase mb-4">Featured Neighborhood</p>
+            <p className="label-text text-white/45 mb-4">Featured Neighborhood</p>
 
             <p className="font-serif font-normal text-5xl lg:text-7xl text-white leading-[1.05] mb-5">
               {featured.name}
@@ -174,18 +170,18 @@ export default function NeighborhoodsPage() {
               {featured.description}
             </p>
 
-            <p className="font-sans font-light text-xs text-white/40 tracking-widest uppercase">
+            <p className="font-sans font-light text-xs text-white/40 tracking-[0.25em] uppercase">
               {featured.vibe}
             </p>
           </div>
         </Link>
       </section>
 
-      {/* ─── NEIGHBORHOOD GRID ─────────────────────────────────────── */}
+      {/* ─── NEIGHBORHOOD GRID ────────────────────────────────────── */}
       <section className="bg-white py-32 lg:py-44">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 mb-14">
-          <p className="text-stone-400 text-xs tracking-widest uppercase mb-4">More to Explore</p>
-          <h2 className="font-serif font-normal text-3xl md:text-4xl text-stone-900 leading-tight max-w-2xl">
+          <p className="label-text mb-4">More to Explore</p>
+          <h2 className="font-serif text-3xl md:text-4xl text-stone-900 leading-tight max-w-2xl">
             Three More Communities,
             <br />
             Three Different Rhythms.
@@ -198,15 +194,15 @@ export default function NeighborhoodsPage() {
               <Link
                 key={n.name}
                 href={n.href}
-                className="group relative block overflow-hidden h-72 sm:h-[400px] lg:h-[500px] w-full"
+                className="group relative block overflow-hidden h-[400px] lg:h-[500px]"
               >
                 <Image
                   src={n.image}
                   alt={n.name}
                   fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/88 via-stone-950/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/88 via-stone-950/20 to-transparent transition-all duration-500 group-hover:from-stone-950/92" />
 
                 <div className="absolute bottom-0 left-0 p-8 lg:p-10 max-w-md">
                   <p className="font-serif font-normal text-3xl lg:text-4xl text-white mb-3 leading-tight">
@@ -216,7 +212,7 @@ export default function NeighborhoodsPage() {
                   <p className="font-sans font-light text-sm text-white/55 leading-relaxed mb-5">
                     {n.description}
                   </p>
-                  <p className="font-sans font-light text-xs text-white/35 tracking-widest uppercase">
+                  <p className="font-sans font-light text-xs text-white/35 tracking-[0.25em] uppercase">
                     {n.vibe}
                   </p>
                 </div>
@@ -226,11 +222,11 @@ export default function NeighborhoodsPage() {
         </div>
       </section>
 
-      {/* ─── LIFESTYLE CONTEXT ─────────────────────────────────────── */}
-      <section className="bg-stone-50 py-28 lg:py-40">
+      {/* ─── LIFESTYLE CONTEXT (NEW — guidance, not directory) ────── */}
+      <section className="bg-cream-50 py-28 lg:py-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="mb-16 max-w-2xl">
-            <p className="text-stone-400 text-xs tracking-widest uppercase mb-4">A Small Guide</p>
+            <p className="label-text mb-4">A Small Guide</p>
             <h2 className="font-serif font-normal text-4xl md:text-5xl text-stone-900 leading-[1.1] mb-7">
               Choosing the Right
               <br />
@@ -244,7 +240,7 @@ export default function NeighborhoodsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 border-t border-stone-200 pt-14">
             {lifestyleContext.map((item) => (
               <div key={item.label}>
-                <p className="text-amber-600 text-xs tracking-widest uppercase mb-5">{item.label}</p>
+                <p className="label-text text-gold mb-5">{item.label}</p>
                 <p className="font-serif font-normal text-2xl text-stone-900 mb-5 leading-snug">
                   {item.neighborhoods}
                 </p>
@@ -257,10 +253,10 @@ export default function NeighborhoodsPage() {
         </div>
       </section>
 
-      {/* ─── CONTINUING TO DOCUMENT ────────────────────────────────── */}
+      {/* ─── CONTINUING TO DOCUMENT (replaces "More Coming Soon") ── */}
       <section className="bg-white py-32 lg:py-40">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <div className="w-8 h-px bg-amber-600 mx-auto mb-12" />
+          <div className="w-8 h-px bg-gold mx-auto mb-12" />
           <h2 className="font-serif font-normal text-3xl md:text-4xl text-stone-900 mb-8 leading-[1.15]">
             More Communities,
             <br />
@@ -269,14 +265,14 @@ export default function NeighborhoodsPage() {
           <p className="font-sans font-light text-base text-stone-500 leading-relaxed">
             We are continuing to document the neighborhoods that define San Diego — from North Park to Little Italy, Mission Hills to Carmel Valley, and beyond. Each community we cover gets the same depth as the four above.
           </p>
-          <div className="w-8 h-px bg-amber-600 mx-auto mt-12" />
+          <div className="w-8 h-px bg-gold mx-auto mt-12" />
         </div>
       </section>
 
-      {/* ─── LOCAL EXPERT (soft CTA) ───────────────────────────────── */}
-      <section className="bg-stone-50 py-28 lg:py-36">
+      {/* ─── LOCAL EXPERT (soft CTA) ──────────────────────────────── */}
+      <section className="bg-cream-50 py-28 lg:py-36">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-stone-400 text-xs tracking-widest uppercase mb-5">Curious About Life in San Diego?</p>
+          <p className="label-text mb-5">Curious About Life in San Diego?</p>
           <h2 className="font-serif font-normal text-3xl md:text-4xl text-stone-900 mb-8 leading-tight">
             Talk to Someone
             <br />
@@ -292,7 +288,7 @@ export default function NeighborhoodsPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-12">
             <Link
               href="/contact"
-              className="font-sans text-xs tracking-widest uppercase border border-stone-900 text-stone-900 px-10 py-4 hover:bg-stone-900 hover:text-white transition-colors duration-500"
+              className="font-sans text-xs tracking-[0.25em] uppercase border border-stone-900 text-stone-900 px-10 py-4 hover:bg-stone-900 hover:text-white transition-colors duration-500"
             >
               Get in Touch
             </Link>
