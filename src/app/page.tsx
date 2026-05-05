@@ -195,7 +195,7 @@ export default async function HomePage() {
               <br />
               long afternoons,
               <br />
-              evenings the rest of the world flies in for.
+              and golden evenings the rest of the world comes to find.
             </h1>
 
             <p className="font-sans font-light text-white/75 max-w-xl text-base md:text-lg leading-relaxed mb-10">
