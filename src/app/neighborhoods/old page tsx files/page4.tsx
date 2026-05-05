@@ -28,7 +28,7 @@ const featured = {
   tagline: 'Cliffs, cove, and a village that has not lost its quiet.',
   description:
     'Seven miles of rugged Pacific coastline. A walkable village with Michelin-recognized dining and galleries that have been there for decades. World-class research institutions just up the hill. La Jolla earns its reputation — and most of the people who land here never leave.',
-  image: '/images/b1-lajollacard.png',
+  image: '/images/b1 lajollacard.png',
   href: '/neighborhoods/la-jolla',
   vibe: 'Cliffs · Cove · Old Village',
 }
@@ -43,7 +43,7 @@ const neighborhoods = [
     description:
       'Bluff homes, the historic 1922 train station, the summer racetrack, and a village that holds onto its small-town soul.',
     vibe: 'Bluff Homes · Racetrack · Village',
-    image: '/images/b2-delmarcard.png',
+    image: '/images/b2 delmarcard.png',
     href: '/neighborhoods/del-mar',
   },
   {
@@ -52,7 +52,7 @@ const neighborhoods = [
     description:
       'Crystal Pier, surf shops, vintage neon, and the most unbroken thread of California beach-town heritage you can find on the coast.',
     vibe: 'Crystal Pier · Surf · Cruiser Bikes',
-    image: '/images/b3-pacificbeachcard.png',
+    image: '/images/b3 pacificbeachcard.png',
     href: '/neighborhoods/pacific-beach',
   },
   {
@@ -61,7 +61,7 @@ const neighborhoods = [
     description:
       'An island in spirit, with the 1888 Hotel Del, Orange Avenue village charm, and homes that quietly pass between generations.',
     vibe: 'Hotel Del · Orange Avenue · Ferry',
-    image: '/images/b4-coronadocard.png',
+    image: '/images/b4 coronadocard.png',
     href: '/neighborhoods/coronado',
   },
 ]
@@ -93,10 +93,10 @@ const lifestyleContext = [
 export default function NeighborhoodsPage() {
   return (
     <>
-      {/* ─── HERO ─────────────────────────────────────────────────── */}
+      {/* ─── HERO (matches working homepage pattern) ─────────────── */}
       <section className="relative h-[80vh] min-h-[600px] w-full overflow-hidden">
         <Image
-          src="/images/a1-homepagehero.png"
+          src="/images/a1 homepagehero.png"
           alt="San Diego coastal communities at golden hour"
           fill
           priority
