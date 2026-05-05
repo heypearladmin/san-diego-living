@@ -164,7 +164,7 @@ export default function LaJollaPage() {
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section className="relative h-[70vh] min-h-[550px] flex items-end">
         <Image
-          src="/images/a1 homepagehero.png"
+          src="/images/a1-homepagehero.png"
           alt="La Jolla coastal cliffs at sunset"
           fill
           className="object-cover"
